@@ -11,7 +11,7 @@ const Achievements = () => {
   const displayedLogos = [...Array(8)].map((_, index) => logos[index % logos.length]);
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       {/* Nailiyyətlərimiz bölməsi */}
       <section className={styles.achievements}>
         <h2>Nəailiyyətlərimiz</h2>

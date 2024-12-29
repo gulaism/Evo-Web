@@ -1,11 +1,14 @@
 import './assets/common/base.scss'
 import Achievements from './pages/user/Achievements/Achievements'
+import HomeBottom from './pages/user/HomePage/HomeBottom/HomeBottom'
+
 
 function App() {
   
   return (
     <div>
-      <Achievements />
+      <HomeBottom />
+      {/* <Achievements /> */}
     </div>
   )
 }
