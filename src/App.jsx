@@ -1,10 +1,11 @@
 import './assets/common/base.scss'
+import Achievements from './pages/user/Achievements/Achievements'
 
 function App() {
   
   return (
     <div>
-      <h1>Course Project</h1>
+      <Achievements />
     </div>
   )
 }
