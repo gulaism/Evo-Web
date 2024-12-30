@@ -16,7 +16,12 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 100px;
+
+    @media (max-width: 480px) {
+        padding: 0 16px;
+    }
 }
+
 a {
     text-decoration: none;
 }
