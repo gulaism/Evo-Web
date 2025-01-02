@@ -1,0 +1,107 @@
+.faqList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.faqItem {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 53px;
+
+    @media (max-width: 480px) {
+        padding: 1rem 26px;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+
+    @media (max-width: 480px) {
+        font-weight: 400;
+        width: 251px;
+    }
+
+
+
+    span {
+        font-size: 20px;
+        font-weight: 400;
+        color: rgba(34, 34, 34, 1);
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+
+        }
+    }
+
+    &:hover {
+        color: #007bff;
+    }
+
+    .icon {
+        font-size: 31px;
+        font-weight: 400;
+        transition: transform 0.3s ease;
+        position: relative;
+
+
+        @media (max-width: 480px) {
+            font-size: 32px;
+            right: -42px;
+
+        }
+
+        &.open {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+}
+
+.faqAnswer {
+    margin-top: 0.5rem;
+
+    // padding-left: 1rem;
+    font-size: 18px;
+    color: rgba(126, 141, 156, 1);
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+
+    }
+}
+
+
+
+.faqHeader {
+    text-align: center;
+    margin-top: 150px;
+
+    @media (max-width: 480px) {
+        margin-top: 50px;
+    }
+
+
+    h2 {
+        font-size: 40px;
+        color: rgba(0, 0, 0, 1); // Başlıq rəngi
+        margin-bottom: 40px;
+        font-weight: 600;
+
+
+        @media (max-width: 480px) {
+            font-size: 24px;
+            margin-bottom: 28px;
+        }
+    }
+
+}

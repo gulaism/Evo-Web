@@ -1,6 +1,6 @@
 import React from 'react'
-import HomeAbove from '../../../components/HomePage/HomeAbove/HomeAbove'
-import HomeBottom from '../../../components/HomePage/HomeBottom/HomeBottom'
+import HomeAbove from '../../../components/HomeAbove/HomeAbove'
+import HomeBottom from '../../../components/HomeBottom/HomeBottom'
 
 const HomePage = () => {
   return (

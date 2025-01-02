@@ -1,0 +1,40 @@
+.partnerLogos {
+    display: flex;
+    justify-content: center;
+    gap: 20px; // Şəkillər arasındakı boşluq
+    flex-wrap: nowrap; // Logoların sətirə düşməməsini təmin etmək üçün
+    overflow: hidden; // Loqoların konteynerdən çıxmasını gizləyir
+    position: relative; // Konteyneri animasiya üçün əsas təyin edir
+    white-space: nowrap; // Loqoları bir xətt üzərində saxlayır
+  
+    .animateWrapper {
+      display: flex;
+      animation: slide 10s linear infinite; // Sonsuz hərəkət, 30s sürətində
+    }
+  }
+  
+  .partnerLogo {
+    width: 295px; // Şəkil ölçüsü
+    height: 100px;
+    object-fit: contain; // Şəkilləri səliqəli göstərmək üçün
+    margin-right: 20px; // Şəkillər arasındakı boşluğu tənzimləyirik
+  }
+  
+  // @keyframes ilə animasiya təyin edirik
+  @keyframes slide {
+    0% {
+      transform: translateX(0); // Başlanğıc nöqtəsi
+    }
+    100% {
+      transform: translateX(-25%); // Bitmə nöqtəsi
+    }
+  }
+  
+  // PARTNERS MobiLe
+  @media (max-width: 480px) {
+    .partnerLogo {
+      width: 140px;
+      height: auto; // Nisbəti saxlamaq üçün
+    }
+  }
+  

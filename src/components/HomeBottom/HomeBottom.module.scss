@@ -1,0 +1,57 @@
+.partners {
+  text-align: center;
+  margin-top: 150px;
+
+  @media (max-width: 480px) {
+    margin-top: 50px;
+  }
+
+
+  h2 {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 1); // Başlıq rəngi
+    margin-bottom: 40px;
+    font-weight: 600;
+
+    @media (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+}
+
+
+.topPersonContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(610px, 1fr));
+  gap: 20px;
+  /* Kartlar arası məsafə */
+  // margin-bottom: 20px;
+  cursor: pointer;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
+  }
+}
+
+.toggleButtonContainer {
+  text-align: center;
+
+  .toggleButton {
+    display: inline-block;
+    font-size: 25px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 48px;
+    height: 48px;
+    margin-top: 40px;
+
+    &:hover {
+      background-color: #3c38b2;
+      /* Hover rəngi */
+    }
+  }
+}
