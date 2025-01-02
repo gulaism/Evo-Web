@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./HomeBottom.module.scss";
-import logoPartner from "../../../../assets/images/Partners/logoPartner.svg";
+import logoPartner from "../../../assets/images/HomePage/Partners/logoPartner.svg";
 
 const HomeBottom = () => {
     // Logoların siyahısını dörd dəfə eyni logo ilə doldururuq
