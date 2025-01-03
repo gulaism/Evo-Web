@@ -26,14 +26,14 @@ const HomeBottom = () => {
       name: "Paşayev Namiq",
       role: "Codeon / Rəqəmsal marketoloq",
       img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir!"
+      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir! nkişaf etdirdi"
     },
     {
       id: 2,
       name: "Əliyeva Aygün",
       role: "UI/UX Dizayner",
       img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatımda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir!"
+      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatımda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir! nkişaf etdirdi"
     },
     {
       id: 3,
