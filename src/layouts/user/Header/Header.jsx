@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 // images
 import logo from '../../../assets/images/Header/EvoCodingLogo.svg'
 // styles
 import styles from "./Header.module.scss"
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({  showApplication, setShowApplication }) => {
+
+
+  const handleOpenModal = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    document.body.style.overflow = 'hidden';
+    // document.body.style.pointerEvents = 'none';
+    console.log(showApplication);
+    setShowApplication(true);
+    console.log(showApplication);
+  }
+
   return (
     <div className={`container ${styles.headerCont}`}>
       <Link to={"/"} className={styles.logoCont}>
@@ -17,7 +28,7 @@ const Header = () => {
         <Link style={{textDecoration: "none", color: "inherit"}} to={"/students"}>Məzunlarımız</Link>
         <Link style={{textDecoration: "none", color: "inherit"}} to={"/contact"}>Əlaqə</Link>
       </div>
-      <button>Müraciət et</button>
+      <button onClick={handleOpenModal}>Müraciət et</button>
     </div>
   );
 }

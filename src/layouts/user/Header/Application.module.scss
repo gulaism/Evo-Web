@@ -1,0 +1,112 @@
+.applicationCont {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+
+
+    .innerCont {
+        background-color: white;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        width: 480px;
+        margin: 0 auto;
+        border-radius: 40px;
+        padding: 40px;
+
+        .cancelCont {
+            display: flex;
+            justify-content: end;
+
+            .close {
+                width: 24px;
+                height: 24px;
+                text-align: end;
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+
+        .heading {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            color: #7E8D9C;
+            font-size: 16px;
+            line-height: 24px;
+
+
+            .divCont {
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+
+
+                label {
+                    font-weight: 500;
+                }
+
+
+                input {
+                    height: 54px;
+                    border: 1px solid #7367FF26;
+                    padding: 15px;
+                    border-radius: 12px;
+                    outline: none;
+                    font-size: 16px;
+                }
+
+
+                input::placeholder {
+                    color: #7E8D9C;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+
+                textarea {
+                    padding: 15px;
+                    border-radius: 12px;
+                    border: 1px solid #7367FF26;
+                    outline: none;
+                    resize: none;
+                    font-size: 16px;
+                    overflow-y: hidden;
+                    height: 100px;
+                }
+            }
+
+
+            button {
+                background-color: #7367FF;
+                color: white;
+                padding: 15px;
+                width: 100%;
+                border-radius: 12px;
+                border: none;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+}
