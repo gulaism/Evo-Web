@@ -4,6 +4,7 @@ import logoPartner from "../../assets/images/HomePage/HomeBottom/Partners/logoPa
 import topPerson from "../../assets/images/HomePage/HomeBottom/TopPerson/topPersonImg.svg";
 import TopPersonCard from "../TopPersonCard/TopPersonCard";
 import FaqList from "../FaqListQuestions/FaqListQuestions";
+import PartnerLogos from "../PartnerLogos/PartnerLogos";
 
 const HomeBottom = () => {
   const faqData = [
@@ -69,7 +70,7 @@ const HomeBottom = () => {
       {/* PARTNERS SECTION */}
       <section className={styles.partners}>
         <h2>Partnyorlar</h2>
-        <partnerLogos logos={partnerLogos} />
+        <PartnerLogos logos={partnerLogos} />
       </section>
 
       {/* TOP-PERSON SECTION */}

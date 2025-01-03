@@ -3,10 +3,6 @@
     padding-top: 32px;
     padding-bottom: 32px;
     font-size: 14px;
-    // position: absolute;
-    // bottom: 0;
-    // right: 0;
-    // left: 0;
 
 
     .aboveCont {
@@ -15,8 +11,28 @@
         margin-bottom: 37px;
         display: flex;
         align-items: start;
-        gap: 78px;
+        justify-content: space-between;
         line-height: 17px;
+
+
+        .logoCont {
+            width: 145px;
+            height: 52px;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+        .aboveInfo {
+            display: flex;
+            align-items: start;
+            gap: 67px;
+        }
 
 
         .heading {

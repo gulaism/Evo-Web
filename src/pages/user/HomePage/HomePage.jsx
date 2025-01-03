@@ -6,9 +6,11 @@ const HomePage = () => {
   return (
     <div>
       <HomeAbove />
-      <HomeBottom />
+      <div style={{marginBottom: "150px"}}>
+        <HomeBottom />
+      </div>
     </div>
-  )
+  );
 }
 
 export default HomePage
