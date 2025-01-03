@@ -18,6 +18,18 @@
     height: 100px;
     object-fit: contain; // Şəkilləri səliqəli göstərmək üçün
     margin-right: 20px; // Şəkillər arasındakı boşluğu tənzimləyirik
+
+    //mobile üçün
+    @media (max-width: 480px) {
+      width: 140px;
+      height: auto; // Nisbəti saxlamaq üçün
+    }
+
+    //tablet üçün
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 217px;
+      height: auto; // Nisbəti saxlamaq üçün
+    }
   }
   
   // @keyframes ilə animasiya təyin edirik
@@ -30,11 +42,4 @@
     }
   }
   
-  // PARTNERS MobiLe
-  @media (max-width: 480px) {
-    .partnerLogo {
-      width: 140px;
-      height: auto; // Nisbəti saxlamaq üçün
-    }
-  }
-  
+ 

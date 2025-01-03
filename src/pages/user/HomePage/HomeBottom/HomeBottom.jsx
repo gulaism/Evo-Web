@@ -10,7 +10,7 @@ import FaqList from "./FaqListQuestions/FaqListQuestions";
 
 const HomeBottom = () => {
   const faqData = [
-    { id: 1, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum." },
+    { id: 1, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.e vestibulum  e vestibulum ", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.e vestibulum e vestibulum" },
     { id: 2, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
     { id: 3, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
     { id: 4, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt." },

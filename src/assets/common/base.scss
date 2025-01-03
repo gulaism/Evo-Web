@@ -16,9 +16,13 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 100px;
-
+//mobile üçün
     @media (max-width: 480px) {
         padding: 0 16px;
+    }
+   //Tablet uçun
+   @media (min-width: 600px) and (max-width: 1024px) {
+        padding: 0 20px;
     }
 }
 

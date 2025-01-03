@@ -2,8 +2,14 @@
   text-align: center;
   margin-top: 150px;
 
+  //mobile üçün
   @media (max-width: 480px) {
     margin-top: 50px;
+  }
+
+  //tablet üçün
+  @media (min-width: 600px) and (max-width: 1024px) {
+    margin-top: 90px;
   }
 
 
@@ -13,8 +19,16 @@
     margin-bottom: 40px;
     font-weight: 600;
 
+    //mobile üçün
     @media (max-width: 480px) {
       font-size: 24px;
+      margin-bottom: 28px
+    }
+
+    //tablet üçün
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 28px;
+      margin-bottom: 32px;
     }
   }
 }
@@ -24,13 +38,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(610px, 1fr));
   gap: 20px;
-  /* Kartlar arası məsafə */
-  // margin-bottom: 20px;
   cursor: pointer;
 
+  //MOBILE üçün stil
   @media (max-width: 480px) {
     grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
   }
+
+  /* Tablet üçün stil burada yazılır */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(342px, 1fr));
+  }
+
 }
 
 .toggleButtonContainer {
