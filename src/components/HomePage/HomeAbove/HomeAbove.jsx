@@ -5,6 +5,88 @@ import styles from "./HomeAbove.module.scss";
 import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
 import plus from "../../../assets/images/HomePage/plus.svg";
 import cursorIcon from "../../../assets/images/HomePage/Vector.svg";
+import minus from "../../../assets/images/HomePage/minus.svg";
+
+const eduFields = [
+  {
+    header: "Advanced Front-end",
+    description: "Front-end dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "Back-end Java",
+    description: "Back-end dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "Ethical Hacking",
+    description: "Kibertəhlükəsizlik dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "Qrafik/Motion Dizayn",
+    description: "Dizayn dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "UX/UI Dizayn",
+    description: "Dizayn dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "İnteryer Dizayn",
+    description: "Dizayn dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "Data Analitika",
+    description: "Data analitika dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "QA Manual Testing",
+    description: "QA Testing dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "Rəqəmsal Marketinq",
+    description: "Marketinq dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  },
+  {
+    header: "Agile",
+    description: "Agile dünyasında ilk addımları bizimlə at.",
+    time: "4 ay",
+    duration: "52 saat",
+  }
+];
+
+const EduField = ({ header, description, time, duration }) => {
+  return (
+    <div className={styles.box}>
+      <div className={styles.boxHeading}>{header}</div>
+      <div className={styles.boxDesc}>{description}</div>
+      <div className={styles.boxBottom}>
+        <div className={styles.time}>
+          <div>{time}</div>
+          <div>{duration}</div>
+        </div>
+        <button className={styles.arrowCont}>
+          <img className={styles.arrowImg} src={rightArrow} alt="" />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 const items = [
   {
@@ -60,6 +142,9 @@ const Item = ({ title, span , description }) => {
 const HomeAbove = () => {
   const [mousePosition, setMousePosition] = useState({ x: 300, y: 300 });
   const [isHovered, setIsHovered] = useState(false);
+  const [ visibleCount, setVisibleCount] = useState(6);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const gridRef = useRef(null);
   const cursorRef = useRef(null);
 
   useEffect(() => {
@@ -90,8 +175,45 @@ const HomeAbove = () => {
     };
   }, []);
 
+  
+
+  useEffect(() => {
+    if(gridRef.current) {
+      const newHeight = gridRef.current.scrollHeight;
+      gridRef.current.style.height = `${newHeight}px`;
+      setTimeout(() => {
+        gridRef.current.style.height = "auto";
+      }, 150);
+    }
+  }, [visibleCount])
+
   const itemsPerRow = 3;
   const rows = Math.ceil(items.length / itemsPerRow);
+
+
+  const handleIncreaseFields = () => {
+    if(gridRef.current) {
+      const currentHeight = gridRef.current.offsetHeight;
+      gridRef.current.style.height = `${currentHeight}px`
+    }
+    setIsAnimating(true);
+    setTimeout(() => {
+      setVisibleCount((prev) => Math.min(prev + 3, eduFields.length))
+      setIsAnimating(false);
+    }, 300);
+  }
+
+  const handleDecreaseFields = () => {
+    if(gridRef.current) {
+      const currentHeight = gridRef.current.offsetHeight;
+      gridRef.current.style.height = `${currentHeight}px`;
+    }
+    setIsAnimating(true);
+    setTimeout(() => {
+      setVisibleCount(6);
+      setIsAnimating(false);
+    }, 300);
+  }
 
   return (
     <div className="container" style={{ position: "relative" }}>
@@ -122,8 +244,19 @@ const HomeAbove = () => {
           >
             <span className={styles.cursorSpan}>Xoş gəlmisən!</span>
           </div>
-          <div style={{position: "absolute", inset: "0", width: "16px", height: "16px"}}>
-            <img style={{width: "100%", height: "100%", objectFit: "cover"}} src={cursorIcon} alt="" />
+          <div
+            style={{
+              position: "absolute",
+              inset: "0",
+              width: "16px",
+              height: "16px",
+            }}
+          >
+            <img
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              src={cursorIcon}
+              alt=""
+            />
           </div>
         </div>
       )}
@@ -191,57 +324,26 @@ const HomeAbove = () => {
 
       <div className={styles.eduFields}>
         <div className={styles.heading}>Tədris Sahələri</div>
-        <div className={styles.gridBox}>
-          <div className={styles.box}>
-            <div className={styles.boxHeading}>Advanced Front-end</div>
-            <div className={styles.boxDesc}>
-              Front-end dünyasında ilk addımları bizimlə at.
-            </div>
-            <div className={styles.boxBottom}>
-              <div className={styles.time}>
-                <div>4 ay</div>
-                <div>52 saat</div>
-              </div>
-              <button className={styles.arrowCont}>
-                <img className={styles.arrowImg} src={rightArrow} alt="" />
-              </button>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.boxHeading}>Back-end Java</div>
-            <div className={styles.boxDesc}>
-              Back-end dünyasında ilk addımları bizimlə at.
-            </div>
-            <div className={styles.boxBottom}>
-              <div className={styles.time}>
-                <div>4 ay</div>
-                <div>52 saat</div>
-              </div>
-              <button className={styles.arrowCont}>
-                <img className={styles.arrowImg} src={rightArrow} alt="" />
-              </button>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.boxHeading}>Ethical Hacking</div>
-            <div className={styles.boxDesc}>
-              Kibertəhlükəsizlik dünyasında ilk addımları bizimlə at. 4 ay 52
-              saat
-            </div>
-            <div className={styles.boxBottom}>
-              <div className={styles.time}>
-                <div>4 ay</div>
-                <div>52 saat</div>
-              </div>
-              <button className={styles.arrowCont}>
-                <img className={styles.arrowImg} src={rightArrow} alt="" />
-              </button>
-            </div>
-          </div>
+        <div className={`${styles.gridBox} ${isAnimating ? styles.opened : styles.closed}`} ref={gridRef}>
+          {eduFields.slice(0, visibleCount).map((item, index) => (
+            <EduField
+              key={index}
+              header={item.header}
+              description={item.description}
+              time={item.time}
+              duration={item.duration}
+            />
+          ))}
         </div>
-        <button>
-          <img src={plus} alt="" />
-        </button>
+        {visibleCount < eduFields.length ? (
+          <button onClick={handleIncreaseFields}>
+            <img src={plus} alt="" />
+          </button>
+        ) : (
+          <button onClick={handleDecreaseFields}>
+            <img src={minus} alt="" />
+          </button>
+        )}
       </div>
 
       <div className={styles.difCont}>

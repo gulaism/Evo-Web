@@ -126,7 +126,24 @@
         column-gap: 20px;
         row-gap: 28px;
         margin-bottom: 40px;
+        transition: height 0.3s ease;
+        overflow: hidden;
 
+
+
+    .opened {
+        // height: auto;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+
+    .closed {
+        // height: 0;
+        // display: none;
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
 
         .box {
             background-color: white;
