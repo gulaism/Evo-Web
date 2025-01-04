@@ -72,6 +72,7 @@
                     border-radius: 12px;
                     outline: none;
                     font-size: 16px;
+                    color: #7E8D9C;
                 }
 
 
@@ -91,6 +92,7 @@
                     font-size: 16px;
                     overflow-y: hidden;
                     height: 100px;
+                    color: #7E8D9C;
                 }
             }
 
@@ -107,6 +109,34 @@
                 line-height: 24px;
                 cursor: pointer;
             }
+
+
+            button:hover {
+                background-color: #0000FF;
+                transition: 0.6s ease;
+            }
+            button:disabled:hover {
+                background-color: #7367FF;
+                cursor: default;
+            }
         }
     }
+}
+
+
+.emailErrorInput {
+    border: 1px solid #D32F2F99 !important;
+}
+.emailErrorText {
+    color: #D32F2F99;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    // margin-top: 5px;
+    // margin-bottom: 20px;
+}
+
+
+.formSubmitted {
+    opacity: 0.5;
 }
