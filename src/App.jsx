@@ -1,15 +1,16 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './assets/common/base.scss'
-import Achievements from './pages/user/Achievements/Achievements'
-import HomeBottom from './pages/user/HomePage/HomeBottom/HomeBottom'
-
+import UserRouter from './router/UserRouter'
 
 function App() {
   
   return (
-    <div>
-      <HomeBottom />
-      {/* <Achievements /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/*' element={<UserRouter />}/>
+        <Route path='/admin/*' element={<h1>Admin</h1>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

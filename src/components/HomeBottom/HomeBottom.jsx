@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import styles from "./HomeBottom.module.scss";
-import logoPartner from "../../../../assets/images/HomeBottom/Partners/logoPartner.svg";
-import topPerson from "../../../../assets/images/HomeBottom/TopPerson/topPersonImg.svg";
-import PartnerLogos from "./PartnerLogos/PartnerLogos";
-import TopPersonCard from "./TopPersoncard/TopPersonCard";
-import FaqList from "./FaqListQuestions/FaqListQuestions";
-
-
+import logoPartner from "../../assets/images/HomePage/HomeBottom/Partners/logoPartner.svg";
+import topPerson from "../../assets/images/HomePage/HomeBottom/TopPerson/topPersonImg.svg";
+import TopPersonCard from "../TopPersonCard/TopPersonCard";
+import FaqList from "../FaqListQuestions/FaqListQuestions";
+import PartnerLogos from "../PartnerLogos/PartnerLogos";
 
 const HomeBottom = () => {
   const faqData = [

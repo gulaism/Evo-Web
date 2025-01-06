@@ -1,0 +1,125 @@
+.footerCont {
+    background-color: #10101C;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+
+
+    .aboveCont {
+        border-bottom: 1px solid rgba(126, 141, 156, 0.27);
+        padding-bottom: 50px;
+        margin-bottom: 37px;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        line-height: 17px;
+
+
+        .logoCont {
+            width: 145px;
+            height: 52px;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+        .aboveInfo {
+            display: flex;
+            align-items: start;
+            gap: 67px;
+        }
+
+
+        .heading {
+            color: #F4F3FF;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+
+        .subHeadingCont {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            color: #788592;
+            font-weight: 400;
+
+
+            div {
+                cursor: pointer;
+            }
+
+
+            div:hover {
+                color: #F4F3FF;
+                transition: .3s ease;
+            }
+
+
+            a:hover {
+                color: #F4F3FF;
+                transition: 0.3s ease;
+                text-decoration: none;
+
+
+                div {
+                    text-decoration: none;
+                }
+            }
+
+
+            .contactCont {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+
+                .iconCont {
+                    width: 20px;
+                    height: 20px;
+
+
+                    .iconImg {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .belowCont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #788592;
+
+
+        .socialCont {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+
+            .iconCont {
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+
+
+                .iconImg {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
