@@ -24,7 +24,9 @@ const Application = ({ setShowApplication}) => {
     else {
       setIsCorrectEmail(true);
       setIsSubmitted(true);
-      alert("Müraciətiniz uğurla göndərildi");
+      setTimeout(() => {
+        setShowApplication(false);
+      }, 1000)
     }
   }
 
@@ -71,7 +73,7 @@ const Application = ({ setShowApplication}) => {
               <label>Əlavə sualınız</label>
               <textarea disabled={isSubmitted}></textarea>
             </div>
-            <button disabled={isSubmitted} type="submit">Müraciət et</button>
+            <button disabled={isSubmitted} type="submit">{`${isSubmitted ? "Müraciətiniz qeydə alınmışdır " : "Müraciət et"}`}</button>
           </form>
         </div>
       </div>
