@@ -27,14 +27,20 @@ const Application = ({ setShowApplication}) => {
       setTimeout(() => {
         setShowApplication(false);
       }, 1000)
+      document.body.style.overflow = 'auto';
     }
   }
 
+
+  const handleClosing = () => {
+    setShowApplication(false);
+    document.body.style.overflow = 'auto';
+  }
   return (
     <div className={styles.applicationCont}>
       <div className="container">
         <div className={styles.innerCont}>
-          <div className={styles.cancelCont}>
+          <div onClick={handleClosing} className={styles.cancelCont}>
             <div className={styles.close}>
               <img src={cancel} alt="" />
             </div>
