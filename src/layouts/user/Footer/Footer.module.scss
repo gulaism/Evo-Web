@@ -55,6 +55,24 @@
             }
 
 
+            div:hover {
+                color: #F4F3FF;
+                transition: .3s ease;
+            }
+
+
+            a:hover {
+                color: #F4F3FF;
+                transition: 0.3s ease;
+                text-decoration: none;
+
+
+                div {
+                    text-decoration: none;
+                }
+            }
+
+
             .contactCont {
                 display: flex;
                 align-items: center;
@@ -93,6 +111,7 @@
             .iconCont {
                 width: 24px;
                 height: 24px;
+                cursor: pointer;
 
 
                 .iconImg {
