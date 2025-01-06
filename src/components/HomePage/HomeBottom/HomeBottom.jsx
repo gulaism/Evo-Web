@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./HomeBottom.module.scss";
-import logoPartner from "../../assets/images/HomePage/HomeBottom/Partners/logoPartner.svg";
-import topPerson from "../../assets/images/HomePage/HomeBottom/TopPerson/topPersonImg.svg";
-import TopPersonCard from "../TopPersonCard/TopPersonCard";
-import FaqList from "../FaqListQuestions/FaqListQuestions";
-import PartnerLogos from "../PartnerLogos/PartnerLogos";
+import logoPartner from "../../../assets/images/HomePage/HomeBottom/Partners/logoPartner.svg";
+import topPerson from "../../../assets/images/HomePage/HomeBottom/TopPerson/topPersonImg.svg";
+import TopPersonCard from "./TopPersonCard/TopPersonCard";
+import FaqList from "./FaqListQuestions/FaqListQuestions";
+import PartnerLogos from "./PartnerLogos/PartnerLogos";
 
 const HomeBottom = () => {
   const faqData = [
@@ -76,7 +76,7 @@ const HomeBottom = () => {
       {/* TOP-PERSON SECTION */}
       <section className={styles.topPerson}>
         <div className={styles.partners}>
-        <h2>Zirvəyə Qalxanlar</h2>
+          <h2>Zirvəyə Qalxanlar</h2>
         </div>
         <div className={styles.topPersonContainer}>
           {displayedPersons.map((person) => (
@@ -92,12 +92,12 @@ const HomeBottom = () => {
         {/* SHOW MORE / LESS BUTTON */}
         {topPersons.length > 4 && (
           <div className={styles.toggleButtonContainer}>
-          <button
-            className={styles.toggleButton}
-            onClick={() => setShowAll(!showAll)}
-          >
-            {showAll ? "−" : "+"}
-          </button>
+            <button
+              className={styles.toggleButton}
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? "−" : "+"}
+            </button>
           </div>
         )}
       </section>

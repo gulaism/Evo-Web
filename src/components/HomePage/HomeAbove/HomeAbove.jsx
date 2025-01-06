@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 // styles
 import styles from "./HomeAbove.module.scss";
 // images
-import rightArrow from "../../assets/images/HomePage/Expand_right.svg";
-import plus from "../../assets/images/HomePage/plus.svg";
-import cursorIcon from "../../assets/images/HomePage/Vector.svg";
-import minus from "../../assets/images/HomePage/minus.svg";
+import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
+import plus from "../../../assets/images/HomePage/plus.svg";
+import cursorIcon from "../../../assets/images/HomePage/Vector.svg";
+import minus from "../../../assets/images/HomePage/minus.svg";
 import { Link } from "react-router-dom";
 
 const eduFields = [
