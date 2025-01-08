@@ -4,8 +4,14 @@ import logo from '../../../assets/images/Header/EvoCodingLogo.svg'
 // styles
 import styles from "./Header.module.scss"
 import { Link } from 'react-router-dom';
+import { BiRightArrow, BiRightArrowAlt } from 'react-icons/bi';
+import { FaLaptopCode } from 'react-icons/fa';
+import { RiShieldKeyholeFill } from 'react-icons/ri';
+import { MdDesignServices } from 'react-icons/md';
 
 const Header = ({  showApplication, setShowApplication }) => {
+  const [ isHovered, setIsHovered ] = useState(false);
+
 
 
   const handleOpenModal = () => {
@@ -16,6 +22,13 @@ const Header = ({  showApplication, setShowApplication }) => {
     setShowApplication(true);
     console.log(showApplication);
   }
+
+
+
+  const handleShowingHoveredCont = () => setIsHovered(true);
+
+
+  const handleClosingHoveredCont = () => setIsHovered(false);
 
   return (
     <div className="container">
@@ -32,7 +45,8 @@ const Header = ({  showApplication, setShowApplication }) => {
           </Link>
           <Link
             style={{ textDecoration: "none", color: "inherit" }}
-            to={"/education"}
+            onMouseEnter={handleShowingHoveredCont}
+            onMouseLeave={handleClosingHoveredCont}
           >
             Tədris sahələri
           </Link>
@@ -50,6 +64,53 @@ const Header = ({  showApplication, setShowApplication }) => {
           </Link>
         </div>
         <button onClick={handleOpenModal}>Müraciət et</button>
+      </div>
+      <div
+        className={styles.hoverCont}
+        style={{ display: isHovered ? "flex" : "none" }}
+        onMouseEnter={handleShowingHoveredCont}
+        onMouseLeave={handleClosingHoveredCont}
+      >
+        <div className={styles.flexEl}>
+          <div className={styles.mainIconCont}>
+            <FaLaptopCode size={40} color="#4A3AFF" />
+          </div>
+          <div>
+            <div className={styles.abovePart}>
+              <div>Proqramlaşdırma</div>
+              <BiRightArrowAlt size={20} color="#170F49" />
+            </div>
+            <div className={styles.description}>
+              Front-end və Back-end proqramlaşdırma
+            </div>
+          </div>
+        </div>
+        <div className={styles.flexEl}>
+          <div className={styles.mainIconCont}>
+            <RiShieldKeyholeFill size={40} color="#4A3AFF" />
+          </div>
+          <div>
+            <div className={styles.abovePart}>
+              <div>Ethical Hacking</div>
+              <BiRightArrowAlt size={20} color="#170F49" />
+            </div>
+            <div className={styles.description}>Ethical Hacking</div>
+          </div>
+        </div>
+        <div className={styles.flexEl}>
+          <div className={styles.mainIconCont}>
+            <MdDesignServices size={40} color="#4A3AFF" />
+          </div>
+          <div>
+            <div className={styles.abovePart}>
+              <div>Dizayn</div>
+              <BiRightArrowAlt size={20} color="#170F49" />
+            </div>
+            <div className={styles.description}>
+              Qrafik/Motion, UX/UI, İnteryer Dizayn
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
