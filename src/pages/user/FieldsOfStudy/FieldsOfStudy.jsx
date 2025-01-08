@@ -8,11 +8,11 @@ const eduFields = [
     { id: 2, category: "programming", header: "Back-end Java", description: "Back-end dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
     { id: 3, category: "ethical_hacking", header: "Ethical Hacking", description: "Kibertəhlükəsizlik dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
     { id: 4, category: "design", header: "Qrafik/Motion Dizayn", description: "Dizayn dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
-    { id: 5, category: "design", header: "UX/UI Dizayn", description: "Dizayn dünyasında ilk addımları bizimlə at.",time: "4 ay", duration: "52 saat" },
-    { id: 6, category: "data_analytics", header: "Data Analitika", description: "Data analitika dünyasında ilk addımları bizimlə at.",time: "4 ay", duration: "52 saat" },
-    { id: 7, category: "qa_testing", header: "QA Manual Testing", description: "QA Testing dünyasında ilk addımları bizimlə at.",time: "4 ay", duration: "52 saat" },
-    { id: 8, category: "digital_marketing", header: "Rəqəmsal Marketinq", description: "Marketinq dünyasında ilk addımları bizimlə at.",time: "4 ay", duration: "52 saat" },
-    { id: 9, category: "agile", header: "Agile", description: "Agile dünyasında ilk addımları bizimlə at.",time: "4 ay", duration: "52 saat" },
+    { id: 5, category: "design", header: "UX/UI Dizayn", description: "Dizayn dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
+    { id: 6, category: "data_analytics", header: "Data Analitika", description: "Data analitika dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
+    { id: 7, category: "qa_testing", header: "QA Manual Testing", description: "QA Testing dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
+    { id: 8, category: "digital_marketing", header: "Rəqəmsal Marketinq", description: "Marketinq dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
+    { id: 9, category: "agile", header: "Agile", description: "Agile dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
 ];
 
 const FieldsOfStudy = () => {
@@ -60,7 +60,7 @@ const FieldsOfStudy = () => {
                                     {field.duration && <div>{field.duration}</div>}
                                 </div>
                                 <button className={styles.arrowCont}>
-                                     <img className={styles.arrowImg} src={rightArrow} alt="" />
+                                    <img className={styles.arrowImg} src={rightArrow} alt="" />
                                 </button>
                             </div>
                         </div>

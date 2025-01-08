@@ -20,73 +20,73 @@
     .fieldsDropdown {
         margin-top: 165px;
         display: flex;
-        position: relative; /* Əlavə edin */
-        align-items: center; /* Düzgün hizalama */
-        width: 384px; /* Dropdown genişliyini uyğunlaşdırın */
-
+        position: relative;
+        align-items: center;
+        width: 384px;
+    
         select {
-            width: 100%; /* Tam eni istifadə edin */
+            width: 100%;
             height: 44px;
             border: none;
             border-radius: 12px;
             background-color: #fff;
             cursor: pointer;
-            padding: 10px;
+            padding: 12px;
             color: rgba(51, 54, 63, 1);
             font-size: 16px;
             font-weight: 400;
-            appearance: none; /* Default ox işarəsini ləğv edin */
+            appearance: none;
         }
-
+    
         .iconWrapper {
             position: absolute;
             top: 50%;
-            right: 16px; /* Oxun sağ tərəfə olan məsafəsi */
+            right: 19px;
             transform: translateY(-50%);
-            pointer-events: none; /* İkon seçimi bloklamasın */
+            pointer-events: none;
         }
     }
 }
 
 .gridBox {
     display: flex;
-    flex-wrap: wrap; // Elementlərin sətir sətir düzülməsi
-    gap: 1.5rem; // Elementlər arasında məsafə
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
     margin-top: 2rem;
   
     .gridItem {
-      width: 400px; // Cardın eni
-      height: 236px; // Cardın uzunluğu
+      width: 400px;
+      height: 236px;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Yüngül kölgə
-      padding: 20px;
+      border-radius: 32px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 38px 26px;
       text-align: left;
-      transition: transform 0.3s, box-shadow 0.3s;
-  
+
       &:hover {
-        transform: translateY(-5px); // Hover effekt
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
   
       .itemHeader {
-        font-size: 1.5rem;
+        font-size: 32px;
         margin-bottom: 10px;
-        color: #171549;
-        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        font-weight: 600;
       }
   
       .itemDescription {
-        font-size: 1rem;
-        color: #555;
+        font-size: 16px;
+        color: rgba(126, 141, 156, 1);
+        font-weight: 400;
       }
     }
-  }
+}
 
-  .boxBottom {
+.boxBottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10px;
 
     .time {
         display: flex;
@@ -127,5 +127,3 @@
         transition: 0.3s ease;
     }
 }
-
-  
