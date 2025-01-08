@@ -1,13 +1,18 @@
 .fieldsOfStudy {
     text-align: center;
     padding: 50px 20px;
-    background-color: #f4f4ff; // Arxa fon rəngi
+   
 
     .fieldsTitle {
         font-size: 60px;
         color: rgba(23, 15, 73, 1);
         font-weight: 700;
         margin-bottom: 16px;
+
+        //Tablet uçun
+        @media (min-width: 600px) and (max-width: 1024px) {
+            font-size: 40px;
+        }
     }
 
     .fieldsDescription {
@@ -15,6 +20,11 @@
         color: rgba(144, 163, 191, 1);
         margin-bottom: 32px;
         line-height: 1.6;
+
+        //Tablet uçun
+        @media (min-width: 600px) and (max-width: 1024px) {
+            font-size: 16px;
+        }
     }
 
     .fieldsDropdown {
@@ -23,6 +33,12 @@
         position: relative;
         align-items: center;
         width: 384px;
+
+        //Tablet uçun
+        @media (min-width: 600px) and (max-width: 1024px) {
+            width: 252px;
+            margin-top: 52px;
+        }
     
         select {
             width: 100%;
@@ -50,7 +66,7 @@
 
 .gridBox {
     display: flex;
-    flex-wrap: wrap; 
+    //flex-wrap: wrap; 
     gap: 1.5rem; 
     margin-top: 2rem;
   
@@ -63,6 +79,13 @@
       padding: 38px 26px;
       text-align: left;
 
+      //Tablet uçun
+      @media (min-width: 600px) and (max-width: 1024px) {
+        width: 342px;
+        height: 195px;
+        padding: 26px 18px;
+      }
+
       &:hover {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
@@ -72,12 +95,22 @@
         margin-bottom: 10px;
         color: rgba(34, 34, 34, 1);
         font-weight: 600;
+
+        //Tablet uçun
+        @media (min-width: 600px) and (max-width: 1024px) {
+          font-size: 24px;
+        }
       }
   
       .itemDescription {
         font-size: 16px;
         color: rgba(126, 141, 156, 1);
         font-weight: 400;
+
+        //Tablet uçun
+        @media (min-width: 600px) and (max-width: 1024px) {
+          font-size: 14px;
+        }
       }
     }
 }
@@ -101,6 +134,12 @@
             font-weight: 400;
             line-height: 24px;
             border-radius: 12px;
+
+            //Tablet uçun
+            @media (min-width: 600px) and (max-width: 1024px) {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
         }
     }
 
