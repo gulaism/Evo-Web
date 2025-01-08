@@ -18,17 +18,39 @@ const Header = ({  showApplication, setShowApplication }) => {
   }
 
   return (
-    <div className={`container ${styles.headerCont}`}>
-      <Link to={"/"} className={styles.logoCont}>
-        <img className={styles.logoImg} src={logo} alt="Evo Academy Logo" />
-      </Link>
-      <div className={styles.navCont}>
-        <Link style={{textDecoration: "none", color: "inherit"}} to={"/about"}>Haqqımızda</Link>
-        <Link style={{textDecoration: "none", color: "inherit"}} to={"/education"}>Tədris sahələri</Link>
-        <Link style={{textDecoration: "none", color: "inherit"}} to={"/students"}>Məzunlarımız</Link>
-        <Link style={{textDecoration: "none", color: "inherit"}} to={"/contact"}>Əlaqə</Link>
+    <div className="container">
+      <div className={styles.headerCont}>
+        <Link to={"/"} className={styles.logoCont}>
+          <img className={styles.logoImg} src={logo} alt="Evo Academy Logo" />
+        </Link>
+        <div className={styles.navCont}>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to={"/about"}
+          >
+            Haqqımızda
+          </Link>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to={"/education"}
+          >
+            Tədris sahələri
+          </Link>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to={"/students"}
+          >
+            Məzunlarımız
+          </Link>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to={"/contact"}
+          >
+            Əlaqə
+          </Link>
+        </div>
+        <button onClick={handleOpenModal}>Müraciət et</button>
       </div>
-      <button onClick={handleOpenModal}>Müraciət et</button>
     </div>
   );
 }

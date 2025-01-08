@@ -80,7 +80,9 @@
     }
 
 
-    button {
+    .button {
+        width: max-content;
+        margin: 0 auto;
         background-color: #7367FF;
         border-radius: 16px;
         padding: 15px 62px;
@@ -93,7 +95,7 @@
     }
 
 
-    button:hover {
+    .button:hover {
         background-color: #0000FF;
         transition: 0.3s ease-in-out;
     }

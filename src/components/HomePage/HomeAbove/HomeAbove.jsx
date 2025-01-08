@@ -320,7 +320,7 @@ const HomeAbove = () => {
           iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün
           əldə edin.
         </div>
-        <button><Link to="/education" style={{cursor: "none"}}>Kəşf et</Link></button>
+        <div className={styles.button}><Link to="/education" style={{cursor: "none"}}>Kəşf et</Link></div>
       </div>
 
       <div className={styles.eduFields}>
