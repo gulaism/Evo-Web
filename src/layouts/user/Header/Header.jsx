@@ -4,7 +4,7 @@ import logo from '../../../assets/images/Header/EvoCodingLogo.svg'
 // styles
 import styles from "./Header.module.scss"
 import { Link } from 'react-router-dom';
-import { BiRightArrow, BiRightArrowAlt } from 'react-icons/bi';
+import { BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
 import { RiShieldKeyholeFill } from 'react-icons/ri';
 import { MdDesignServices } from 'react-icons/md';
