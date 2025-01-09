@@ -1,7 +1,11 @@
 .fieldsOfStudy {
     text-align: center;
     padding: 50px 20px;
+
    
+
+    margin-bottom: 103px;
+
 
     .fieldsTitle {
         font-size: 60px;
@@ -72,7 +76,7 @@
   
     .gridItem {
       width: 400px;
-      height: 236px;
+      max-height: 236px;
       background: #fff;
       border-radius: 32px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

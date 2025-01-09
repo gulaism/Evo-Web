@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./FieldsOfStudy.module.scss"; // SCSS faylını daxil edin
-import { FaChevronDown } from "react-icons/fa";
 import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
+import { FaChevronDown } from "react-icons/fa";
 
 const eduFields = [
     { id: 1, category: "programming", header: "Advanced Front-end", description: "Front-end dünyasında ilk addımları bizimlə at.", time: "4 ay", duration: "52 saat" },
