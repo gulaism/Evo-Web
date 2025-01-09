@@ -53,24 +53,30 @@
 }
 
 .toggleButtonContainer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
 
   .toggleButton {
-    display: inline-block;
-    font-size: 25px;
-    background-color: #4f46e5;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 48px;
-    height: 48px;
-    margin-top: 40px;
+      font-size: 25px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 48px;
+      height: 48px;
+     
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
     &:hover {
       background-color: #3c38b2;
       /* Hover rəngi */
     }
+
+
   }
 }

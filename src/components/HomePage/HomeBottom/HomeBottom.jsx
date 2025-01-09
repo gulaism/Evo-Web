@@ -6,6 +6,7 @@ import TopPersonCard from "./TopPersonCard/TopPersonCard";
 import FaqList from "./FaqListQuestions/FaqListQuestions";
 import PartnerLogos from "./PartnerLogos/PartnerLogos";
 
+
 const HomeBottom = () => {
   const faqData = [
     { id: 1, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.e vestibulum  e vestibulum ", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.e vestibulum e vestibulum" },
@@ -27,7 +28,7 @@ const HomeBottom = () => {
       name: "Paşayev Namiq",
       role: "Codeon / Rəqəmsal marketoloq",
       img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir! nkişaf etdirdi"
+      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir! "
     },
     {
       id: 2,
@@ -96,18 +97,52 @@ const HomeBottom = () => {
               className={styles.toggleButton}
               onClick={() => setShowAll(!showAll)}
             >
-              {showAll ? "−" : "+"}
+              {showAll ? (
+                // Minus işarəsi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              ) : (
+                // Plus işarəsi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              )}
             </button>
           </div>
         )}
-      </section>
+
+
+
+      </section >
 
 
       {/* QUESTIONS SECTION */}
-      <section className={styles.questions}>
+      < section className={styles.questions} >
         <FaqList questions={faqData} />
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

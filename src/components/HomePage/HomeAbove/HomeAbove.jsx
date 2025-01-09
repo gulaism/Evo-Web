@@ -115,35 +115,35 @@ const items = [
       "Tecrübəli müəllim və mentormuz tələbələrə real layihələrdə prosktiki təcrübə qazanmağa kömək edir.",
   },
   {
-    title: "Strateji köməkçi dəstəyi", 
+    title: "Strateji köməkçi dəstəyi",
     span: "Strateji",
     description:
       "Strategi köməkçilərimiz hər gün suallarınıza cavablandırmağa kömək edəcək.",
   },
 ];
 
-const Item = ({ title, span , description }) => {
+const Item = ({ title, span, description }) => {
   const splitTitle = title.split(new RegExp(`(${span})`, "i"));
 
-  return(
+  return (
     <div className={styles.item}>
-    <h3 className={styles.itemTitle}> 
-      {splitTitle.map((part, index) => (
-        part.toLowerCase() === span.toLowerCase() ? (
-          <span key={index}>{part}</span>
-        ) : (
-          <React.Fragment key={index}>{part}</React.Fragment>
-        )
-      ))}
-    </h3>
-    <p className={styles.itemDescription}>{description}</p>
-  </div>
+      <h3 className={styles.itemTitle}>
+        {splitTitle.map((part, index) => (
+          part.toLowerCase() === span.toLowerCase() ? (
+            <span key={index}>{part}</span>
+          ) : (
+            <React.Fragment key={index}>{part}</React.Fragment>
+          )
+        ))}
+      </h3>
+      <p className={styles.itemDescription}>{description}</p>
+    </div>
   )
 };
 const HomeAbove = () => {
   const [mousePosition, setMousePosition] = useState({ x: 300, y: 300 });
   const [isHovered, setIsHovered] = useState(false);
-  const [ visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(6);
   const [isAnimating, setIsAnimating] = useState(false);
   const gridRef = useRef(null);
   const cursorRef = useRef(null);
@@ -176,10 +176,10 @@ const HomeAbove = () => {
     };
   }, []);
 
-  
+
 
   useEffect(() => {
-    if(gridRef.current) {
+    if (gridRef.current) {
       const newHeight = gridRef.current.scrollHeight;
       gridRef.current.style.height = `${newHeight}px`;
       setTimeout(() => {
@@ -193,7 +193,7 @@ const HomeAbove = () => {
 
 
   const handleIncreaseFields = () => {
-    if(gridRef.current) {
+    if (gridRef.current) {
       const currentHeight = gridRef.current.offsetHeight;
       gridRef.current.style.height = `${currentHeight}px`
     }
@@ -205,7 +205,7 @@ const HomeAbove = () => {
   }
 
   const handleDecreaseFields = () => {
-    if(gridRef.current) {
+    if (gridRef.current) {
       const currentHeight = gridRef.current.offsetHeight;
       gridRef.current.style.height = `${currentHeight}px`;
     }
@@ -320,7 +320,7 @@ const HomeAbove = () => {
           iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün
           əldə edin.
         </div>
-        <div className={styles.button}><Link to="/education" style={{cursor: "none"}}>Kəşf et</Link></div>
+        <div className={styles.button}><Link to="/education" style={{ cursor: "none" }}>Kəşf et</Link></div>
       </div>
 
       <div className={styles.eduFields}>
@@ -336,37 +336,78 @@ const HomeAbove = () => {
             />
           ))}
         </div>
-        {visibleCount < eduFields.length ? (
-          <button onClick={handleIncreaseFields}>
-            <img src={plus} alt="" />
-          </button>
-        ) : (
-          <button onClick={handleDecreaseFields}>
-            <img src={minus} alt="" />
-          </button>
-        )}
-      </div>
+        <div className={styles.toggleButtonContainer}>
+          {visibleCount < eduFields.length ? (
+            <button
+              className={styles.toggleButton}
+              onClick={handleIncreaseFields}
+              aria-label="Tədris sahələrini artır"
+            >
+              {/* Plus işarəsi SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          ) : (
+            <button
+              className={styles.toggleButton}
+              onClick={handleDecreaseFields}
+              aria-label="Tədris sahələrini azalt"
+            >
+              {/* Minus işarəsi SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          )}
+        </div>
+        
 
-      <div className={styles.difCont}>
-        <div className={styles.heading}>Fərqimiz</div>
-        <div className={styles.itemsContainer}>
-          {Array.from({ length: rows }).map((_, rowIndex) => {
-            const start = rowIndex * itemsPerRow;
-            const end = Math.min(start + itemsPerRow, items.length);
-            const rowItems = items.slice(start, end);
 
-            return (
-              <div key={rowIndex} className={styles.row}>
-                {rowItems.map((item, itemIndex) => (
-                  <Item key={itemIndex} {...item} />
-                ))}
-              </div>
-            );
-          })}
+        <div className={styles.difCont}>
+          <div className={styles.heading}>Fərqimiz</div>
+          <div className={styles.itemsContainer}>
+            {Array.from({ length: rows }).map((_, rowIndex) => {
+              const start = rowIndex * itemsPerRow;
+              const end = Math.min(start + itemsPerRow, items.length);
+              const rowItems = items.slice(start, end);
+
+              return (
+                <div key={rowIndex} className={styles.row}>
+                  {rowItems.map((item, itemIndex) => (
+                    <Item key={itemIndex} {...item} />
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        </div>
         </div>
       </div>
-    </div>
+  
   );
 };
+
 
 export default HomeAbove;

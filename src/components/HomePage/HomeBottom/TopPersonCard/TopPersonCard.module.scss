@@ -1,20 +1,16 @@
 .card {
-    border: 1px solid #d4bdf3;
-    /* Çərçivə rəngi */
+    border: 1px solid transparent; // Default border
     border-radius: 32px;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    transition: transform 0.2s ease;
-  
-
- 
+    transition: border-color 0.5s ease;
 
     &:hover {
-        transform: translateY(-10px);
-        /* Hover zamanı kart yuxarı qalxsın */
+        border-color: rgba(126, 141, 156, 0.368627451); // Hoverda rəng dəyişir
     }
+
+
 
     .badge {
         position: absolute;
