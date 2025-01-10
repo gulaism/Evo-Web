@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 // images
 import logo from '../../../assets/images/Header/EvoCodingLogo.svg'
 // styles
@@ -9,8 +9,75 @@ import { FaLaptopCode } from 'react-icons/fa';
 import { RiShieldKeyholeFill } from 'react-icons/ri';
 import { MdDesignServices } from 'react-icons/md';
 
+const fields = [
+  {
+    name: "Proqramlaşdırma",
+    description: "Front-end  və Back-end proqramlaşdırma",
+    subTopics: [
+      "Andvanced Front-end",
+      "Back-end Java",
+    ],
+  },
+  {
+    name: "Ethical Hacking",
+    description: "Ethical Hacking",
+    subTopics: [
+      "Ethical Hacking",
+    ],
+  },
+  {
+    name: "Dizayn",
+    description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
+    subTopics: [
+      "Qrafik/Motion dizayn",
+      "İnteryer dizayn",
+      "UX/UI dizayn",
+    ],
+  },
+  {
+    name: "Data analitika",
+    description: "Data analitika",
+    subTopics: [
+      "Data analitika",
+    ],
+  },
+  {
+    name: "Q/A Manual Testing",
+    description: "Q/A Manual Testing",
+    subTopics: [
+      "Q/A Manual Testing",
+    ],
+  },
+  {
+    name: "Rəqəmsal Marketinq",
+    description: "Rəqəmsal Marketinq",
+    subTopics: [
+      "Rəqəmsal Marketinq",
+    ],
+  },
+  {
+    name: "Agile",
+    description: "Agile",
+    subTopics: [
+      "Agile",
+    ],
+  },
+]
+
+const HoveredSubCont = ({ subTopics }) => {
+  return (
+    <div className={styles.hoveredSubCont}>
+      {subTopics.map((subTopic, index) => (
+        <div key={index}>{subTopic}</div>
+      ))}
+    </div>
+  )
+}
+
 const Header = ({  showApplication, setShowApplication }) => {
   const [ isHovered, setIsHovered ] = useState(false);
+  const [ isSubHovered, setIsSubHovered ] = useState(null);
+  const timeoutId = useRef(null);
 
 
 
@@ -25,10 +92,36 @@ const Header = ({  showApplication, setShowApplication }) => {
 
 
 
-  const handleShowingHoveredCont = () => setIsHovered(true);
+  const handleShowingHoveredCont = () => {
+    if(timeoutId.current) {
+      clearTimeout(timeoutId.current);
+      timeoutId.current = null;
+    }  
+    setIsHovered(true)
+  };
 
 
-  const handleClosingHoveredCont = () => setIsHovered(false);
+  const handleClosingHoveredCont = () =>{
+     timeoutId.current =setTimeout(() => {
+    setIsHovered(false)
+  }, 200);
+  setIsSubHovered(null);
+};
+
+
+  const handleShowingHoveredSubCont = (index) => {
+    if(timeoutId.current) {
+      clearTimeout(timeoutId.current);
+      timeoutId.current = null;
+    }
+    setIsSubHovered(index);
+  }
+
+  const handleClosingHoveredSubCont = (index) => {
+    timeoutId.current = setTimeout(() => {
+      setIsSubHovered(index);
+    }, 200);
+  }
 
   return (
     <div className="container">
@@ -71,46 +164,28 @@ const Header = ({  showApplication, setShowApplication }) => {
         onMouseEnter={handleShowingHoveredCont}
         onMouseLeave={handleClosingHoveredCont}
       >
-        <div className={styles.flexEl}>
-          <div className={styles.mainIconCont}>
-            <FaLaptopCode size={40} color="#4A3AFF" />
-          </div>
-          <div>
-            <div className={styles.abovePart}>
-              <div>Proqramlaşdırma</div>
-              <BiRightArrowAlt size={20} color="#170F49" />
+        {fields.map((field, index) => (
+          <div
+            key={index}
+            className={styles.flexEl}
+            onMouseEnter={() => handleShowingHoveredSubCont(index)}
+            onMouseLeave={() => handleClosingHoveredSubCont(index)}
+          >
+            <div className={styles.mainIconCont}>
+              <FaLaptopCode size={40} color="#4A3AFF" />
             </div>
-            <div className={styles.description}>
-              Front-end və Back-end proqramlaşdırma
+            <div>
+              <div className={styles.abovePart}>
+                <div>{field.name}</div>
+                <BiRightArrowAlt size={20} style={{transition: "all 0.3s ease-in-out"}} color={`${isSubHovered === index ? "#4A3AFF" : "#170F49"}`} />
+              </div>
+              <div className={styles.description}>
+                {field.description}
+              </div>
             </div>
+            {isSubHovered === index && <HoveredSubCont subTopics={field.subTopics} />}
           </div>
-        </div>
-        <div className={styles.flexEl}>
-          <div className={styles.mainIconCont}>
-            <RiShieldKeyholeFill size={40} color="#4A3AFF" />
-          </div>
-          <div>
-            <div className={styles.abovePart}>
-              <div>Ethical Hacking</div>
-              <BiRightArrowAlt size={20} color="#170F49" />
-            </div>
-            <div className={styles.description}>Ethical Hacking</div>
-          </div>
-        </div>
-        <div className={styles.flexEl}>
-          <div className={styles.mainIconCont}>
-            <MdDesignServices size={40} color="#4A3AFF" />
-          </div>
-          <div>
-            <div className={styles.abovePart}>
-              <div>Dizayn</div>
-              <BiRightArrowAlt size={20} color="#170F49" />
-            </div>
-            <div className={styles.description}>
-              Qrafik/Motion, UX/UI, İnteryer Dizayn
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
