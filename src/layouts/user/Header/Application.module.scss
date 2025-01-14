@@ -38,6 +38,7 @@
 
 
         .heading {
+            color: #282828;
             font-size: 24px;
             font-weight: 500;
             line-height: 36px;
@@ -124,7 +125,7 @@
     }
 }
 
-
+// styles for errors
 .emailErrorInput {
     border: 1px solid #D32F2F99 !important;
 }
@@ -140,4 +141,66 @@
 
 .formSubmitted {
     opacity: 0.5;
+}
+
+
+// tablet
+@media (min-width: "600px") and (max-width: "1024px") {
+    .applicationCont {
+        .innerCont {
+            width: 400px;
+            border-radius: 18px;
+            padding: 28px;
+            top: 108px;
+    
+    
+            .heading {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+    
+    
+            form {
+                gap: 12px;
+                font-size: 14px;
+                line-height: 21px;
+    
+    
+                .divCont {
+                    input {
+                        height: 42px;
+                        padding: 11px 10px;
+                        font-size: 14px;
+                    }
+    
+    
+                    input::placeholder {
+                        font-size: 14px;
+                    }
+    
+    
+                    textarea {
+                        padding: 12px 10px;
+                        font-size: 14px;
+                        height: 93px;
+                    }
+                }
+    
+    
+                button {
+                    padding: 10px;
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+
+    .emailErrorText {
+        font-size: 12px;
+        line-height: 18px;
+        // margin-top: 5px;
+        // margin-bottom: 20px;
+    }
 }
