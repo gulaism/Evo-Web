@@ -349,7 +349,7 @@
     }
 }
 
-@media (min-width: "744px") and (max-width: "1024px") {
+@media (min-width: "600px") and (max-width: "1024px") {
     .homeWelcome {
         text-align: center;
         margin: 80px 64px 90px;
@@ -657,6 +657,121 @@
                   line-height: 21px;
                   text-align: center;
                   color: #222222;
+                }
+              }
+          
+            }
+          }
+    
+    }
+}
+
+
+@media (min-width: "375px") and (max-width: "599px") {
+    .homeWelcome {
+        margin: 40px 0px 50px;
+    
+    
+        .welcomeHead {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 28px;
+    
+    
+            >div {
+                font-size: 14px;
+                line-height: 21px;
+                padding: 8px 10px;
+            }
+        }
+    
+    
+        .welcomeText {
+            font-size: 28px;
+            line-height: 29px;
+            margin-bottom: 14px;
+        }
+    
+    
+        .welcomeSubText {
+            font-size: 14px;
+            line-height: 21px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .button {
+            padding: 10px 20px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+
+    .eduFields {
+        margin-bottom: 50px;
+    
+    
+        .heading {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .gridBox {
+            grid-template-columns: repeat(1, 1fr);
+    
+            .box {
+                height: 180px;
+                border-radius: 22px;
+    
+    
+                .boxHeading {
+                    font-size: 20px;
+                    line-height: 30px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    
+    
+        >button {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+
+    .difCont {
+        margin-bottom: 50px;
+    
+        .heading {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .itemsContainer {
+            margin: 28px 0;
+          
+            .row {
+              margin-bottom: 28px;
+          
+              .item {
+                flex-basis: calc(100% - 20px); /* 1 column with 20px margin between */
+                margin: 0px 28px;
+          
+                .itemTitle {
+                  font-size: 18px;
+                  line-height: 27px;
+                }
+          
+                .itemDescription {
+                  font-size: 12px;
+                  line-height: 18px;
                 }
               }
           

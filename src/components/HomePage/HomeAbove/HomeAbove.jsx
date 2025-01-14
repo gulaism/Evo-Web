@@ -189,7 +189,8 @@ const HomeAbove = () => {
     }
   }, [visibleCount])
   useEffect(() => {
-    if(window.innerWidth >= 744 && window.innerWidth <= 1024) {
+    if(window.innerWidth <= 600) setItemsPerRow(1);
+    else if(window.innerWidth >= 600 && window.innerWidth <= 1024) {
       setItemsPerRow(2);
     }
     else setItemsPerRow(3);
@@ -197,7 +198,7 @@ const HomeAbove = () => {
   const rows = Math.ceil(items.length / itemsPerRow);
  
   const handleIncreaseFields = () => {
-    const isTabletSize = window.matchMedia("(min-width: 744px) and (max-width: 1024px").matches;
+    const isTabletSize = window.matchMedia("(min-width: 600px) and (max-width: 1024px").matches;
     const incrementValue = isTabletSize ? 2 : 3;
     if (gridRef.current) {
       const currentHeight = gridRef.current.offsetHeight;
