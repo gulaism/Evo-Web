@@ -233,8 +233,11 @@ const HomeAbove = () => {
           <div
             style={{
               position: "absolute",
-              left: 25,
-              top: 10,
+              left: 12,
+              top: 12,
+              fontWeight: "500",
+              fontSize: "12px",
+              lineHeight: "12px",
               backgroundColor: "#9747FF",
               color: "white",
               borderRadius: "33px",
