@@ -3,7 +3,7 @@
   margin-top: 150px;
 
   //mobile üçün
-  @media (max-width: 480px) {
+  @media (max-width: 599px) {
     margin-top: 50px;
   }
 
@@ -20,7 +20,7 @@
     font-weight: 600;
 
     //mobile üçün
-    @media (max-width: 480px) {
+    @media (max-width: 599px) {
       font-size: 24px;
       margin-bottom: 28px
     }
@@ -41,7 +41,7 @@
   cursor: pointer;
 
   //MOBILE üçün stil
-  @media (max-width: 480px) {
+  @media (max-width: 599px) {
     grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
   }
 

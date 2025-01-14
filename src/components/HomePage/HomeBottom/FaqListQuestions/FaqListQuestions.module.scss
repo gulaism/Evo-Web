@@ -9,7 +9,7 @@
     padding: 1rem 53px;
 
     // mobile üçün
-    @media (max-width: 480px) {
+    @media (max-width: 599px) {
         padding: 1rem 26px;
     }
 
@@ -31,7 +31,7 @@
     font-weight: 600;
 
     // mobile üçün
-    @media (max-width: 480px) {
+    @media (max-width: 599px) {
         font-weight: 400;
         // width: 251px;
     }
@@ -42,7 +42,7 @@
         color: rgba(34, 34, 34, 1);
 
         // mobile üçün
-        @media (max-width: 480px) {
+        @media (max-width: 599px) {
             font-size: 14px;
         }
 
@@ -63,7 +63,7 @@
         position: relative;
 
         // mobile üçün
-        @media (max-width: 480px) {
+        @media (max-width: 599px) {
             font-size: 32px;
             right: -22px;
         }
@@ -89,7 +89,7 @@
     color: rgba(126, 141, 156, 1);
 
     // mobile üçün
-    @media (max-width: 480px) {
+    @media (max-width: 599px) {
         font-size: 12px;
     }
 
@@ -104,7 +104,7 @@
     margin-top: 150px;
 
     // mobile üçün
-    @media (max-width: 480px) {
+    @media (max-width: 599px) {
         margin-top: 50px;
     }
 
@@ -120,7 +120,7 @@
         font-weight: 600;
 
         // mobile üçün
-        @media (max-width: 480px) {
+        @media (max-width: 599px) {
             font-size: 24px;
             margin-bottom: 28px;
         }
