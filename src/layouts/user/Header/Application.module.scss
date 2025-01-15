@@ -144,6 +144,68 @@
 }
 
 
+// mobile
+@media (max-width: "599px") {
+    .applicationCont {
+        .innerCont {
+            width: 343px;
+            border-radius: 18px;
+            padding: 28px;
+            top: 57px;
+    
+    
+            .heading {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+    
+    
+            form {
+                gap: 12px;
+                font-size: 12px;
+                line-height: 18px;
+    
+    
+                .divCont {
+                    input {
+                        height: 42px;
+                        padding: 12px 10px;
+                        font-size: 12px;
+                    }
+    
+    
+                    input::placeholder {
+                        font-size: 12px;
+                    }
+    
+    
+                    textarea {
+                        padding: 12px 10px;
+                        font-size: 12px;
+                        height: 93px;
+                    }
+                }
+    
+    
+                button {
+                    padding: 12px;
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+
+
+    .emailErrorText {
+        font-size: 11px;
+        line-height: 17px;
+        // margin-top: 5px;
+        // margin-bottom: 20px;
+    }
+}
+
+
 // tablet
 @media (min-width: "600px") and (max-width: "1024px") {
     .applicationCont {

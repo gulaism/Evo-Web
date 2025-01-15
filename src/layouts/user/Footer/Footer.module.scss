@@ -125,6 +125,73 @@
 }
 
 
+// mobile
+@media (max-width: 599px) {
+    .footerCont {
+        padding-top: 20px 20px 6px;
+    
+    
+        .aboveCont {
+            margin-bottom: 20px;
+    
+    
+            .logoCont {
+                display: none;
+            }
+    
+    
+            .aboveInfo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 28px;
+                width: 100%;
+                text-align: center;
+            }
+    
+    
+            .heading {
+                margin-bottom: 20px;
+            }
+    
+    
+            .subHeadingCont {
+                gap: 12px;
+    
+    
+                .contactCont {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    width: max-content;
+                    margin: 0 auto;
+                }
+            }
+        }
+    
+    
+        .belowCont {
+            display: flex;
+            flex-direction: column;
+            flex-flow: column-reverse;
+            text-align: center;
+            gap: 20px;
+    
+    
+            .socialCont {
+                .iconCont {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+
+// tablet
 @media (min-width: 600px) and (max-width: 1024px) {
     .footerCont {
         .aboveCont {
