@@ -78,7 +78,7 @@ const FieldsComponent = () => {
               <div>
                 <div className={styles.abovePart}>
                   <div>{field.name}</div>
-                  {showDetailsOfField === index ? (
+                  {showDetailsOfField !== index ? (
                     <BiRightArrowAlt
                       size={20}
                       style={{ transition: "all 0.3s ease-in-out" }}

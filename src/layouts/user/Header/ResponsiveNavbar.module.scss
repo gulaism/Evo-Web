@@ -131,3 +131,63 @@
         }
     }
 }
+
+
+// mobile
+@media (max-width: "599px") {
+    .respCont {
+        right: 16px;
+        left: 16px;
+        margin-top: 16px;
+    
+    
+        >div {
+            padding: 19px 15px;
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+    
+    
+    .subCont {
+        gap: 13px;
+        right: 16px;
+        left: 16px;
+        margin-top: 24px;
+        // width: 100%;
+    
+    
+        .backCont {
+            padding: 5px;
+            font-size: 14px;
+            line-height: 21px;
+        }
+    
+    
+        .fieldsdCont {
+            >div {
+                .subTopics {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+    
+    
+            .flexEl {
+                gap: 17px;
+
+
+                .abovePart {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+    
+    
+                .description {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+}
