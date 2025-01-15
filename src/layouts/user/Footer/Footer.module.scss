@@ -123,3 +123,44 @@
         }
     }
 }
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .footerCont {
+        .aboveCont {
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            gap: 132px;
+    
+    
+            .logoCont {
+                width: 120px;
+                height: 43px;
+            }
+    
+    
+            .aboveInfo {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+    
+    
+            .heading {
+                margin-bottom: 20px;
+            }
+    
+    
+            .subHeadingCont {
+                gap: 12px;
+            }
+        }
+    
+    
+        .belowCont {
+            .socialCont {
+                gap: 24px;
+            }
+        }
+    }
+}
