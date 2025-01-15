@@ -8,7 +8,9 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
 import { RiShieldKeyholeFill } from 'react-icons/ri';
 import { MdDesignServices } from 'react-icons/md';
-import { HiMenuAlt4 } from 'react-icons/hi';
+import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import cancel from "../../../assets/images/HomePage/Application/Close.svg";
+import ResponsiveNavbar from './ResponsiveNavbar';
 
 const fields = [
   {
@@ -78,6 +80,7 @@ const HoveredSubCont = ({ subTopics }) => {
 const Header = ({  showApplication, setShowApplication }) => {
   const [ isHovered, setIsHovered ] = useState(false);
   const [ isSubHovered, setIsSubHovered ] = useState(null);
+  const [ showResponsiveNavbar, setShowResponsiveNavbar ] = useState(false);
   const timeoutId = useRef(null);
 
 
@@ -124,6 +127,8 @@ const Header = ({  showApplication, setShowApplication }) => {
     }, 200);
   }
 
+  const handleToggleNavbarBtn = () => setShowResponsiveNavbar(!showResponsiveNavbar);
+
   return (
     <div className="container">
       <div className={styles.headerCont}>
@@ -159,11 +164,21 @@ const Header = ({  showApplication, setShowApplication }) => {
         </div>
         <div className={styles.tabletCont}>
           <button onClick={handleOpenModal}>Müraciət et</button>
-          <HiMenuAlt4
-            className={styles.tabletMenuBar}
-            style={{ cursor: "pointer", color: "#0D0B26" }}
-            size={44}
-          />
+          {showResponsiveNavbar ? (
+            <HiX
+              onClick={handleToggleNavbarBtn}
+              className={styles.tabletMenuBar}
+              style={{ cursor: "pointer", color: "#0D0B26" }}
+              size={44}
+            />
+          ) : (
+            <HiMenuAlt4
+              onClick={handleToggleNavbarBtn}
+              className={styles.tabletMenuBar}
+              style={{ cursor: "pointer", color: "#0D0B26" }}
+              size={44}
+            />
+          )}
         </div>
       </div>
       <div
@@ -199,6 +214,7 @@ const Header = ({  showApplication, setShowApplication }) => {
           </div>
         ))}
       </div>
+      {showResponsiveNavbar && <ResponsiveNavbar />}
     </div>
   );
 }
