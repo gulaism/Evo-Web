@@ -149,6 +149,46 @@
 }
 
 
+// mobile
+@media (max-width: 599px) {
+    .headerCont {
+        margin-top: 3px;
+        border-radius: 18px;
+        padding: 10px 10px;
+    
+    
+        .logoCont {
+            width: 80px;
+            height: 29px;
+        }
+    
+    
+        .navCont {
+            display: none;
+        }
+    
+    
+        button {
+            padding: 7px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+
+        .tabletCont {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+
+            .tabletMenuBar {
+                display: block;
+            }
+        }
+    }
+}
+
 
 // tablet
 @media (min-width: "600px") and (max-width: "1024px") {
