@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 // styles
 import styles from "./ResponsiveNavbar.module.scss"; 
+// assets
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
+import bottomArrow from "../../../assets/images/Header/bottomArrow.svg"
 
 const fields = [
     {
@@ -60,30 +62,43 @@ const fields = [
 ]
 
 const FieldsComponent = () => {
+    const [ showDetailsOfField, setShowDetailsOfField ] = useState(null);
+
+    const handleToggleField = (id) =>
+      setShowDetailsOfField((prev) => (prev === id ? null : id));
+
     return (
-      <div
-        className={styles.fieldsdCont}
-      >
+      <div className={styles.fieldsdCont}>
         {fields.map((field, index) => (
-          <div
-            key={index}
-          >
-            <div className={styles.mainIconCont}>
-              <FaLaptopCode size={25} color="#4A3AFF" />
-            </div>
-            <div>
-              <div className={styles.abovePart}>
-                <div>{field.name}</div>
-                <BiRightArrowAlt
-                  size={20}
-                  style={{ transition: "all 0.3s ease-in-out" }}
-                />
+          <div>
+            <div onClick={() => handleToggleField(index)} className={styles.flexEl} key={index}>
+              <div className={styles.mainIconCont}>
+                <FaLaptopCode size={25} color="#4A3AFF" />
               </div>
-              <div className={styles.description}>{field.description}</div>
+              <div>
+                <div className={styles.abovePart}>
+                  <div>{field.name}</div>
+                  {showDetailsOfField === index ? (
+                    <BiRightArrowAlt
+                      size={20}
+                      style={{ transition: "all 0.3s ease-in-out" }}
+                    />
+                  ) : (
+                    <div>
+                      <img src={bottomArrow} alt="" />
+                    </div>
+                  )}
+                </div>
+                <div className={styles.description}>{field.description}</div>
+              </div>
             </div>
-            {/* {isSubHovered === index && (
-              <HoveredSubCont subTopics={field.subTopics} />
-            )} */}
+            {showDetailsOfField === index && (
+              <div className={styles.subTopics}>
+                {field.subTopics.map((sbTpc, index) => (
+                  <div key={index}>{sbTpc}</div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
