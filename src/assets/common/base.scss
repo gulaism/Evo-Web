@@ -17,7 +17,7 @@ body {
     margin: 0 auto;
     padding: 0 100px;
 //mobile üçün
-    @media (max-width: 480px) {
+    @media (min-width: 375px) {
         padding: 0 16px;
     }
    //Tablet uçun

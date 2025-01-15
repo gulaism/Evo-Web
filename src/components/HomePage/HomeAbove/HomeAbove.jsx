@@ -145,6 +145,7 @@ const HomeAbove = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [visibleCount, setVisibleCount] = useState(6);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [itemsPerRow, setItemsPerRow] = useState(3);
   const gridRef = useRef(null);
   const cursorRef = useRef(null);
 
@@ -187,19 +188,25 @@ const HomeAbove = () => {
       }, 150);
     }
   }, [visibleCount])
-
-  const itemsPerRow = 3;
+  useEffect(() => {
+    if(window.innerWidth <= 600) setItemsPerRow(1);
+    else if(window.innerWidth >= 600 && window.innerWidth <= 1024) {
+      setItemsPerRow(2);
+    }
+    else setItemsPerRow(3);
+  }, [])
   const rows = Math.ceil(items.length / itemsPerRow);
-
-
+ 
   const handleIncreaseFields = () => {
+    const isTabletSize = window.matchMedia("(min-width: 600px) and (max-width: 1024px").matches;
+    const incrementValue = isTabletSize ? 2 : 3;
     if (gridRef.current) {
       const currentHeight = gridRef.current.offsetHeight;
       gridRef.current.style.height = `${currentHeight}px`
     }
     setIsAnimating(true);
     setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + 3, eduFields.length))
+      setVisibleCount((prev) => Math.min(prev + incrementValue, eduFields.length))
       setIsAnimating(false);
     }, 300);
   }
@@ -233,8 +240,11 @@ const HomeAbove = () => {
           <div
             style={{
               position: "absolute",
-              left: 25,
-              top: 10,
+              left: 12,
+              top: 12,
+              fontWeight: "500",
+              fontSize: "12px",
+              lineHeight: "12px",
               backgroundColor: "#9747FF",
               color: "white",
               borderRadius: "33px",
@@ -320,12 +330,21 @@ const HomeAbove = () => {
           iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün
           əldə edin.
         </div>
-        <div className={styles.button}><Link to="/education" style={{ cursor: "none" }}>Kəşf et</Link></div>
+        <div className={styles.button}>
+          <Link to="/education" style={{ cursor: "none" }}>
+            Kəşf et
+          </Link>
+        </div>
       </div>
 
       <div className={styles.eduFields}>
         <div className={styles.heading}>Tədris Sahələri</div>
-        <div className={`${styles.gridBox} ${isAnimating ? styles.opened : styles.closed}`} ref={gridRef}>
+        <div
+          className={`${styles.gridBox} ${
+            isAnimating ? styles.opened : styles.closed
+          }`}
+          ref={gridRef}
+        >
           {eduFields.slice(0, visibleCount).map((item, index) => (
             <EduField
               key={index}
@@ -382,30 +401,27 @@ const HomeAbove = () => {
             </button>
           )}
         </div>
-        
+      </div>
 
+      <div className={styles.difCont}>
+        <div className={styles.heading}>Fərqimiz</div>
+        <div className={styles.itemsContainer}>
+          {Array.from({ length: rows }).map((_, rowIndex) => {
+            const start = rowIndex * itemsPerRow;
+            const end = Math.min(start + itemsPerRow, items.length);
+            const rowItems = items.slice(start, end);
 
-        <div className={styles.difCont}>
-          <div className={styles.heading}>Fərqimiz</div>
-          <div className={styles.itemsContainer}>
-            {Array.from({ length: rows }).map((_, rowIndex) => {
-              const start = rowIndex * itemsPerRow;
-              const end = Math.min(start + itemsPerRow, items.length);
-              const rowItems = items.slice(start, end);
-
-              return (
-                <div key={rowIndex} className={styles.row}>
-                  {rowItems.map((item, itemIndex) => (
-                    <Item key={itemIndex} {...item} />
-                  ))}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+            return (
+              <div key={rowIndex} className={styles.row}>
+                {rowItems.map((item, itemIndex) => (
+                  <Item key={itemIndex} {...item} />
+                ))}
+              </div>
+            );
+          })}
         </div>
       </div>
-  
+    </div>
   );
 };
 
