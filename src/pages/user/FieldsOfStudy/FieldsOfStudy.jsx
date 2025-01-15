@@ -44,10 +44,13 @@ const FieldsOfStudy = () => {
   return (
     <div className="container">
       <div className={styles.fieldsOfStudy}>
-        <h1 className={styles.fieldsTitle}>Tədris sahələri</h1>
-        <p className={styles.fieldsDescription}>
-          Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin.
-        </p>
+        <div className={styles.fieldsLine}>
+          <h1 className={styles.fieldsTitle}>Tədris sahələri</h1>
+          <p className={styles.fieldsDescription}>
+            Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin.
+          </p>
+        </div>
+
 
         {/* Custom Dropdown */}
         <div className={styles.fieldsDropdown} ref={dropdownRef}>
@@ -123,6 +126,9 @@ const FieldsOfStudy = () => {
                   {field.time && <div>{field.time}</div>}
                   {field.duration && <div>{field.duration}</div>}
                 </div>
+                  <button className={styles.arrowCont}>
+                    <img className={styles.arrowImg} src={rightArrow} alt="" />
+                  </button>
               </div>
             </div>
           ))}

@@ -1,10 +1,9 @@
 .fieldsOfStudy {
-   text-align: center;
-    padding: 50px 20px;
-
-
-
+    text-align: center;
+    // padding: 50px 20px;
     margin-bottom: 103px;
+    margin-top: 100px;
+
 
 
     .fieldsTitle {
@@ -13,10 +12,18 @@
         font-weight: 700;
         margin-bottom: 16px;
 
+
+        //Mobile uçun
+        @media (max-width: 480px) {
+            font-size: 28px;
+        }
+
         //Tablet uçun
         @media (min-width: 600px) and (max-width: 1024px) {
             font-size: 40px;
         }
+
+
     }
 
     .fieldsDescription {
@@ -24,23 +31,38 @@
         color: rgba(144, 163, 191, 1);
         margin-bottom: 32px;
         line-height: 1.6;
+        padding: 0 150px;
+
+
+        //Mobile uçun    
+        @media (max-width: 480px) {
+            font-size: 14px;
+            padding: 0;
+        }
 
         //Tablet uçun
         @media (min-width: 600px) and (max-width: 1024px) {
             font-size: 16px;
+            padding: 0;
         }
     }
 
     .fieldsDropdown {
-        margin-top: 165px;
+        margin-top: 150px;
         position: relative;
         width: 295px;
-    
+
+        //Mobile uçun
+        @media (max-width: 480px) {
+            width: 163px;
+            margin-top: 50px;
+        }
+
         @media (min-width: 600px) and (max-width: 1024px) {
             width: 252px;
             margin-top: 52px;
         }
-    
+
         .dropdownHeader {
             display: flex;
             justify-content: space-between;
@@ -54,14 +76,27 @@
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-    
-    
+
+            //Mobile uçun
+            @media (max-width: 480px) {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            //Tablet uçun
+
+
             svg {
                 font-size: 14px;
                 color: rgba(51, 54, 63, 0.6);
+
+                //Mobile uçun
+                @media (max-width: 480px) {
+                    font-size: 12px;
+                }
             }
         }
-    
+
         .dropdownMenu {
             position: absolute;
             top: 110%;
@@ -74,7 +109,7 @@
             z-index: 10;
             overflow: hidden;
             text-align: left;
-    
+
             .dropdownItem {
                 padding: 12px 16px;
                 font-size: 16px;
@@ -82,16 +117,21 @@
                 color: rgba(51, 54, 63, 1);
                 cursor: pointer;
                 transition: all 0.3s ease;
-    
+
+                //Mobile uçun
+                @media (max-width: 480px) {
+                    font-size: 12px;
+                }
+
                 &:hover {
-                    color:#fff;
+                    color: #fff;
                     background-color: rgba(137, 137, 252, 1);
-                    
+
                 }
             }
         }
     }
-    
+
 }
 
 .gridBox {
@@ -100,102 +140,138 @@
     gap: 1.5rem;
     margin-top: 2rem;
 
-    .gridItem {
-        width: 400px;
-        max-height: 236px;
-        background: #fff;
-        border-radius: 32px;
-        border: 1px solid transparent;
-        padding: 38px 26px;
-        text-align: left;
-        transition: border-color 0.5s ease;
-        cursor: pointer;
+    //Mobile uçun
+    @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
 
+    //Tablet uçun
+    @media (min-width: 600px) and (max-width: 1024px) {
+        gap: 20px;}
 
-        //Tablet uçun
-        @media (min-width: 600px) and (max-width: 1024px) {
-            width: 342px;
-            height: 195px;
-            padding: 26px 18px;
-        }
+        .gridItem {
+            width: 400px;
+            max-height: 236px;
+            background: #fff;
+            border-radius: 32px;
+            border: 1px solid transparent;
+            padding: 38px 26px;
+            text-align: left;
+            transition: border-color 0.5s ease;
+            cursor: pointer;
 
-        &:hover {
-            border-color: rgba(126, 141, 156, 0.368627451); // Hoverda rəng dəyişir
-        }
-
-        .itemHeader {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: rgba(34, 34, 34, 1);
-            font-weight: 600;
-
-            //Tablet uçun
-            @media (min-width: 600px) and (max-width: 1024px) {
-                font-size: 24px;
+            //Mobile uçun
+            @media (max-width: 480px) {
+                width: 342px;
+                height: 180px;
+                padding: 26px 18px;
             }
-        }
 
-        .itemDescription {
-            font-size: 16px;
-            color: rgba(126, 141, 156, 1);
-            font-weight: 400;
 
             //Tablet uçun
             @media (min-width: 600px) and (max-width: 1024px) {
-                font-size: 14px;
+                width: 342px;
+                height: 195px;
+                padding: 26px 18px;
+            }
+
+            &:hover {
+                border-color: rgba(126, 141, 156, 0.368627451); // Hoverda rəng dəyişir
+            }
+
+            .itemHeader {
+                font-size: 32px;
+                margin-bottom: 10px;
+                color: rgba(34, 34, 34, 1);
+                font-weight: 600;
+
+                //Mobile uçun
+                @media (max-width: 480px) {
+                    font-size: 20px;
+                }
+
+                //Tablet uçun
+                @media (min-width: 600px) and (max-width: 1024px) {
+                    font-size: 24px;
+                }
+            }
+
+            .itemDescription {
+                font-size: 16px;
+                color: rgba(126, 141, 156, 1);
+                font-weight: 400;
+
+                //Mobile uçun
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                }
+
+                //Tablet uçun
+                @media (min-width: 600px) and (max-width: 1024px) {
+                    font-size: 14px;
+                }
             }
         }
     }
-}
 
-.boxBottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-
-    .time {
+    .boxBottom {
         display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: space-between;
+        margin-top: 10px;
 
-        div {
-            padding: 10px 18px;
-            background-color: #7367FF;
-            color: #FEFEFE;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            border-radius: 12px;
+        .time {
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-            //Tablet uçun
-            @media (min-width: 600px) and (max-width: 1024px) {
-                padding: 8px 12px;
-                font-size: 14px;
+            div {
+                padding: 10px 18px;
+                background-color: #7367FF;
+                color: #FEFEFE;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                border-radius: 12px;
+
+                //Mobile uçun
+                @media (max-width: 480px) {
+                    padding: 8px 12px;
+                    font-size: 12px;
+                }
+
+                //Tablet uçun
+                @media (min-width: 600px) and (max-width: 1024px) {
+                    padding: 8px 12px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .arrowCont {
+            width: 44px;
+            height: 44px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            .arrowImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
 
-    .arrowCont {
-        width: 44px;
-        height: 44px;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
+    .gridItem:hover {
+        border: 1px solid #7E8D9C5E;
 
-        .arrowImg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .itemHeader {
+            color: #4A3AFF;
+            transition: 0.5s ease;
         }
     }
-}
-
-.gridItem:hover {
-    border: 1px solid #7E8D9C5E;
-
-    .itemHeader {
-        color: #4A3AFF;
-        transition: 0.5s ease;
-    }
-}
