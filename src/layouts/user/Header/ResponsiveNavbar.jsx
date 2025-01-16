@@ -5,6 +5,7 @@ import styles from "./ResponsiveNavbar.module.scss";
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
 import bottomArrow from "../../../assets/images/Header/bottomArrow.svg"
+import { Link } from 'react-router-dom';
 
 const fields = [
     {
@@ -105,9 +106,13 @@ const FieldsComponent = () => {
     );
 }
 
-const ResponsiveNavbar = () => {
+const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
   const [ showFields, setShowFields ] = useState(false);
-  const handleOpenFields = () => setShowFields(true);
+  const handleOpenFields = () => {
+    setShowFields(true)
+    console.log('isledi');
+    
+  };
   const handleCloseFields = () => setShowFields(false);
   
   return !showFields ? (
@@ -116,9 +121,10 @@ const ResponsiveNavbar = () => {
         <div>Haqqımızda</div>
         <BiRightArrowAlt size={18} color="#170F49" />
       </div>
-      <div onClick={handleOpenFields}>
-        <div>Tədris Sahələri</div>
+      <div>
+        <Link to={"/education"} onClick={() => setShowResponsiveNavbar(false)} style={{whiteSpace: "nowrap"}}>Tədris Sahələri</Link>
         <BiRightArrowAlt size={18} color="#170F49" />
+        <div onClick={handleOpenFields} style={{width: "100%", height: "24px", backgroundColor: "transparent"}}></div>
       </div>
       <div>
         <div>Məzunlarımız</div>

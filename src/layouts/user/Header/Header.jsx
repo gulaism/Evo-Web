@@ -143,6 +143,7 @@ const Header = ({  showApplication, setShowApplication }) => {
             Haqqımızda
           </Link>
           <Link
+            to={"/education"}
             style={{ textDecoration: "none", color: "inherit" }}
             onMouseEnter={handleShowingHoveredCont}
             onMouseLeave={handleClosingHoveredCont}
@@ -214,7 +215,7 @@ const Header = ({  showApplication, setShowApplication }) => {
           </div>
         ))}
       </div>
-      {showResponsiveNavbar && <ResponsiveNavbar />}
+      {showResponsiveNavbar && <ResponsiveNavbar setShowResponsiveNavbar={setShowResponsiveNavbar}/>}
     </div>
   );
 }
