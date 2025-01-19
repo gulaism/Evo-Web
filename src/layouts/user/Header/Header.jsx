@@ -8,6 +8,9 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
 import { RiShieldKeyholeFill } from 'react-icons/ri';
 import { MdDesignServices } from 'react-icons/md';
+import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import cancel from "../../../assets/images/HomePage/Application/Close.svg";
+import ResponsiveNavbar from './ResponsiveNavbar';
 
 const fields = [
   {
@@ -77,6 +80,7 @@ const HoveredSubCont = ({ subTopics }) => {
 const Header = ({  showApplication, setShowApplication }) => {
   const [ isHovered, setIsHovered ] = useState(false);
   const [ isSubHovered, setIsSubHovered ] = useState(null);
+  const [ showResponsiveNavbar, setShowResponsiveNavbar ] = useState(false);
   const timeoutId = useRef(null);
 
 
@@ -123,6 +127,8 @@ const Header = ({  showApplication, setShowApplication }) => {
     }, 200);
   }
 
+  const handleToggleNavbarBtn = () => setShowResponsiveNavbar(!showResponsiveNavbar);
+
   return (
     <div className="container">
       <div className={styles.headerCont}>
@@ -137,6 +143,7 @@ const Header = ({  showApplication, setShowApplication }) => {
             Haqqımızda
           </Link>
           <Link
+            to={"/education"}
             style={{ textDecoration: "none", color: "inherit" }}
             onMouseEnter={handleShowingHoveredCont}
             onMouseLeave={handleClosingHoveredCont}
@@ -156,7 +163,24 @@ const Header = ({  showApplication, setShowApplication }) => {
             Əlaqə
           </Link>
         </div>
-        <button onClick={handleOpenModal}>Müraciət et</button>
+        <div className={styles.tabletCont}>
+          <button onClick={handleOpenModal}>Müraciət et</button>
+          {showResponsiveNavbar ? (
+            <HiX
+              onClick={handleToggleNavbarBtn}
+              className={styles.tabletMenuBar}
+              style={{ cursor: "pointer", color: "#0D0B26" }}
+              size={44}
+            />
+          ) : (
+            <HiMenuAlt4
+              onClick={handleToggleNavbarBtn}
+              className={styles.tabletMenuBar}
+              style={{ cursor: "pointer", color: "#0D0B26" }}
+              size={44}
+            />
+          )}
+        </div>
       </div>
       <div
         className={styles.hoverCont}
@@ -177,16 +201,21 @@ const Header = ({  showApplication, setShowApplication }) => {
             <div>
               <div className={styles.abovePart}>
                 <div>{field.name}</div>
-                <BiRightArrowAlt size={20} style={{transition: "all 0.3s ease-in-out"}} color={`${isSubHovered === index ? "#4A3AFF" : "#170F49"}`} />
+                <BiRightArrowAlt
+                  size={20}
+                  style={{ transition: "all 0.3s ease-in-out" }}
+                  color={`${isSubHovered === index ? "#4A3AFF" : "#170F49"}`}
+                />
               </div>
-              <div className={styles.description}>
-                {field.description}
-              </div>
+              <div className={styles.description}>{field.description}</div>
             </div>
-            {isSubHovered === index && <HoveredSubCont subTopics={field.subTopics} />}
+            {isSubHovered === index && (
+              <HoveredSubCont subTopics={field.subTopics} />
+            )}
           </div>
         ))}
       </div>
+      {showResponsiveNavbar && <ResponsiveNavbar setShowResponsiveNavbar={setShowResponsiveNavbar}/>}
     </div>
   );
 }

@@ -36,11 +36,11 @@ const [ hoveredElement, setHoveredElement ] = useState(null);
             <div>
               <div className={styles.heading}>Haqqımızda</div>
               <div className={styles.subHeadingCont}>
-                <div>Tədris sahələri</div>
-                <div>Təlimçilər</div>
+                <div>Akademiya haqqında</div>
+                <div>Instruktorlar</div>
+                <div>Təqaüd proqramı</div>
                 <div>Partnyorlar</div>
                 <div>Təcrübə proqramları</div>
-                <div>Təqaüd</div>
               </div>
             </div>
             <div>
