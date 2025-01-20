@@ -1,9 +1,10 @@
 import React from 'react'
 import PartnerLogos from '../../HomePage/HomeBottom/PartnerLogos/PartnerLogos'
-//import styles from '../../HomePage/HomeBottom/HomeBottom.module.scss'
 import logoPartner from '../../../assets/images/HomePage/HomeBottom/Partners/logoPartner.svg'
 import FaqList from '../../HomePage/HomeBottom/FaqListQuestions/FaqListQuestions'
 import styles from './AboutUs.module.scss'
+import InternshipProgram from './InternShipProgram/InternShipProgram'
+
 
 
 const AboutUsBottom = () => {
@@ -30,14 +31,8 @@ const AboutUsBottom = () => {
       </section>
 
       {/* Tecrube programi*/}
-      <div className={styles.internShipContainer}>
-      <div className={styles.internShip}>
-        <h1 className={styles.internTitle}>Təcrubə Programı</h1>
-        <p className={styles.internDescription}>
-          Təcrübə proqramı sizə real layihələr üzərində işləmək, komanda bacarıqlarınızı inkişaf etdirmək, CV və müsahibə hazırlığı, mentor dəstəyi, kariyera yönləndirilməsi və networking qurmaq üçün geniş imkanlar təqdim edir.
-        </p>
-      </div>
-      </div>
+     <InternshipProgram/>
+
 
 
 
