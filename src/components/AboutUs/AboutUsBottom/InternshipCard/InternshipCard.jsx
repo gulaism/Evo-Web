@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './InternshipCard.module.scss';
+import { GoArrowRight } from "react-icons/go";
 
 const InternshipCard = ({ icon, title, description, time, mode, arrow }) => {
+  // Modal üçün state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Modalı açıb-bağlama funksiyaları
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className={styles.card}>
       <div className={styles.cardHeading}>
@@ -14,8 +22,66 @@ const InternshipCard = ({ icon, title, description, time, mode, arrow }) => {
           <span>{time}</span>
           <span>{mode}</span>
         </div>
-        {arrow && <img src={arrow} alt="arrow" />}
+        {/* Arrow hover funksionallığı */}
+        <div
+          className={styles.arrowWrapper}
+          onClick={openModal}
+        >
+          <div className={styles.icon}>
+          {arrow   && <img src={arrow} alt="arrow" />}
+          </div>
+          <div className={styles.expandButton}>
+            <GoArrowRight className={styles.hoverIcon} /> {/* Hover ox */}
+            <span className={styles.hoverText}>Konsultasiyaya yazıl</span>
+          </div>
+        </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <button onClick={closeModal} className={styles.closeButton}>X</button>
+            <h2>Konsultasiyaya yazıl</h2>
+            <form>
+              <label>
+                Ad, soyad:
+                <input type="text" placeholder="Adınız Soyadınız" />
+              </label>
+              <label>
+                Əlaqə nömrəsi:
+                <input type="text" placeholder="+994" />
+              </label>
+              <label>
+                Email:
+                <input type="email" placeholder="yourmail@gmail.com" />
+              </label>
+              <label>
+                Təcrübə keçmək istədiyiniz sahəni seçin:
+                <div>
+                  <label>
+                    <input type="radio" name="field" value="Frontend" />
+                    Front-end Development
+                  </label>
+                  <label>
+                    <input type="radio" name="field" value="Backend" />
+                    Back-end Java
+                  </label>
+                  <label>
+                    <input type="radio" name="field" value="UXUI" />
+                    UX/UI Dizayn
+                  </label>
+                  <label>
+                    <input type="radio" name="field" value="QA" />
+                    Q/A Manual Testing
+                  </label>
+                </div>
+              </label>
+              <button type="submit">Müraciət et</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

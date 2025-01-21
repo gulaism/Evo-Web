@@ -18,4 +18,4 @@ const PartnerLogos = ({ logos }) => {
   );
 };
 
-export default PartnerLogos;
+export default PartnerLogos; 
