@@ -54,7 +54,7 @@
   border-radius: 25px;
   overflow: hidden;
   cursor: pointer;
-  transition: width 0.3s ease, background-color 0.3s ease;
+  transition: width 0.9s ease, background-color 0.3s ease;
 
   /* Hover zamanı düymənin genişlənməsi */
   &:hover {
@@ -64,6 +64,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    white-space: nowrap;
   }
 
   /* Adi ox üçün tərtibat */
