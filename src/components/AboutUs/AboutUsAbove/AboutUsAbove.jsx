@@ -2,6 +2,7 @@
 import { FaLinkedin } from "react-icons/fa";
 import styles from "./AboutUsAbove.module.scss";
 import { useEffect, useState } from "react";
+import { useGetAboutQuery } from "../../../redux/services/aboutApi";
 
 const instructors = [
   {
@@ -72,6 +73,11 @@ const instructors = [
 const AboutUsAbove = () => {
   const [clickedIns, setClickedIns] = useState(null);
   const [windowWidth, setWindowWidth] = useState('');
+  const {data, isLoading, isError} = useGetAboutQuery();
+
+  useEffect(() => {
+    if(!isLoading && !isError) console.log('salam', data);
+  }, [])
 
   useEffect(() => {
     if(window.innerWidth >= 600 && window.innerWidth <= 1025) setWindowWidth('tablet');
@@ -90,18 +96,14 @@ const AboutUsAbove = () => {
         <div className={styles.hashtag}>#hədəflərinizləfərqlənin</div>
         <div className={styles.flexDiv}>
           <div className={styles.slogan}>
-            Öyrətmək bizdən, kariyeranı qurmaq səndən!
+            {data?.title}
           </div>
           <div className={styles.description}>
-            Evo Computer Akademiyası 2018-ci ildən etibarən texnologiya
-            sahəsində peşəkar təhsil verən qabaqcıl tədris mərkəzidir. Akademiya
-            müasir dövrün tələblərini nəzərə alaraq, müxtəlif texnoloji
-            istiqamətlər üzrə keyfiyyətli təhsil proqramları təqdim edir.
-            <br />
-            Bizim missiyamız texnologiya sahəsində gələcəyin peşəkarlarını
-            hazırlamaq və onların iş dünyasına uğurlu inteqrasiyasını təmin
-            etməkdir. Evo Computer Akademiyası ilə gələcəyinizə investisiya
-            edin!
+            {data?.paragraphs?.map((p, index) => (
+              <div key={index}>
+                {p}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -114,7 +116,7 @@ const AboutUsAbove = () => {
           müasir yanaşmaları tətbiq edir.
         </div>
         <div className={styles.gridCont}>
-          {instructors.map((instructor, index) => (
+          {data?.instructors.map((instructor, index) => (
             <div
               onClick={() => handleClickingInsCont(instructor.id)}
               className={`${styles.insCont} ${
@@ -130,14 +132,14 @@ const AboutUsAbove = () => {
               <div className={styles.instructor}>
                 <div className={styles.photoCont}>
                   <img
-                    src={instructor.photo}
+                    src={instructor.profilePicture}
                     alt={`${instructor.name}'s photo`}
                   />
                 </div>
                 <div>
                   <div className={styles.instName}>{instructor.name}</div>
-                  <div className={styles.instProf}>{instructor.profession}</div>
-                  <a href={instructor.link}>
+                  <div className={styles.instProf}>{instructor.job}</div>
+                  <a href={instructor.linkedinLink}>
                     <FaLinkedin color="#0c65c2" size={windowWidth === 'web' ? 32 : 24} />
                   </a>
                 </div>
@@ -161,14 +163,11 @@ const AboutUsAbove = () => {
         </div>
       </div>
       <div className={styles.flexDiv}>
-        <div className={styles.slogan}>InnoTech Təqaüd proqramı</div>
+        <div className={styles.slogan}>{data?.scholarships[0].name}</div>
         <div className={styles.description}>
-          Akademiyamızda ödənişsiz Təqaüd proqramına qoşulun və Məntiq,
-          İnformatika, İngilis dili fənlərində nəticələrinizə əsasən endirimlər
-          əldə edin. Bizim missiyamız texnologiya sahəsində gələcəyin
-          peşəkarlarını hazırlamaq və onların iş dünyasına uğurlu
-          inteqrasiyasını təmin etməkdir. Evo Computer Akademiyası ilə
-          gələcəyinizə investisiya edin!
+          {data?.scholarships[0]?.paragraphs?.map((p, index) => (
+            <div key={index}>{p}</div>
+          ))}
         </div>
       </div>
     </div>

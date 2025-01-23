@@ -7,6 +7,7 @@ import plus from "../../../assets/images/HomePage/plus.svg";
 import cursorIcon from "../../../assets/images/HomePage/Vector.svg";
 import minus from "../../../assets/images/HomePage/minus.svg";
 import { Link } from "react-router-dom";
+import { useGetDifferenceQuery } from "../../../redux/services/differenceApi";
 
 const eduFields = [
   {
@@ -148,6 +149,12 @@ const HomeAbove = () => {
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const gridRef = useRef(null);
   const cursorRef = useRef(null);
+  const {data: diff, isLoading: diffLoading, isError: diffError} = useGetDifferenceQuery(1);
+
+  if(!diffLoading && !diffError) {
+    console.log(diff);
+  }
+
 
   useEffect(() => {
     const home = document.getElementById("home");

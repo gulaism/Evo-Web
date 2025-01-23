@@ -119,7 +119,7 @@ const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
 
   return !showFields ? (
     <div className={styles.respCont}>
-      <div>
+      <div style={{position: "relative"}}>
         <Link style={{position: "absolute", inset: "0"}} onClick={closeNavBar} to={"/about"}></Link>
         <div>Haqqımızda</div>
         <BiRightArrowAlt size={18} color="#170F49" />

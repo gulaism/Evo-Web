@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { aboutSlice } from './services/aboutSlice';
+import { aboutApi } from './services/aboutApi';
+import { differenceApi } from './services/differenceApi';
 
 const store = configureStore({
   reducer: {
-    [aboutSlice.reducerPath]: aboutSlice.reducer,
+    [aboutApi.reducerPath]: aboutApi.reducer,
+    [differenceApi.reducerPath]: differenceApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(aboutSlice.middleware),
+    getDefaultMiddleware().concat(aboutApi.middleware).concat(differenceApi.middleware),
 });
 
 export default store;

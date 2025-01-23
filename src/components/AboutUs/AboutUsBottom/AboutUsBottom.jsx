@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetAboutQuery } from '../../../redux/services/aboutSlice';
+import { useGetAboutQuery } from '../../../redux/services/aboutApi';
 import PartnerLogos from '../../HomePage/HomeBottom/PartnerLogos/PartnerLogos';
 import FaqList from '../../HomePage/HomeBottom/FaqListQuestions/FaqListQuestions';
 import InternshipProgram from './InternShipProgram/InternShipProgram';
