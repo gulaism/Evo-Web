@@ -195,7 +195,7 @@
     
     .instructorsCont {
         margin-bottom: 90px;
-        padding: 0 20px;
+        padding: 0 4px;
     
     
         .instructorHeader {
@@ -239,6 +239,7 @@
                     .instName {
                         font-size: 20px;
                         line-height: 30px;
+                        white-space: nowrap;
                     }
     
     
@@ -246,6 +247,7 @@
                         font-size: 14px;
                         line-height: 21px;
                         margin-bottom: 8px;
+                        white-space: nowrap;
                     }
                 }
     
