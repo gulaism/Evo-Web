@@ -5,7 +5,7 @@ const PartnerLogos = ({ logos }) => {
   return (
     <div className={styles.partnerLogos}>
       <div className={styles.animateWrapper}>
-        {logos.concat(logos).map((logo, index) => (
+        {logos.map((logo, index) => (
           <img
             key={index}
             src={logo.src}
@@ -17,5 +17,6 @@ const PartnerLogos = ({ logos }) => {
     </div>
   );
 };
+
 
 export default PartnerLogos; 
