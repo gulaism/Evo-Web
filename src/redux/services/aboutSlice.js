@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const url = import.meta.env.VITE_SOME_KEY;
 
-export const apiSlice = createApi({
+export const aboutSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: url}), // Buraya öz backend baz URL-ni yaz
   endpoints: (builder) => ({
@@ -11,4 +11,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useGetAboutQuery } = apiSlice;
+export const { useGetAboutQuery } = aboutSlice;
