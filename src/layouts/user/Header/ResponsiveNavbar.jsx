@@ -115,16 +115,32 @@ const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
   };
   const handleCloseFields = () => setShowFields(false);
   
+  const closeNavBar = () => setShowResponsiveNavbar(false);
+
   return !showFields ? (
     <div className={styles.respCont}>
       <div>
+        <Link style={{position: "absolute", inset: "0"}} onClick={closeNavBar} to={"/about"}></Link>
         <div>Haqqımızda</div>
         <BiRightArrowAlt size={18} color="#170F49" />
       </div>
       <div>
-        <Link to={"/education"} onClick={() => setShowResponsiveNavbar(false)} style={{whiteSpace: "nowrap"}}>Tədris Sahələri</Link>
+        <Link
+          to={"/education"}
+          onClick={() => setShowResponsiveNavbar(false)}
+          style={{ whiteSpace: "nowrap" }}
+        >
+          Tədris Sahələri
+        </Link>
         <BiRightArrowAlt size={18} color="#170F49" />
-        <div onClick={handleOpenFields} style={{width: "100%", height: "24px", backgroundColor: "transparent"}}></div>
+        <div
+          onClick={handleOpenFields}
+          style={{
+            width: "100%",
+            height: "24px",
+            backgroundColor: "transparent",
+          }}
+        ></div>
       </div>
       <div>
         <div>Məzunlarımız</div>
@@ -138,7 +154,7 @@ const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
   ) : (
     <div className={styles.subCont}>
       <div onClick={handleCloseFields} className={styles.backCont}>
-        <BiLeftArrowAlt color='#170F49' size={18} />
+        <BiLeftArrowAlt color="#170F49" size={18} />
         <div>Geri qayıt</div>
       </div>
       <FieldsComponent />
