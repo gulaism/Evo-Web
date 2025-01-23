@@ -1,7 +1,7 @@
 // styles
 import { FaLinkedin } from "react-icons/fa";
 import styles from "./AboutUsAbove.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const instructors = [
   {
@@ -71,6 +71,12 @@ const instructors = [
 
 const AboutUsAbove = () => {
   const [clickedIns, setClickedIns] = useState(null);
+  const [windowWidth, setWindowWidth] = useState('');
+
+  useEffect(() => {
+    if(window.innerWidth >= 600 && window.innerWidth <= 1025) setWindowWidth('tablet');
+    else setWindowWidth('web');
+  }, [])
 
   const handleClickingInsCont = (id) => {
     console.log(id);
@@ -132,7 +138,7 @@ const AboutUsAbove = () => {
                   <div className={styles.instName}>{instructor.name}</div>
                   <div className={styles.instProf}>{instructor.profession}</div>
                   <a href={instructor.link}>
-                    <FaLinkedin color="#0c65c2" size={32} />
+                    <FaLinkedin color="#0c65c2" size={windowWidth === 'web' ? 32 : 24} />
                   </a>
                 </div>
               </div>

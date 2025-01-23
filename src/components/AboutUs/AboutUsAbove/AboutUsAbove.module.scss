@@ -166,3 +166,126 @@
         border-left: 1px solid #7E8D9C45;
     }
 }
+
+
+// tablet 
+@media (min-width: "600px") and (max-width: "1024px") {
+    .generalInfoCont {
+        margin: 80px 0 90px;
+    
+    
+        h1 {
+            font-size: 40px;
+            line-height: 41px;
+            margin-bottom: 8px;
+        }
+    
+    
+        .hashtag {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 32px;
+        }
+    
+    
+        
+    }
+    
+    
+    .instructorsCont {
+        margin-bottom: 90px;
+        padding: 0 20px;
+    
+    
+        .instructorHeader {
+            font-size: 28px;
+            line-height: 42px;
+            margin-bottom: 12px;
+        }
+    
+    
+        .description {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 32px;
+        }
+    
+    
+        .gridCont {
+            .insCont {
+                border-radius: 22px;
+                padding: 15px;
+                // cursor: pointer;
+                // transition: border 0.3s ease, height 0.3s ease;
+                // position: relative;
+                // overflow: hidden;
+                // z-index: 1;
+                // grid-row: auto;
+                // height: fit-content;
+                
+                .instructor {
+                    gap: 12px;
+    
+    
+                    .photoCont {
+                        min-width: 81px;
+                        min-height: 81px;
+                        max-width: 81px;
+                        max-height: 81px;
+                    }
+    
+    
+                    .instName {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+    
+    
+                    .instProf {
+                        font-size: 14px;
+                        line-height: 21px;
+                        margin-bottom: 8px;
+                    }
+                }
+    
+    
+                .hiddenInfo {
+                    font-size: 14px;
+                    line-height: 21px;
+                    // overflow: hidden;
+                    // max-height: 0;
+                    // height: auto;
+                    // transition: max-height 0.3s ease;
+                }
+            }
+    
+    
+            .insCont:hover {
+                border: 1px solid #7E8D9C5E;
+                transition: 0.3 ease;
+            }
+    
+            // .insCont.clicked .hiddenInfo {
+            //     max-height: 300px;
+            // }
+    
+        }
+    }
+    
+    
+    .flexDiv {
+        .slogan {
+            font-size: 28px;
+            line-height: 39px;
+            min-width: 252px;
+        }
+    
+    
+        .description {
+            padding: 24px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
