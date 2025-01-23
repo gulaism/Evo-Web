@@ -23,7 +23,7 @@ const AboutUsBottom = () => {
     { id: 4, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt." },
   ];
   return (
-    <div className="container">
+    <div style={{marginBlock: "150px"}} className="container">
       {/* PARTNERS SECTION */}
       <section className={styles.partners}>
         <h2>Partnyorlar</h2>

@@ -1,0 +1,168 @@
+.generalInfoCont {
+    margin: 100px 0 150px;
+
+
+    h1 {
+        color: #222222;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 90px;
+        margin-bottom: 1px;
+        text-align: center;
+    }
+
+
+    .hashtag {
+        color: #7E8D9C;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+
+    
+}
+
+
+.instructorsCont {
+    margin-bottom: 150px;
+    padding: 0 105px;
+
+
+    .instructorHeader {
+        color: #222222;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .description {
+        color: #7E8D9C;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+
+    .gridCont {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        grid-auto-rows: minmax(150px, auto);
+
+
+        .insCont {
+            background-color: white;
+            border-radius: 32px;
+            padding: 20px 32px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: border 0.3s ease, height 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            grid-row: auto;
+            height: fit-content;
+            
+            .instructor {
+                display: flex;
+                align-items: center;
+                // justify-content: space-between;
+                gap: 16px;
+
+
+                .photoCont {
+                    min-width: 143px;
+                    min-height: 143px;
+                    max-width: 143px;
+                    max-height: 143px;
+                    white-space: nowrap;
+
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        white-space: nowrap;
+                    }
+                }
+
+
+                .instName {
+                    color: #000000;
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 42px;
+                }
+
+
+                .instProf {
+                    color: #7E8D9C;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 27px;
+                    margin-bottom: 18px;
+                }
+            }
+
+
+            .hiddenInfo {
+                color: #7E8D9C;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 27px;
+                overflow: hidden;
+                max-height: 0;
+                height: auto;
+                transition: max-height 0.3s ease;
+            }
+        }
+
+
+        .insCont:hover {
+            border: 1px solid #7E8D9C5E;
+            transition: 0.3 ease;
+        }
+
+        .insCont.clicked .hiddenInfo {
+            max-height: 300px;
+        }
+
+    }
+}
+
+
+.flexDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .slogan {
+        color: #170F49;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 56px;
+        margin-right: 20px;
+        min-width: 400px;
+    }
+
+
+    .description {
+        flex-grow: 1;
+        padding: 42px 0 42px 47px;
+        color: #7E8D9C;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        border-left: 1px solid #7E8D9C45;
+    }
+}
