@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './InternshipCard.module.scss';
 import { GoArrowRight } from "react-icons/go";
+import { IoCloseOutline } from "react-icons/io5";
 
 const InternshipCard = ({ icon, title, description, time, mode, arrow }) => {
   // Modal üçün state
@@ -41,7 +42,9 @@ const InternshipCard = ({ icon, title, description, time, mode, arrow }) => {
       {isModalOpen && (
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>
-            <button onClick={closeModal} className={styles.closeButton}>X</button>
+            <button onClick={closeModal} className={styles.closeButton}>
+            <IoCloseOutline style={{fontSize: "24px",color: "#5848c2"}} />
+            </button>
             <h2>Konsultasiyaya yazıl</h2>
             <form>
               <label>
@@ -58,10 +61,10 @@ const InternshipCard = ({ icon, title, description, time, mode, arrow }) => {
               </label>
               <label>
                 Təcrübə keçmək istədiyiniz sahəni seçin:
-                <div>
+                <div className={styles.field}>
                   <label>
                     <input type="radio" name="field" value="Frontend" />
-                    Front-end Development
+                   Front-end Development
                   </label>
                   <label>
                     <input type="radio" name="field" value="Backend" />
