@@ -6,7 +6,9 @@ import InternshipProgram from './InternShipProgram/InternShipProgram';
 import styles from './AboutUs.module.scss';
 
 const AboutUsBottom = () => {
-  const { data, isLoading, isError } = useGetAboutQuery();
+  const { data = {}, isLoading, isError } = useGetAboutQuery();
+
+  console.log('Backend-dən gələn data:', data);
 
   if (isLoading) {
     return <div>Yüklənir...</div>;
@@ -16,26 +18,31 @@ const AboutUsBottom = () => {
     return <div>Xəta baş verdi!</div>;
   }
 
+  if (!data?.partners || !data?.experienceProgram || !data?.faqs) {
+    return <div>Məlumat yoxdur.</div>;
+  }
+
   const { partners, experienceProgram, faqs } = data;
 
   return (
     <div className="container">
-      {/* PARTNERS SECTION */}
       <section className={styles.partners}>
         <h2>Partnyorlar</h2>
         <PartnerLogos logos={partners.map((partner, index) => ({
           id: index,
-          src: partner, // Assuming this is a URL
+          src: partner,
           alt: `Partnyor ${index + 1}`,
         }))} />
       </section>
 
-      {/* Təcrübə Proqramı */}
       <InternshipProgram programs={experienceProgram} />
 
-      {/* QUESTIONS SECTION */}
       <section className={styles.questions}>
-        <FaqList questions={faqs} />
+        <FaqList questions={faqs.map((faq) => ({
+          id: faq.id,
+          question: faq.question, // Düzgün məlumat ötürülür
+          answer: faq.answer,
+        }))} />
       </section>
     </div>
   );

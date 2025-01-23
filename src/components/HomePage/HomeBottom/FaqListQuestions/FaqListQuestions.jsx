@@ -8,10 +8,16 @@ const FaqList = ({ questions }) => {
     setOpenQuestion(openQuestion === id ? null : id);
   };
 
+  console.log("FaqList-də questions:", questions);
+
+  if (!questions || questions.length === 0) {
+    return <div>Məlumat yoxdur.</div>;
+  }
+
   return (
     <div className={styles.faqContainer}>
-        <div className={styles.faqHeader}>
-      <h2>Tez-Tez Verilən Suallar</h2>
+      <div className={styles.faqHeader}>
+        <h2>Tez-Tez Verilən Suallar</h2>
       </div>
       <ul className={styles.faqList}>
         {questions.map((question) => (
@@ -20,7 +26,7 @@ const FaqList = ({ questions }) => {
               className={styles.faqQuestion}
               onClick={() => toggleQuestion(question.id)}
             >
-              <span>{question.title}</span>
+              <span>{question.question}</span>
               <span
                 className={`${styles.icon} ${
                   openQuestion === question.id ? styles.open : ""
