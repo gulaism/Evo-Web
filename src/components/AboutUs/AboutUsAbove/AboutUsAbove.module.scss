@@ -123,6 +123,7 @@
                 max-height: 0;
                 height: auto;
                 transition: max-height 0.3s ease;
+                margin-top: 16px;
             }
         }
 
@@ -219,13 +220,6 @@
             .insCont {
                 border-radius: 22px;
                 padding: 15px;
-                // cursor: pointer;
-                // transition: border 0.3s ease, height 0.3s ease;
-                // position: relative;
-                // overflow: hidden;
-                // z-index: 1;
-                // grid-row: auto;
-                // height: fit-content;
                 
                 .instructor {
                     gap: 12px;
@@ -256,6 +250,7 @@
                 .hiddenInfo {
                     font-size: 14px;
                     line-height: 21px;
+                    margin-top: 10px;
                 }
             }
     
