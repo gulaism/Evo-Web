@@ -8,7 +8,7 @@ import AboutUs from '../pages/user/AboutUs/AboutUs.jsx'
 const UserRouter = () => {
   return (
     <Routes>
-      <Route element={<UserLayout />}>
+      {/* <Route element={<UserLayout />}> */}
         <Route index path='/' element={<HomePage />} />
         <Route path='/about' element={<AboutUs/>} />
         <Route path='/education' element={<FieldsOfStudy />} /> 
@@ -16,7 +16,7 @@ const UserRouter = () => {
         <Route path='/contact' element={<h1>Elaqe</h1>} />
       
         
-      </Route>
+      {/* </Route> */}
     </Routes>
   )
 }
