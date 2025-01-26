@@ -5,17 +5,17 @@
 }
 
 .faqItem {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(126, 141, 156, 1);
     padding: 1rem 53px;
 
     // mobile üçün
     @media (max-width: 599px) {
-        padding: 1rem 26px;
+        padding: 1rem 16px;
     }
 
     // tablet üçün
     @media (min-width: 600px) and (max-width: 1024px) {
-        padding: 1rem 20px;
+        padding: 1rem 28px;
     }
 
     &:last-child {
@@ -65,7 +65,7 @@
         // mobile üçün
         @media (max-width: 599px) {
             font-size: 32px;
-            right: -22px;
+            right: -16px;
         }
 
         // tablet üçün
@@ -122,13 +122,13 @@
         // mobile üçün
         @media (max-width: 599px) {
             font-size: 24px;
-            margin-bottom: 28px;
+            margin-bottom: 19px;
         }
 
         // tablet üçün
         @media (min-width: 600px) and (max-width: 1024px) {
             font-size: 28px;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
     }
 }

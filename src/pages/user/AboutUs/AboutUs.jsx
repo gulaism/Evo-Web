@@ -6,7 +6,7 @@ import AboutUsBottom from '../../../components/AboutUs/AboutUsBottom/AboutUsBott
 const AboutUs = () => {
     return (
         <div>
-            <AboutUsAbove />
+            {/* <AboutUsAbove /> */}
             <div style={{ marginBottom: "150px" }}></div>
             <AboutUsBottom />
         </div>
