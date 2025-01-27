@@ -1,0 +1,45 @@
+.header {
+  text-align: center;
+  padding: 0 100px;
+
+}
+
+.title {
+  font-size: 60px;
+  color: rgba(34, 34, 34, 1);
+  margin-bottom: 20px;
+  font-weight: 700;
+
+}
+
+.description {
+  font-size: 20px;
+  color: rgba(126, 141, 156, 1);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 48px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.statLabel {
+  font-size: 16px;
+  color: rgba(126, 141, 156, 1);
+  font-weight: 400;
+}

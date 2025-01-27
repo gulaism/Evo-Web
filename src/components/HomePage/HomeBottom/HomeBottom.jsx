@@ -1,80 +1,45 @@
 import React, { useState } from "react";
 import styles from "./HomeBottom.module.scss";
-import logoPartner from "../../../assets/images/HomePage/HomeBottom/Partners/logoPartner.svg";
-import topPerson from "../../../assets/images/HomePage/HomeBottom/TopPerson/topPersonImg.svg";
-import TopPersonCard from "./TopPersonCard/TopPersonCard";
-import FaqList from "./FaqListQuestions/FaqListQuestions";
 import PartnerLogos from "./PartnerLogos/PartnerLogos";
+import FaqList from "./FaqListQuestions/FaqListQuestions";
+import TopPersonCard from "./TopPersonCard/TopPersonCard";
+import { useGetAboutQuery } from "../../../redux/services/aboutApi";
+import { useGetTopPerformanceQuery } from "../../../redux/services/topPerformanceApi";
+
+const HomeBottom = (id) => {
+  const { data: aboutData, isLoading: aboutLoading, isError: aboutError } = useGetAboutQuery();
+  const { data: topPerformanceData, isLoading: topPerformanceLoading, isError: topPerformanceError } =
+  useGetTopPerformanceQuery(id); // Əgər id tərif edilməyibsə, default dəyər təyin olunur
 
 
-const HomeBottom = () => {
-  const faqData = [
-    { id: 1, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.e vestibulum  e vestibulum ", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.e vestibulum e vestibulum" },
-    { id: 2, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-    { id: 3, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
-    { id: 4, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", answer: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt." },
-  ];
-  // Logoların siyahısı
-  const partnerLogos = Array.from({ length: 4 }, (_, index) => ({
-    id: index + 1,
-    src: logoPartner,
-    alt: `Dövlət Məşğulluq Agentliyi ${index + 1}`,
-  }));
-
-  // "Zirvəyə Qalxanlar" üçün məlumatlar
-  const [topPersons] = useState([
-    {
-      id: 1,
-      name: "Paşayev Namiq",
-      role: "Codeon / Rəqəmsal marketoloq",
-      img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir! "
-    },
-    {
-      id: 2,
-      name: "Əliyeva Aygün",
-      role: "UI/UX Dizayner",
-      img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatımda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir! nkişaf etdirdi"
-    },
-    {
-      id: 3,
-      name: "Məmmədov Elçin",
-      role: "Full Stack Developer",
-      img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatımda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir!",
-    },
-    {
-      id: 4,
-      name: "Hüseynova Günay",
-      role: "Backend Developer",
-      img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatımda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir!"
-    },
-    {
-      id: 5,
-      name: "Rzayev Vüqar",
-      role: "DevOps Engineer",
-      img: topPerson,
-      description: "Mən - Paşayev Namiq, Rəqəmsal Marketinq kursuna qatılmaq həyatımda dönüş nöqtəsi oldu. Təlimçimizin keçdiyi hər dərs, hər tapşırıq mənə yeni bir dünyanı açdı və bu bilikləri praktikaya tətbiq etməyim sayəsində CodeOn-da işə başlamaq kimi böyük bir uğur qazandım.Evo Academy isə sadəcə bir təhsil ocağı deyildi; orada mən bir marketoloq olaraq formalaşdım, öz bacarıqlarımı kəşf etdim və inkişaf etdirdim. Əgər karyeranızda sürətli bir sıçrayış etmək istəyirsinizsə, bu kurs sizin üçün mükəmməl seçimdir!",
-    },
-  ]);
-
-  // Kartların göstərilmə idarəsi
   const [showAll, setShowAll] = useState(false);
 
-  // Göstəriləcək kartlar
+  // Yüklənir və ya xəta baş verəndə göstəriləcək mesajlar
+  if (aboutLoading || topPerformanceLoading) return <div>Yüklənir...</div>;
+  if (aboutError || topPerformanceError) return <div>Xəta baş verdi!</div>;
+
+  // Əgər backend-dən məlumat uğurla gəlibsə:
+  const { partners, faqs } = aboutData;
+  const topPersons = topPerformanceData ? [topPerformanceData] : [];// Backend-dən gələn zirvəyə qalxanlar
+
+  // Göstəriləcək şəxslər
   const displayedPersons = showAll ? topPersons : topPersons.slice(0, 4);
 
   return (
     <div className="container">
-      {/* PARTNERS SECTION */}
+      {/* PARTNYORLAR */}
       <section className={styles.partners}>
         <h2>Partnyorlar</h2>
-        <PartnerLogos logos={partnerLogos} />
+        <PartnerLogos
+          logos={partners.map((partner, index) => ({
+            id: index,
+            src: partner,
+            alt: `Partnyor ${index + 1}`,
+          }))}
+        />
       </section>
 
-      {/* TOP-PERSON SECTION */}
+      {/* ZİRVƏYƏ QALXANLAR */}
       <section className={styles.topPerson}>
         <div className={styles.partners}>
           <h2>Zirvəyə Qalxanlar</h2>
@@ -82,67 +47,36 @@ const HomeBottom = () => {
         <div className={styles.topPersonContainer}>
           {displayedPersons.map((person) => (
             <TopPersonCard
-              key={person.id}
-              name={person.name}
-              role={person.role}
-              img={person.img}
-              description={person.description}
+              key={person.pinnancleId} // Backend-dən gələn ID
+              name={person.pinnancleName}
+              role={person.fieldOfStudy}
+              img={person.pinnancleImage}
+              description={person.pinnancleDescription}
             />
           ))}
         </div>
-        {/* SHOW MORE / LESS BUTTON */}
+
+        {/* GÖSTƏR / GİZLƏT DÜYMƏSİ */}
         {topPersons.length > 4 && (
           <div className={styles.toggleButtonContainer}>
-            <button
-              className={styles.toggleButton}
-              onClick={() => setShowAll(!showAll)}
-            >
-              {showAll ? (
-                // Minus işarəsi
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              ) : (
-                // Plus işarəsi
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              )}
+            <button className={styles.toggleButton} onClick={() => setShowAll(!showAll)}>
+              {showAll ? "Gizlət" : "Hamısını Göstər"}
             </button>
           </div>
         )}
+      </section>
 
-
-
-      </section >
-
-
-      {/* QUESTIONS SECTION */}
-      < section className={styles.questions} >
-        <FaqList questions={faqData} />
-      </section >
-    </div >
+      {/* SUALLAR */}
+      <section className={styles.questions}>
+        <FaqList
+          questions={faqs.map((faq) => ({
+            id: faq.id,
+            question: faq.question,
+            answer: faq.answer,
+          }))}
+        />
+      </section>
+    </div>
   );
 };
 
