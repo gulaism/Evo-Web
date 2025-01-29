@@ -1,0 +1,574 @@
+@import "../../../assets/variables/variables.scss";
+
+section:first-of-type {
+    margin-top: 100px;
+}
+section {
+    margin-bottom: 150px;
+}
+.firstSection {
+    .title {
+        color: $mainColor;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 90px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .description {
+        color: $secondColor;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        max-width: 1030px;
+        margin: 0 auto;
+    }
+
+
+    .generalInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+
+        .fieldName {
+            color: #170F49;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 67px;
+            max-width: 400px;
+            margin-right: 54px;
+        }
+
+
+        .fieldDesc {
+            color: $secondColor;
+            font-size: 20px;
+            line-height: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 41px 0 42px 67px ;
+            border-left: 1px solid $secondColor;
+        }
+    }
+}
+
+
+.whatYouWillGet {
+    .title {
+        color: #000000;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 60px;
+        text-align-last: center;
+        margin-bottom: 40px;
+    }
+
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 0;
+
+        .row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 52px;
+
+            .item {
+                flex-basis: calc(50% - 20px);
+                /* 3 columns with 20px margin between */
+                margin: 0px 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .itemTitle {
+                    font-size: 28px;
+                    font-weight: 600;
+                    margin-bottom: 12px;
+                    color: #222222;
+                    line-height: 42px;
+                    max-width: 270px;
+                }
+
+
+                span {
+                    font-weight: 600;
+                    color: #4A3AFF;
+                }
+
+                .itemDescription {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: center;
+                    color: #7E8D9C;
+                }
+            }
+
+        }
+    }
+}
+
+
+.program {
+    .title {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+
+    .programDuration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 173px;
+        margin-bottom: 20px;
+
+
+        .number {
+            color: $mainColor;
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 72px;
+            text-align: center;
+        }
+
+
+        .detail {
+            color: $secondColor;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+        }
+    }
+
+
+    .question {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        max-width: 1115px;
+        margin: 0 auto 28px;
+
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: $secondColor;
+            font-size: 16px;
+            line-height: 24px;
+            background-color: white;
+            border-radius: 12px;
+            border: none;
+            padding: 8px 10px 8px 8px;
+        }
+    }
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+
+        > div {
+            background-color: white;
+            border-radius: 32px;
+            padding: 20px 38px;
+
+
+            .title {
+                color: $mainColor;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 8px;
+                text-align: start;
+            }
+
+
+            .description {
+                color: $secondColor;
+                font-size: 18px;
+                line-height: 27px;
+            }
+        }
+    }
+}
+
+
+.instruktorss {
+    .instructorsCont {
+        padding: 0 105px;
+    
+    
+        .instructorHeader {
+            color: #222222;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 60px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+    
+        .description {
+            color: #7E8D9C;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            margin-bottom: 31px;
+        }
+    
+    
+        .gridCont {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+            row-gap: 31px;
+            grid-auto-rows: minmax(150px, auto);
+    
+    
+            .insCont {
+                background-color: white;
+                border-radius: 32px;
+                padding: 20px 32px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                transition: border 0.3s ease, height 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                grid-row: auto;
+                height: fit-content;
+                
+                .instructor {
+                    display: flex;
+                    align-items: center;
+                    // justify-content: space-between;
+                    gap: 16px;
+    
+    
+                    .photoCont {
+                        width: 143px;
+                        height: 143px;
+                        white-space: nowrap;
+                        flex-shrink: 0;
+    
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            white-space: nowrap;
+                        }
+                    }
+    
+    
+                    .instName {
+                        color: #000000;
+                        font-weight: 600;
+                        font-size: 28px;
+                        line-height: 42px;
+                        white-space: nowrap;
+                    }
+    
+    
+                    .instProf {
+                        color: #7E8D9C;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 27px;
+                        margin-bottom: 18px;
+                    }
+                }
+    
+    
+                .hiddenInfo {
+                    color: #7E8D9C;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 27px;
+                    overflow: hidden;
+                    max-height: 0;
+                    height: auto;
+                    transition: max-height 0.3s ease;
+                    margin-top: 16px;
+                }
+            }
+    
+    
+            .insCont:hover {
+                border: 1px solid #7E8D9C5E;
+                transition: 0.3 ease;
+            }
+    
+            .insCont.clicked .hiddenInfo {
+                max-height: 300px;
+            }
+    
+        }
+    }
+}
+
+
+.nextGroups {
+    .title {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+        margin-bottom: 31px;
+    }
+
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1030px;
+        align-items: center;
+        margin: 0 auto;
+
+
+        > div {
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px;
+            min-width: 400px;
+
+
+
+            .title {
+                color: $mainColor;
+                font-weight: 600;
+                font-size: 28px;
+                line-height: 42px;
+                margin-bottom: 8px;
+                text-align: start;
+            }   
+
+
+            .type {
+                color: $secondColor;
+                font-size: 18px;
+                line-height: 27px;
+                margin-bottom: 4px;
+            }
+
+
+            .time {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 16px;
+                color: $secondColor;
+                font-size: 18px;
+                line-height: 27px;
+                margin-bottom: 12px;
+            }
+
+
+            button {
+                background-color: #4A3AFF;
+                color: white;
+                border-radius: 16px;
+                border: none;
+                padding: 10px 20px;
+                display: flex;
+                justify-self: end;
+            }
+        }
+    }
+}
+
+
+.portfolio {
+    .title {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .desc {
+        color: $secondColor;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        margin: 0 auto 40px;
+        max-width: 1030px;
+    }
+
+
+    .slider {
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: scroll;
+        display: flex;
+        scrollbar-width: none;
+        gap: 20px;
+        height: max-content;
+
+
+        > div {
+            background-color: white;
+            border-radius: 32px;
+            padding: 20px;
+            max-width: 505px;
+            // max-height: 520px;
+            height: max-content;
+
+
+            .studentInfo {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+
+
+                .img {
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+
+                .name {
+                    color: $mainColor;
+                    font-size: 20px;
+                    line-height: 30px;
+                    white-space: nowrap;
+                }
+
+
+                .job {
+                    color: $secondColor;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+
+
+            .saying {
+                color: $mainColor;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 10px;   
+            }
+
+
+            // .grid {
+            //     display: grid;
+            //     grid-template-columns: repeat(2, 226px);
+            //     gap: 13px;
+
+
+            //     .box {
+            //         width: 226px;
+            //         height: 172px;
+            //         transition: all 0.3s ease;
+            //         overflow: hidden;
+            //         cursor: pointer;
+            //         border-radius: 16px;
+
+
+            //         img {
+            //             width: 100%;
+            //             height: 100%;
+            //             object-fit: cover;
+            //         }
+            //     }
+            // }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                // grid-template-rows: repeat(2, 100px);
+                gap: 13px;
+              }
+              
+              .box {
+                width: 226px;
+                height: 172px;
+                transition: all 0.3s ease;
+                overflow: hidden;
+                cursor: pointer;
+                border-radius: 16px;
+              }
+              
+              .box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              
+              .hovered {
+                width: 465px;
+                height: 344px;
+                z-index: 1;
+              }
+
+
+            // .grid:hover .box:nth-of-type(1):hover {
+            //     grid-column: 1 / 3;
+            //     grid-row: 1 / 2;
+            //     width: 465px;
+            //     height: 357px;
+            //     transform: translate(0, 0);
+            //     z-index: 1;
+            // }
+
+            // .grid:hover .box:nth-of-type(2):hover {
+            //     grid-column: 1 / 2;
+            //     grid-row: 2 / 3;
+            //     width: 465px;
+            //     height: 357px;
+            //     transform: translate(0, 0);
+            //     z-index: 1;
+            // }
+            
+        }
+    }
+}
