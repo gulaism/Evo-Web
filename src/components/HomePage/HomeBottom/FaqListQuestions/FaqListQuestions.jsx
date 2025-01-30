@@ -8,8 +8,6 @@ const FaqList = ({ questions }) => {
     setOpenQuestion(openQuestion === id ? null : id);
   };
 
-  console.log("FaqList-də questions:", questions);
-
   if (!questions || questions.length === 0) {
     return <div>Məlumat yoxdur.</div>;
   }

@@ -5,14 +5,14 @@ import styles from "./ResponsiveNavbar.module.scss";
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
 import bottomArrow from "../../../assets/images/Header/bottomArrow.svg"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const fields = [
     {
       name: "Proqramlaşdırma",
       description: "Front-end  və Back-end proqramlaşdırma",
       subTopics: [
-        "Andvanced Front-end",
+        "Advanced Front-end",
         "Back-end Java",
       ],
     },
@@ -62,16 +62,22 @@ const fields = [
     },
 ]
 
-const FieldsComponent = () => {
+const FieldsComponent = ({ setShowResponsiveNavbar }) => {
     const [ showDetailsOfField, setShowDetailsOfField ] = useState(null);
+    const navigate = useNavigate();
 
     const handleToggleField = (id) =>
       setShowDetailsOfField((prev) => (prev === id ? null : id));
 
+    const goToTheField = (nameOfField) => {
+      navigate("/field", {state: {field: nameOfField}});
+      setShowResponsiveNavbar(false);
+    }
+
     return (
       <div className={styles.fieldsdCont}>
         {fields.map((field, index) => (
-          <div>
+          <div key={index}>
             <div onClick={() => handleToggleField(index)} className={styles.flexEl} key={index}>
               <div className={styles.mainIconCont}>
                 <FaLaptopCode size={25} color="#4A3AFF" />
@@ -96,7 +102,7 @@ const FieldsComponent = () => {
             {showDetailsOfField === index && (
               <div className={styles.subTopics}>
                 {field.subTopics.map((sbTpc, index) => (
-                  <div key={index}>{sbTpc}</div>
+                  <div onClick={() => goToTheField(sbTpc)} key={index}>{sbTpc}</div>
                 ))}
               </div>
             )}
@@ -157,7 +163,7 @@ const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
         <BiLeftArrowAlt color="#170F49" size={18} />
         <div>Geri qayıt</div>
       </div>
-      <FieldsComponent />
+      <FieldsComponent setShowResponsiveNavbar={setShowResponsiveNavbar}/>
     </div>
   );
 }

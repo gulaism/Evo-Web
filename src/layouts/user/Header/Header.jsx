@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import logo from '../../../assets/images/Header/EvoCodingLogo.svg'
 // styles
 import styles from "./Header.module.scss"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { FaLaptopCode } from 'react-icons/fa';
 import { RiShieldKeyholeFill } from 'react-icons/ri';
@@ -16,65 +16,60 @@ const fields = [
   {
     name: "Proqramlaşdırma",
     description: "Front-end  və Back-end proqramlaşdırma",
-    subTopics: [
-      "Andvanced Front-end",
-      "Back-end Java",
-    ],
+    subTopics: ["Advanced Front-end", "Back-end Java"],
   },
   {
     name: "Ethical Hacking",
     description: "Ethical Hacking",
-    subTopics: [
-      "Ethical Hacking",
-    ],
+    subTopics: ["Ethical Hacking"],
   },
   {
     name: "Dizayn",
     description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
-    subTopics: [
-      "Qrafik/Motion dizayn",
-      "İnteryer dizayn",
-      "UX/UI dizayn",
-    ],
+    subTopics: ["Qrafik/Motion dizayn", "İnteryer dizayn", "UX/UI dizayn"],
   },
   {
     name: "Data analitika",
     description: "Data analitika",
-    subTopics: [
-      "Data analitika",
-    ],
+    subTopics: ["Data analitika"],
   },
   {
     name: "Q/A Manual Testing",
     description: "Q/A Manual Testing",
-    subTopics: [
-      "Q/A Manual Testing",
-    ],
+    subTopics: ["Q/A Manual Testing"],
   },
   {
     name: "Rəqəmsal Marketinq",
     description: "Rəqəmsal Marketinq",
-    subTopics: [
-      "Rəqəmsal Marketinq",
-    ],
+    subTopics: ["Rəqəmsal Marketinq"],
   },
   {
     name: "Agile",
     description: "Agile",
-    subTopics: [
-      "Agile",
-    ],
+    subTopics: ["Agile"],
   },
-]
+];
 
 const HoveredSubCont = ({ subTopics }) => {
+  const navigate = useNavigate();
+
+  const openTheField = (fieldName) => {
+    navigate('/field', {state: {field: fieldName}});
+  } 
+
   return (
     <div className={styles.hoveredSubCont}>
       {subTopics.map((subTopic, index) => (
-        <div key={index}>{subTopic}</div>
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => openTheField(subTopic)}
+          key={index}
+        >
+          {subTopic}
+        </div>
       ))}
     </div>
-  )
+  );
 }
 
 const Header = ({  showApplication, setShowApplication }) => {
