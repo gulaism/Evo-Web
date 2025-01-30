@@ -1,35 +1,104 @@
+.portfolio {
+  text-align: center;
+  //padding: 50px 100px;
 
-  
   .title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
   }
-  
-  .list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+
+  .description {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(126, 141, 156, 1);
+    margin-bottom: 40px;
   }
-  
+  // .grid{
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit, minmax(505px, 1fr));
+  //   gap: 20px;
+  // }
+
+  .swiper {
+    overflow: hidden;
+    padding: 20px 0;
+  }
+  .swiperSlide{
+    width: 505px !important;
+  }
+
   .card {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 32px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
-  
-  .image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
   }
-  
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
   .name {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(34, 34, 34, 1);
   }
+
+  .field {
+    font-size: 16px;
+    color: rgba(126, 141, 156, 1);
+    font-weight: 400;
+  }
+
+  .review {
+    color: rgba(34, 34, 34, 1);
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    align-items: start;
+    position: relative;
+  }
+
+  .workImage {
+    //width: 240px;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+  }
+
+  .workImage:hover {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    width: 465px;
+    height: 357px;
+    transform: translate(0, 0);
+    z-index: 1;
+  }
+
+  // .workImage:hover + .workImage {
+  //  // transform: translateY(50px); // Yanındakı şəkil aşağı düşür
+  //   transition: transform 0.4s ease;
+  // }
+}

@@ -3,63 +3,57 @@ import PropTypes from "prop-types";
 import styles from "../GraduatesSection/GraduatesSection.module.scss";
 
 const GraduatesSection = ({ graduates }) => {
-    const [expandedId, setExpandedId] = useState(null); // Hansi card genişlənib?
+    const [expandedId, setExpandedId] = useState(null);
     const [showAll, setShowAll] = useState(false);
 
     const toggleExpand = (id) => {
-        setExpandedId(expandedId === id ? null : id); // Açıqsa bağla, bağlıdırsa aç
+        setExpandedId(expandedId === id ? null : id);
     };
 
+    // Yalnız 6 məzunu göstərmək üçün `visibleGraduates` yaradılır
     const visibleGraduates = showAll ? graduates : graduates.slice(0, 6);
 
     return (
         <section className={styles.graduates}>
             <h2 className={styles.title}>Gələcəyi quranlar</h2>
             <p className={styles.description}>
-                Məzunlarımızın uğurları, bizim davamlı inkişafımızın və təhsil sahəsindəki öndə olmağı məqsədimizin təcəssümüdür. Hər bir məzunumuz, akademiyamızın dəyərini və peşəkar vizyonunu dünyada təmsil edir.
+                Məzunlarımızın uğurları, bizim davamlı inkişafımızın və təhsil sahəsindəki öndə olmağı məqsədimizin təcəssümüdür.
             </p>
-            <div className={styles.list}>
-                {visibleGraduates.map((graduate) => (
+
+            <div className={styles.gridCont}>
+                {visibleGraduates.map((instructor) => (
                     <div
-                        key={graduate.id}
-                        className={`${styles.card} ${expandedId === graduate.id ? styles.expanded : ""}`}
+                        onClick={() => toggleExpand(instructor.id)}
+                        className={`${styles.insCont} ${expandedId === instructor.id ? styles.clicked : ""}`}
+                        key={instructor.id}
+                        style={expandedId === instructor.id ? { border: "1px solid #7E8D9C5E" } : {}}
                     >
-                        <img
-                            onClick={() => toggleExpand(graduate.id)}
-                            src={graduate.image}
-                            alt={graduate.name}
-                            className={styles.image}
-                        />
-                        <div className={styles.graduateInfo}>
-                            <h3
-                                className={styles.name}
+                        <div className={styles.instructor}>
+                            <div className={styles.photoCont}>
+                                <img src={instructor.photo} alt={`${instructor.name}'s photo`} />
+                            </div>
+                            <div
+                                className={styles.info}
                                 onClick={(e) => {
-                                    e.stopPropagation(); // Kart genişlənməsin
-                                    window.open(graduate.linkedin, "_blank"); // Yeni tabda aç
+                                    e.stopPropagation(); // Parent div-in klik eventinin işə düşməsinin qarşısını alır
+                                    window.open(instructor.link, "_blank"); // LinkedIn linkini yeni tab-da açır
                                 }}
                             >
-                                {graduate.name}
-                            </h3>
-                            <p
-                                className={styles.field}
-                                onClick={(e) => {
-                                    e.stopPropagation(); // Kart genişlənməsin
-                                    window.open(graduate.linkedin, "_blank"); // Yeni tabda aç
-                                }}
-                            >
-                                {graduate.field}
-                            </p>
+                                <div className={styles.instName}>{instructor.name}</div>
+                                <div className={styles.instProf}>{instructor.profession}</div>
+                            </div>
+
                         </div>
-                        {expandedId === graduate.id && (
-                            <p className={styles.thoughts}>
-                                “Akademiyada aldığım təhsil mənə yüksək səviyyədə texniki bacarıqlar
-                                qazandırdı. Kursların strukturlaşdırılması və müasir metodologiyalardan istifadə mənim üçün çox
-                                faydalı oldu. Tədrisin keyfiyyəti çox yüksəkdir.”
-                            </p>
+                        {expandedId === instructor.id && (
+                            <div className={styles.hiddenInfo}>
+                                “Akademiyada aldığım təhsil mənə yüksək səviyyədə texniki bacarıqlar qazandırdı. Kursların strukturlaşdırılması və müasir metodologiyalardan istifadə mənim üçün çox faydalı oldu. Tədrisin keyfiyyəti çox yüksəkdir.”
+                            </div>
                         )}
                     </div>
                 ))}
             </div>
+
+            {/* Əgər məzun sayı 6-dan çoxdursa, toggle button göstərilir */}
             {graduates.length > 6 && (
                 <div className={styles.toggleButtonContainer}>
                     <button
@@ -109,9 +103,9 @@ GraduatesSection.propTypes = {
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
-            field: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-            linkedin: PropTypes.string.isRequired, // LinkedIn profili üçün
+            profession: PropTypes.string.isRequired,
+            photo: PropTypes.string.isRequired,
+            link: PropTypes.string.isRequired,
         })
     ).isRequired,
 };
