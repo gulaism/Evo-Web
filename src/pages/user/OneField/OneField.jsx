@@ -10,6 +10,7 @@ import {
 } from "react-icons/si";
 import { useLocation, useNavigate } from "react-router-dom";
 import Application from "../../../layouts/user/Header/Application";
+import Modal from "./Modal";
 
 // const instructors = [
 //   {
@@ -704,6 +705,8 @@ const OneField = () => {
     );
   }
   const [itemsPerRow, setItemsPerRow] = useState(3);
+  
+  const [ showModal, setShowModal ] = useState(false);
   useEffect(() => {
     if (window.innerWidth <= 600) setItemsPerRow(1);
     else if (window.innerWidth >= 600 && window.innerWidth <= 1024) {
@@ -726,15 +729,12 @@ const OneField = () => {
     console.log(field);
   }, [field]);
 
-  const [hoveredBox, setHoveredBox] = useState(null);
-
   const handleClickingInsCont = (id) => {
     console.log(id);
     setClickedIns((prevId) => (prevId === id ? null : id));
   };
 
-  const handleMouseEnter = (index) => setHoveredBox(index);
-  const handleMouseLeave = () => setHoveredBox(null);
+  const openModal = () => setShowModal(true);
 
   return (
     fieldName !== undefined && (
@@ -812,6 +812,7 @@ const OneField = () => {
             ))}
           </div>
         </section>
+        {showModal && <Modal setShowModal = {setShowModal} />}
         <section className={styles.instruktorss}>
           <div className={styles.instructorsCont}>
             <div className={styles.instructorHeader}>İnstruktorlar</div>
@@ -884,7 +885,7 @@ const OneField = () => {
                     <div key={index}>{time}</div>
                   ))}
                 </div>
-                <button>Müraciət et</button>
+                <button onClick={openModal}>Müraciət et</button>
               </div>
             ))}
           </div>
@@ -917,175 +918,186 @@ const OneField = () => {
                   dəstək və motivasiya mənbəyi olan bir ailədir!"
                 </div>
                 <div className={styles.grid}>
-                  {/* {[0, 1, 2, 3].map((index) => {
-                let gridArea;
-                console.log(hoveredBox);
-
-                if (hoveredBox === null) {
-                  // Default positions when no box is hovered
-                  gridArea =
-                    index === 0
-                      ? "1/1/2/2"
-                      : index === 1
-                      ? "1/2/2/3"
-                      : index === 2
-                      ? "2/1/3/2"
-                      : "2/2/3/3";
-                } else if (hoveredBox === index) {
-                  // Enlarge the hovered box
-                  gridArea = "1/1/3/3";
-                } else if (hoveredBox === 0 || hoveredBox === 1) {
-                  // When Box 0 or 1 is hovered, reposition other boxes
-                  gridArea =
-                    index === 0 || index === 1
-                      ? "3/1/4/2"
-                      : index === 2
-                      ? "3/2/4/3"
-                      : "4/1/5/2";
-                } else {
-                  // When Box 2 or 3 is hovered
-                  gridArea =
-                    index === 0
-                      ? "3/1/4/2"
-                      : index === 1
-                      ? "3/2/4/3"
-                      : index === 2
-                      ? "3/2/4/3"
-                      : "4/1/5/2";
-                }
-
-                return (
-                  <div
-                    key={index}
-                    className={`${styles.box} ${
-                      hoveredBox === index ? styles.hovered : ""
-                    }`}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                    style={{ gridArea }}
-                  >
+                  <div className={styles.box}>
                     <img
-                      src={
-                        index === 0
-                          ? "https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
-                          : index === 1
-                          ? "https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
-                          : index === 2
-                          ? "https://images.unsplash.com/photo-1735822081174-c919b99e8623?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY4OTJ8&ixlib=rb-4.0.3&q=85"
-                          : "https://images.unsplash.com/photo-1735064812360-7358ca479c00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY5NTh8&ixlib=rb-4.0.3&q=85"
-                      }
+                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
                       alt=""
                     />
                   </div>
-                );
-              })} */}
-
-                  {/* <div className={styles.box}>
-                <img
-                  src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
-                  alt=""
-                />
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85" alt="" />
+                  </div>
+                  <div className={styles.box}>
+                    <img src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85" alt="" />
+                  </div>
+                </div>
               </div>
-              <div className={styles.box}>
-                <img
-                  src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
-                  alt=""
-                />
+              <div>
+                <div className={styles.studentInfo}>
+                  <div className={styles.img}>
+                    <img src="https://thispersondoesnotexist.com" alt="" />
+                  </div>
+                  <div>
+                    <div className={styles.name}>Elizabeth Bennet</div>
+                    <div className={styles.job}>
+                      Freelance / Qrafik Dizayner
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.saying}>
+                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə
+                  dəstək və motivasiya mənbəyi olan bir ailədir!"
+                </div>
+                <div className={styles.grid}>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85" alt="" />
+                  </div>
+                  <div className={styles.box}>
+                    <img src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85" alt="" />
+                  </div>
+                </div>
               </div>
-              <div className={styles.box}>
-                <img src="https://thispersondoesnotexist.com" alt="" />
+              <div>
+                <div className={styles.studentInfo}>
+                  <div className={styles.img}>
+                    <img src="https://thispersondoesnotexist.com" alt="" />
+                  </div>
+                  <div>
+                    <div className={styles.name}>Elizabeth Bennet</div>
+                    <div className={styles.job}>
+                      Freelance / Qrafik Dizayner
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.saying}>
+                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə
+                  dəstək və motivasiya mənbəyi olan bir ailədir!"
+                </div>
+                <div className={styles.grid}>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85" alt="" />
+                  </div>
+                  <div className={styles.box}>
+                    <img src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85" alt="" />
+                  </div>
+                </div>
               </div>
-              <div className={styles.box}>
-                <img src="https://thispersondoesnotexist.com" alt="" />
+              {/* <div>
+                <div className={styles.studentInfo}>
+                  <div className={styles.img}>
+                    <img src="https://thispersondoesnotexist.com" alt="" />
+                  </div>
+                  <div>
+                    <div className={styles.name}>Elizabeth Bennet</div>
+                    <div className={styles.job}>
+                      Freelance / Qrafik Dizayner
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.saying}>
+                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə
+                  dəstək və motivasiya mənbəyi olan bir ailədir!"
+                </div>
+                <div className={styles.grid}>
+                  <div className={styles.box}>
+                    <img
+                      src="https://images.unsplash.com/photo-1735064812360-7358ca479c00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY5NTh8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://images.unsplash.com/photo-1735822081174-c919b99e8623?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY4OTJ8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className={styles.studentInfo}>
+                  <div className={styles.img}>
+                    <img src="https://thispersondoesnotexist.com" alt="" />
+                  </div>
+                  <div>
+                    <div className={styles.name}>Elizabeth Bennet</div>
+                    <div className={styles.job}>
+                      Freelance / Qrafik Dizayner
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.saying}>
+                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə
+                  dəstək və motivasiya mənbəyi olan bir ailədir!"
+                </div>
+                <div className={styles.grid}>
+                  <div className={styles.box}>
+                    <img
+                      src="https://images.unsplash.com/photo-1735064812360-7358ca479c00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY5NTh8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://images.unsplash.com/photo-1735822081174-c919b99e8623?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY4OTJ8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <img
+                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
+                      alt=""
+                    />
+                  </div>
+                </div>
               </div> */}
-                </div>
-              </div>
-              <div>
-                <div className={styles.studentInfo}>
-                  <div className={styles.img}>
-                    <img src="https://thispersondoesnotexist.com" alt="" />
-                  </div>
-                  <div>
-                    <div className={styles.name}>Elizabeth Bennet</div>
-                    <div className={styles.job}>
-                      Freelance / Qrafik Dizayner
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.saying}>
-                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə
-                  dəstək və motivasiya mənbəyi olan bir ailədir!"
-                </div>
-                <div className={styles.grid}>
-                  <div className={styles.box}>
-                    <img
-                      src="https://images.unsplash.com/photo-1735064812360-7358ca479c00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY5NTh8&ixlib=rb-4.0.3&q=85"
-                      alt=""
-                    />
-                  </div>
-                  <div className={styles.box}>
-                    <img
-                      src="https://images.unsplash.com/photo-1735822081174-c919b99e8623?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY4OTJ8&ixlib=rb-4.0.3&q=85"
-                      alt=""
-                    />
-                  </div>
-                  <div className={styles.box}>
-                    <img
-                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
-                      alt=""
-                    />
-                  </div>
-                  <div className={styles.box}>
-                    <img
-                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className={styles.studentInfo}>
-                  <div className={styles.img}>
-                    <img src="https://thispersondoesnotexist.com" alt="" />
-                  </div>
-                  <div>
-                    <div className={styles.name}>Elizabeth Bennet</div>
-                    <div className={styles.job}>
-                      Freelance / Qrafik Dizayner
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.saying}>
-                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə
-                  dəstək və motivasiya mənbəyi olan bir ailədir!"
-                </div>
-                <div className={styles.grid}>
-                  <div className={styles.box}>
-                    <img
-                      src="https://images.unsplash.com/photo-1735064812360-7358ca479c00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY5NTh8&ixlib=rb-4.0.3&q=85"
-                      alt=""
-                    />
-                  </div>
-                  <div className={styles.box}>
-                    <img
-                      src="https://images.unsplash.com/photo-1735822081174-c919b99e8623?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgxNDY4OTJ8&ixlib=rb-4.0.3&q=85"
-                      alt=""
-                    />
-                  </div>
-                  <div className={styles.box}>
-                    <img
-                      src="https://fastly.picsum.photos/id/634/200/200.jpg?hmac=3WUmj9wMd1h3UZICk1C5iydU5fixjx0px9jw-LBezgg"
-                      alt=""
-                    />
-                  </div>
-                  <div className={styles.box}>
-                    <img
-                      src="https://fastly.picsum.photos/id/465/200/200.jpg?hmac=66oxx-Qv8Bakk-7zPy6Kdv7t064QKKWhmDwQTWGZ7A0"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
         )}
