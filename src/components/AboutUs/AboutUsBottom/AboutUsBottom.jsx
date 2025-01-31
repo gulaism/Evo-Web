@@ -1,9 +1,9 @@
 import React from 'react';
-import { useGetAboutQuery } from '../../../redux/services/aboutApi';
 import PartnerLogos from '../../HomePage/HomeBottom/PartnerLogos/PartnerLogos';
 import FaqList from '../../HomePage/HomeBottom/FaqListQuestions/FaqListQuestions';
 import styles from './AboutUs.module.scss';
 import InternshipProgram from './InternshipProgram/InternshipProgram';
+import { useGetAboutQuery } from '../../../redux/services/apiSlice';
 
 const AboutUsBottom = () => {
   const { data = {}, isLoading, isError } = useGetAboutQuery();

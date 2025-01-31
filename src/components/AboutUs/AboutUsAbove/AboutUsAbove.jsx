@@ -2,7 +2,7 @@
 import { FaLinkedin } from "react-icons/fa";
 import styles from "./AboutUsAbove.module.scss";
 import { useEffect, useState } from "react";
-import { useGetAboutQuery } from "../../../redux/services/aboutApi";
+import { useGetAboutQuery } from "../../../redux/services/apiSlice";
 
 const instructors = [
   {
