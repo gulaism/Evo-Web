@@ -338,7 +338,7 @@ const HomeAbove = () => {
           əldə edin.
         </div>
         <div className={styles.button}>
-          <Link to="/education" style={{ cursor: "none" }}>
+          <Link to={'/education'} style={{ cursor: "none" }}>
             Kəşf et
           </Link>
         </div>

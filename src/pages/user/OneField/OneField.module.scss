@@ -39,7 +39,7 @@ section {
             font-weight: 700;
             font-size: 48px;
             line-height: 67px;
-            max-width: 400px;
+            width: 400px;
             margin-right: 54px;
         }
 
@@ -53,6 +53,7 @@ section {
             gap: 20px;
             padding: 41px 0 42px 67px ;
             border-left: 1px solid $secondColor;
+            width: 100%;
         }
     }
 }
