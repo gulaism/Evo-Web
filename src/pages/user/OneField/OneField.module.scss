@@ -35,7 +35,7 @@ section {
 
 
         .fieldName {
-            color: #170F49;
+            color: $mainColor;
             font-weight: 700;
             font-size: 48px;
             line-height: 67px;
@@ -61,7 +61,7 @@ section {
 
 .whatYouWillGet {
     .title {
-        color: #000000;
+        color: $mainColor;
         font-weight: 600;
         font-size: 40px;
         line-height: 60px;
@@ -93,7 +93,7 @@ section {
 
                 .itemTitle {
                     font-size: 28px;
-                    font-weight: 600;
+                    font-weight: 400;
                     margin-bottom: 12px;
                     color: #222222;
                     line-height: 42px;
@@ -200,7 +200,8 @@ section {
                 > img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
+
+                    object-fit: contain;
                 }
             }
         }
@@ -323,7 +324,7 @@ section {
     
     
                     .instName {
-                        color: #000000;
+                        color: $mainColor;
                         font-weight: 600;
                         font-size: 28px;
                         line-height: 42px;
@@ -684,6 +685,415 @@ section {
               .grid:has(.box:hover) {
                 height: 727px;
               }            
+        }
+    }
+}
+
+
+// tablet
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    section:first-of-type {
+        margin-top: 80px;
+    }
+    section {
+        margin-bottom: 90px;
+    }
+    .firstSection {
+        .title {
+            font-size: 40px;
+            line-height: 41px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+    
+    
+        .description {
+            font-size: 16px;
+            line-height: 24px;
+            max-width: 563px;
+        }
+    
+    
+        .generalInfo {
+            margin-top: 32px;
+    
+    
+            .fieldName {
+                font-size: 28px;
+                line-height: 39px;
+                width: 202px;
+                margin-right: 24px;
+            }
+    
+    
+            .fieldDesc {
+                font-size: 16px;
+                line-height: 24px;
+                gap: 18px;
+                padding: 10px 0 15px 24px ;
+            }
+        }
+    }
+    
+    
+    .whatYouWillGet {
+        .title {
+            font-size: 28px;
+            line-height: 42px;
+            margin-bottom: 32px;
+        }
+    
+    
+        .grid {
+            .row {
+                margin-bottom: 20px;
+    
+                .item {
+                    .itemTitle {
+                        font-size: 24px;
+                        line-height: 36px;
+                    }
+
+
+                    .itemDescription {
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+                }
+    
+            }
+        }
+    }
+    
+    
+    .program {
+        .title {
+            font-size: 28px;
+            line-height: 42px;
+            margin-bottom: 32px;
+        }
+    
+    
+        .programDuration {
+            gap: 90px;
+    
+    
+            .number {
+                font-size: 32px;
+                line-height: 48px;
+            }
+    
+    
+            .detail {
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    
+    
+        .question {
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+    
+    
+        .tools {
+            gap: 12px;
+            max-width: 564px;
+            margin: 0 auto 20px;
+    
+    
+            .tool {
+                font-size: 14px;
+                line-height: 21px;
+                padding: 5px 10px 5px 5px;
+    
+    
+                >div:first-of-type {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    
+    
+        .grid {
+            grid-template-columns: repeat(1, 1fr);
+    
+    
+            > div {
+                padding: 16px 20px;
+                user-select: none;
+                
+
+                .title {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+
+
+                .description {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+        }
+    }
+    
+    
+    .instruktorss {
+        .instructorsCont {
+            padding: 0;
+        
+        
+            .instructorHeader {
+                font-size: 28px;
+                line-height: 42px;
+                margin-bottom: 12px;
+            }
+        
+        
+            .description {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 32px;
+            }
+        
+        
+            .gridCont {
+                row-gap: 20px;
+                grid-auto-rows: minmax(113px, auto);
+        
+        
+                .insCont {
+                    border-radius: 22px;
+                    padding: 15px;
+                    
+                    .instructor {
+                        gap: 12px;
+        
+        
+                        .photoCont {
+                            width: 81px;
+                            height: 81px;
+                        }
+        
+        
+                        .instName {
+                            color: $mainColor;
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+        
+        
+                        .instProf {
+                            font-size: 14px;
+                            line-height: 21px;
+                            margin-bottom: 8px;
+                        }
+                    }
+        
+        
+                    .hiddenInfo {
+                        font-size: 14px;
+                        line-height: 21px;
+                        margin-top: 10px;
+                    }
+                }
+                
+
+                .insCont.clicked .hiddenInfo {
+                    max-height: auto;
+                }
+            }
+        }
+    }
+    
+    
+    .nextGroups {
+        max-width: 100%;
+        margin: 0 auto 90px;
+    
+    
+        .title {
+            font-size: 28px;
+            line-height: 42px;
+            margin-bottom: 32px;
+        }
+    
+    
+        .flex {
+            max-width: 100%;
+    
+    
+            > div {
+                min-width: 342px;
+    
+    
+    
+                .title {
+                    font-size: 20px;
+                    line-height: 30px;
+                }   
+    
+    
+                .type {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+    
+    
+                .time {
+                    gap: 8px;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+    
+    
+                button {
+                    border-radius: 12px;
+                    padding: 10px 10px;
+                }
+            }
+    
+    
+            .noGroups {
+                padding: 20px 20px;
+                max-width: 523px;
+    
+    
+                .title {
+                    font-weight: 700;
+                    max-width: 253px;
+                }
+    
+    
+                .desc {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+    
+    
+                .animationCont {
+                    .arrowWrapper {
+                        width: 36px;
+                        height: 36px;
+                        padding: 7px 8px 8px 5px;
+                
+                        /* Hover zamanı düymənin genişlənməsi */
+                        &:hover {
+                        width: 166px;
+                        background-color: #7367FF;
+                        height: 46px;
+                        //   display: flex;
+                        //   align-items: center;
+                        //   justify-content: flex-start;
+                        //   padding-left: 10px;
+                        //   white-space: nowrap;
+                        }
+                
+                        /* Genişlənən düymə üçün konteyner */
+                        .expandButton {
+                        gap: 8px;
+                
+                        
+                        .hoverIcon {
+                            font-size: 20px;
+                        }
+                
+                        .hoverText {
+                            font-size: 14px;
+                            line-height: 21px;
+                        }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .portfolio {
+        .title {
+            font-size: 28px;
+            line-height: 42px;
+            margin-bottom: 12px;
+        }
+    
+    
+        .desc {
+            font-size: 16px;
+            line-height: 24px;
+            margin: 0 auto 32px;
+            max-width: 100%;
+        }
+    
+    
+        .slider {
+            > div {
+                border-radius: 26px;
+                padding: 14px 19px;
+                max-width: 342px;
+    
+    
+                .studentInfo {
+                    gap: 8px;
+                    margin-bottom: 8px;
+    
+    
+                    .img {
+                        width: 42px;
+                        height: 42px;
+                    }
+    
+    
+                    .name {
+                        font-size: 18px;
+                        line-height: 27px;
+                    }
+    
+    
+                    .job {
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+                }
+    
+    
+                .saying {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+                
+    
+                .grid {
+                    grid-template-columns: 147px auto;
+                    gap: 12px;
+                    width: 306px;
+                    height: 232px;
+                  }
+
+                  
+                  .box img {
+                    border-radius: 12px;
+                  }
+    
+                  .box:hover {
+                    grid-column: 1 / span 2;
+                    grid-row: 1 / span 2;
+                  }
+    
+                  .box:hover ~ div {
+                    grid-column: span 1;
+                    grid-row: auto;
+                  }
+    
+                  .grid:has(.box:hover) {
+                    height: 479px;
+                  }            
+            }
         }
     }
 }

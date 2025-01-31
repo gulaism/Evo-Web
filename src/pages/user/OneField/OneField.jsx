@@ -834,7 +834,7 @@ const OneField = () => {
                   <div className={styles.arrowWrapper}>
                     <TfiArrowTopRight
                       className={styles.icon}
-                      size={26}
+                      size={windowWidth === "web" ? 26 : 20}
                       color="#7367FF"
                     />
                     <div className={styles.expandButton}>
