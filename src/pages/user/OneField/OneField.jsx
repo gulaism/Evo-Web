@@ -11,6 +11,8 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import Application from "../../../layouts/user/Header/Application";
 import Modal from "./Modal";
+import { TfiArrowTopRight } from "react-icons/tfi";
+import { GoArrowRight } from "react-icons/go";
 
 // const instructors = [
 //   {
@@ -284,16 +286,6 @@ const fields = [
       },
     ],
     nextGroups: [
-      {
-        date: "29 yanvar 2025",
-        weekPart: "Həftəiçi",
-        times: ["11:00-13:00", "19:00-21:00"],
-      },
-      {
-        date: "2 fevral 2025",
-        weekPart: "Həftəsonu",
-        times: ["11:00-13:00"],
-      },
     ],
   },
   {
@@ -812,7 +804,55 @@ const OneField = () => {
             ))}
           </div>
         </section>
-        {showModal && <Modal setShowModal = {setShowModal} />}
+        <section className={styles.nextGroups}>
+          <div className={styles.title}>Növbəti Qruplarımız</div>
+          <div className={styles.flex}>
+            {field.nextGroups?.length > 0 ? (
+              field.nextGroups?.map((group, index) => (
+                <div key={index}>
+                  <div className={styles.title}>{group.date}</div>
+                  <div className={styles.type}>{group.weekPart}</div>
+                  <div className={styles.time}>
+                    {group.times.map((time, index) => (
+                      <div key={index}>{time}</div>
+                    ))}
+                  </div>
+                  <button onClick={openModal}>Müraciət et</button>
+                </div>
+              ))
+            ) : (
+              <div className={styles.noGroups}>
+                <div className={styles.title}>
+                  Növbəti qruplarımız yığılmayıb
+                </div>
+                <div className={styles.desc}>
+                  Təəssüf ki, növbəti qruplarımızın yığım tarix hələ məlum
+                  deyil. Əlavə məlumat üçün tədris şöbəsinə müraciət edə
+                  bilərsiniz.
+                </div>
+                <div className={styles.animationCont}>
+                  <div className={styles.arrowWrapper}>
+                    <TfiArrowTopRight
+                      className={styles.icon}
+                      size={26}
+                      color="#7367FF"
+                    />
+                    <div className={styles.expandButton}>
+                      <GoArrowRight className={styles.hoverIcon} />{" "}
+                      {/* Hover ox */}
+                      <span className={styles.hoverText}>Məlumat əldə et</span>
+                    </div>
+                    <a
+                      style={{ position: "absolute", inset: 0 }}
+                      href="https://api.whatsapp.com/send/?phone=994557733452&text&type=phone_number&app_absent=0"
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+        {showModal && <Modal setShowModal={setShowModal} />}
         <section className={styles.instruktorss}>
           <div className={styles.instructorsCont}>
             <div className={styles.instructorHeader}>İnstruktorlar</div>
@@ -873,23 +913,6 @@ const OneField = () => {
             </div>
           </div>
         </section>
-        <section className={styles.nextGroups}>
-          <div className={styles.title}>Növbəti Qruplarımız</div>
-          <div className={styles.flex}>
-            {field.nextGroups?.map((group, index) => (
-              <div key={index}>
-                <div className={styles.title}>{group.date}</div>
-                <div className={styles.type}>{group.weekPart}</div>
-                <div className={styles.time}>
-                  {group.times.map((time, index) => (
-                    <div key={index}>{time}</div>
-                  ))}
-                </div>
-                <button onClick={openModal}>Müraciət et</button>
-              </div>
-            ))}
-          </div>
-        </section>
         {/* below section only for graphic design students */}
         {field.name === "Qrafik/Motion Dizayn" && (
           <section className={styles.portfolio}>
@@ -931,10 +954,16 @@ const OneField = () => {
                     />
                   </div>
                   <div className={styles.box}>
-                    <img src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85" alt="" />
+                    <img
+                      src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
                   </div>
                   <div className={styles.box}>
-                    <img src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85" alt="" />
+                    <img
+                      src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -968,10 +997,16 @@ const OneField = () => {
                     />
                   </div>
                   <div className={styles.box}>
-                    <img src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85" alt="" />
+                    <img
+                      src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
                   </div>
                   <div className={styles.box}>
-                    <img src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85" alt="" />
+                    <img
+                      src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -1005,10 +1040,16 @@ const OneField = () => {
                     />
                   </div>
                   <div className={styles.box}>
-                    <img src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85" alt="" />
+                    <img
+                      src="https://images.unsplash.com/photo-1737312869629-6c327d4b0bdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1Mzd8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
                   </div>
                   <div className={styles.box}>
-                    <img src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85" alt="" />
+                    <img
+                      src="https://images.unsplash.com/photo-1736322969168-7105551d1798?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2MDcyNjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgyNDI1OTF8&ixlib=rb-4.0.3&q=85"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>

@@ -357,6 +357,10 @@ section {
 
 
 .nextGroups {
+    max-width: 1030px;
+    margin: 0 auto 150px;
+
+
     .title {
         color: $mainColor;
         font-weight: 600;
@@ -425,6 +429,103 @@ section {
                 padding: 10px 20px;
                 display: flex;
                 justify-self: end;
+            }
+        }
+
+
+        .noGroups {
+            padding: 20px 19px;
+            max-width: 610px;
+
+
+            .title {
+                font-weight: 700;
+                max-width: 380px;
+            }
+
+
+            .desc {
+                color: $secondColor;
+                font-size: 18px;
+                line-height: 27px;
+                margin-bottom: 12px;
+            }
+
+
+            .animationCont {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+
+
+                
+            .arrowWrapper {
+                position: relative;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                width: 46px;
+                height: 46px;
+                background-color: $bgColor;
+                border-radius: 31px;
+                overflow: hidden;
+                cursor: pointer;
+                padding: 10px 12px 10px 8px;
+                transition: width 0.9s ease, background-color 0.3s ease;
+          
+                /* Hover zamanı düymənin genişlənməsi */
+                &:hover {
+                  width: 197px;
+                  background-color: #7367FF;
+                  height: 46px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-left: 10px;
+                  white-space: nowrap;
+                }
+          
+                /* Adi ox üçün tərtibat */
+                .icon {
+                    vertical-align: middle;
+                  transition: opacity 0.3s ease;
+                }
+          
+                /* Genişlənən düymə üçün konteyner */
+                .expandButton {
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                  /* İkon ilə mətn arasındakı məsafə */
+                  opacity: 0;
+                  transform: scale(0.8);
+                  transition: opacity 0.3s ease, transform 0.3s ease;
+          
+                  /* Hover zamanı genişlənmə */
+                  .hoverIcon {
+                    font-size: 26px;
+                    color: $bgColor;
+                  }
+          
+                  .hoverText {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    color: $bgColor;
+                  }
+                }
+          
+                &:hover .expandButton {
+                  opacity: 1;
+                  transform: scale(1);
+                  margin-left: auto;
+                }
+          
+                &:hover .icon {
+                  display: none;
+                  opacity: 0;
+                }
+            }
             }
         }
     }
