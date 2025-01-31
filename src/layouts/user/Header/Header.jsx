@@ -19,14 +19,9 @@ const fields = [
     subTopics: ["Advanced Front-end", "Back-end Java"],
   },
   {
-    name: "Ethical Hacking",
-    description: "Ethical Hacking",
-    subTopics: ["Ethical Hacking"],
-  },
-  {
     name: "Dizayn",
     description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
-    subTopics: ["Qrafik/Motion dizayn", "İnteryer dizayn", "UX/UI dizayn"],
+    subTopics: ["Qrafik/Motion dizayn"],
   },
   {
     name: "Data analitika",
@@ -34,19 +29,9 @@ const fields = [
     subTopics: ["Data analitika"],
   },
   {
-    name: "Q/A Manual Testing",
-    description: "Q/A Manual Testing",
-    subTopics: ["Q/A Manual Testing"],
-  },
-  {
     name: "Rəqəmsal Marketinq",
     description: "Rəqəmsal Marketinq",
     subTopics: ["Rəqəmsal Marketinq"],
-  },
-  {
-    name: "Agile",
-    description: "Agile",
-    subTopics: ["Agile"],
   },
 ];
 
@@ -210,7 +195,7 @@ const Header = ({  showApplication, setShowApplication }) => {
           </div>
         ))}
       </div>
-      {showResponsiveNavbar && <ResponsiveNavbar setShowResponsiveNavbar={setShowResponsiveNavbar}/>}
+      {showResponsiveNavbar && <ResponsiveNavbar fields = {fields} setShowResponsiveNavbar={setShowResponsiveNavbar}/>}
     </div>
   );
 }

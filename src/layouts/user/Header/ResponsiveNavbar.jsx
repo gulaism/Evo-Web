@@ -7,62 +7,55 @@ import { FaLaptopCode } from 'react-icons/fa';
 import bottomArrow from "../../../assets/images/Header/bottomArrow.svg"
 import { Link, useNavigate } from 'react-router-dom';
 
-const fields = [
-    {
-      name: "Proqramlaşdırma",
-      description: "Front-end  və Back-end proqramlaşdırma",
-      subTopics: [
-        "Advanced Front-end",
-        "Back-end Java",
-      ],
-    },
-    {
-      name: "Ethical Hacking",
-      description: "Ethical Hacking",
-      subTopics: [
-        "Ethical Hacking",
-      ],
-    },
-    {
-      name: "Dizayn",
-      description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
-      subTopics: [
-        "Qrafik/Motion dizayn",
-        "İnteryer dizayn",
-        "UX/UI dizayn",
-      ],
-    },
-    {
-      name: "Data analitika",
-      description: "Data analitika",
-      subTopics: [
-        "Data analitika",
-      ],
-    },
-    {
-      name: "Q/A Manual Testing",
-      description: "Q/A Manual Testing",
-      subTopics: [
-        "Q/A Manual Testing",
-      ],
-    },
-    {
-      name: "Rəqəmsal Marketinq",
-      description: "Rəqəmsal Marketinq",
-      subTopics: [
-        "Rəqəmsal Marketinq",
-      ],
-    },
-    {
-      name: "Agile",
-      description: "Agile",
-      subTopics: [
-        "Agile",
-      ],
-    },
-]
+// const fields = [
+//     {
+//       name: "Proqramlaşdırma",
+//       description: "Front-end  və Back-end proqramlaşdırma",
+//       subTopics: [
+//         "Advanced Front-end",
+//         "Back-end Java",
+//       ],
+//     },
+//     {
+//       name: "Dizayn",
+//       description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
+//       subTopics: [
+//         "Qrafik/Motion dizayn",
+//         "İnteryer dizayn",
+//         "UX/UI dizayn",
+//       ],
+//     },
+//     {
+//       name: "Data analitika",
+//       description: "Data analitika",
+//       subTopics: [
+//         "Data analitika",
+//       ],
+//     },
+//     {
+//       name: "Q/A Manual Testing",
+//       description: "Q/A Manual Testing",
+//       subTopics: [
+//         "Q/A Manual Testing",
+//       ],
+//     },
+//     {
+//       name: "Rəqəmsal Marketinq",
+//       description: "Rəqəmsal Marketinq",
+//       subTopics: [
+//         "Rəqəmsal Marketinq",
+//       ],
+//     },
+//     {
+//       name: "Agile",
+//       description: "Agile",
+//       subTopics: [
+//         "Agile",
+//       ],
+//     },
+// ]
 
-const FieldsComponent = ({ setShowResponsiveNavbar }) => {
+const FieldsComponent = ({ fields , setShowResponsiveNavbar }) => {
     const [ showDetailsOfField, setShowDetailsOfField ] = useState(null);
     const navigate = useNavigate();
 
@@ -112,7 +105,7 @@ const FieldsComponent = ({ setShowResponsiveNavbar }) => {
     );
 }
 
-const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
+const ResponsiveNavbar = ({ fields, setShowResponsiveNavbar }) => {
   const [ showFields, setShowFields ] = useState(false);
   const handleOpenFields = () => {
     setShowFields(true)
@@ -163,7 +156,7 @@ const ResponsiveNavbar = ({ setShowResponsiveNavbar }) => {
         <BiLeftArrowAlt color="#170F49" size={18} />
         <div>Geri qayıt</div>
       </div>
-      <FieldsComponent setShowResponsiveNavbar={setShowResponsiveNavbar}/>
+      <FieldsComponent fields = {fields} setShowResponsiveNavbar = {setShowResponsiveNavbar}/>
     </div>
   );
 }
