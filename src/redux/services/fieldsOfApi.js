@@ -1,26 +1,33 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-const url = import.meta.env.VITE_SOME_KEY;
 
-
-
+const url = import.meta.env.VITE_SOME_KEY;  // URL burada təyin edilir
 
 export const fieldsOfApi = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({
-    baseUrl: url, // API-nin əsas URL-i
-  }),
+  reducerPath: 'fieldsOfApi',
+  baseQuery: fetchBaseQuery({ baseUrl: url }),  // baseUrl təyin edilir
   endpoints: (builder) => ({
-    // Kateqoriyaları əldə etmək üçün GET request
+    // Get Categories
     getCategories: builder.query({
-      query: () => 'category',
+      query: () => 'category', // Kateqoriyaları almaq üçün GET sorğusu
+    }),
 
-    }),
-    // Kateqoriya əsasında kursları əldə etmək üçün GET request
+    // Get Tablets by Category
     getTabletsByCategory: builder.query({
-      query: (category) => `category/getTablets?category=${category}`,
+      query: (category) => ({
+        url: `category/getTablets?trimmedCategory=${category}`, // category parametri query olaraq göndərilir
+        method: "GET", // GET sorğusu
+      }),
     }),
-    
+
+    // Digər endpointləri buraya əlavə edə bilərsiniz
   }),
 });
 
-export const { useGetCategoriesQuery, useGetTabletsByCategoryQuery } = fieldsOfApi;
+
+
+
+
+
+
+export const { useGetCategoriesQuery, useGetTabletsByCategoryQuery} = fieldsOfApi;
+

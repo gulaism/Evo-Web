@@ -3,7 +3,7 @@ const url = import.meta.env.VITE_SOME_KEY;
 
 export const aboutApi = createApi({
   reducerPath: 'aboutApi',
-  baseQuery: fetchBaseQuery({ baseUrl: url}), // Buraya öz backend baz URL-ni yaz
+  baseQuery: fetchBaseQuery({ baseUrl: url}), 
   endpoints: (builder) => ({
     getAbout: builder.query({
       query: () => 'about',

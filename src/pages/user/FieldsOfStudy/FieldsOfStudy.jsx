@@ -1,72 +1,61 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./FieldsOfStudy.module.scss"; // SCSS faylını daxil edin
-import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
+import styles from "./FieldsOfStudy.module.scss";
 import { FaChevronDown } from "react-icons/fa";
-import { useGetCategoriesQuery, useGetTabletsByCategoryQuery } from "../../../redux/services/fieldsOfApi"; // API hook-ları
+import { useGetCategoriesQuery, useGetTabletsByCategoryQuery } from "../../../redux/services/fieldsOfApi";  
+import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
 
 const FieldsOfStudy = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Programing");
+  const [selectedCategory, setSelectedCategory] = useState("");  // Başlangıçda heç bir kateqoriya seçilməyib
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null); // Dropdown-a referans əlavə olunur
+  const dropdownRef = useRef(null);
 
-  // API çağırışı
+  // Get Categories (You can use this in your dropdown)
   const { data: categories, isLoading: isLoadingCategories } = useGetCategoriesQuery();
-  const { data: tablets, isLoading: isLoadingTablets } = useGetTabletsByCategoryQuery(selectedCategory);
+  const { data: tablets, isLoading: isLoadingTablets } = useGetTabletsByCategoryQuery(selectedCategory, {
+    skip: !selectedCategory, // Boş dəyər göndərməmək üçün
+  });
 
-console.log("Selected Category:", selectedCategory); // Yoxlamaq üçün
-
-  
+  // Kategoriyalar yükləndəndə default olaraq "Programming" seçilsin
+  useEffect(() => {
+    if (categories && categories.length > 0 && !selectedCategory) {
+      const defaultCategory = categories.find((category) => category.category === "Programming");
+      if (defaultCategory) {
+        setSelectedCategory(defaultCategory.category); // İlk olaraq "Programming" seçilsin
+      }
+    }
+  }, [categories, selectedCategory]); // categories dəyişdikdə yenidən işləyəcək
 
   const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
+    setSelectedCategory(category.trim());
     setDropdownOpen(false);
   };
 
-  // Kənarda klikləri dinləmək üçün useEffect
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
-
-    document.addEventListener("mousedown", handleClickOutside); // Hadisəni əlavə et
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside); // Təmizləmə
-    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  if (isLoadingCategories || isLoadingTablets) {
-    return <p>Yüklənir...</p>;
-  }
+  if (isLoadingCategories) return <p>Kateqoriyalar yüklənir...</p>;
+  if (isLoadingTablets) return <p>Kurslar yüklənir...</p>;
 
   return (
     <div className="container">
       <div className={styles.fieldsOfStudy}>
-        <div className={styles.fieldsLine}>
-          <h1 className={styles.fieldsTitle}>Tədris sahələri</h1>
-          <p className={styles.fieldsDescription}>
-            Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin.
-          </p>
-        </div>
-
-        {/* Custom Dropdown */}
+        <h1 className={styles.fieldsTitle}>Tədris sahələri</h1>
         <div className={styles.fieldsDropdown} ref={dropdownRef}>
-          <div
-            className={styles.dropdownHeader}
-            onClick={() => setDropdownOpen(!isDropdownOpen)}
-          >
-            {selectedCategory}
+          <div className={styles.dropdownHeader} onClick={() => setDropdownOpen(!isDropdownOpen)}>
+            {selectedCategory || "Kateqoriya seçin"}
             <FaChevronDown />
           </div>
           {isDropdownOpen && (
             <div className={styles.dropdownMenu}>
-              {categories && categories.map((category) => (
-                <div
-                  key={category.id}
-                  className={styles.dropdownItem}
-                  onClick={() => handleCategoryChange(category.category)}
-                >
+              {categories?.map((category) => (
+                <div key={category.id} className={styles.dropdownItem} onClick={() => handleCategoryChange(category.category)}>
                   {category.category}
                 </div>
               ))}
@@ -76,17 +65,17 @@ console.log("Selected Category:", selectedCategory); // Yoxlamaq üçün
 
         {/* GridBox */}
         <div className={styles.gridBox}>
-          {tablets && tablets.map((tablet) => (
-            <div key={tablet.lessonProgramId} className={styles.gridItem}>
-              <h3 className={styles.itemHeader}>{tablet.lessonName}</h3>
-              <p className={styles.itemDescription}>{tablet.lessonDescription}</p>
+          {tablets?.map((tablet) => (
+            <div key={tablet.order} className={styles.gridItem}>
+              <h3 className={styles.itemHeader}>{tablet.areaName}</h3>
+              <p className={styles.itemDescription}>{tablet.courseDescription}</p>
               <div className={styles.boxBottom}>
                 <div className={styles.time}>
-                  {tablet.lessonMonth && <div>{tablet.lessonMonth} ay</div>}
-                  {tablet.lessonHour && <div>{tablet.lessonHour} saat</div>}
+                  {tablet.courseHour && <div>{tablet.courseHour} saat</div>}
+                  {tablet.courseDuration && <div>{tablet.courseDuration} ay</div>}
                 </div>
                 <button className={styles.arrowCont}>
-                  <img className={styles.arrowImg} src={rightArrow} alt="expand" />
+                  <img src={rightArrow} alt="Right Arrow" />
                 </button>
               </div>
             </div>

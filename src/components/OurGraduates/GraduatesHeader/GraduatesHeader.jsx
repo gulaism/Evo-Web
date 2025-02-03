@@ -1,24 +1,49 @@
 import React, { useState, useEffect } from "react";
+import { useGetAllDataQuery } from "../../../redux/services/graduateApi";
 import styles from "../GraduatesHeader/GraduatesHeader.module.scss";
 
-const GraduatesHeader = ({ statistics }) => {
-    const [stats, setStats] = useState(statistics);
+const GraduatesHeader = () => {
+    const { data, error, isLoading } = useGetAllDataQuery();
+
+    const [animatedStats, setAnimatedStats] = useState([
+        { id: 1, label: "Pedaqoji Kollektiv", value: 0 },
+        { id: 2, label: "Tələbə", value: 0 },
+        { id: 3, label: "Məzun", value: 0 },
+        { id: 4, label: "Uğur Hekayəsi", value: 0 },
+    ]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setStats((prevStats) =>
-                prevStats.map((stat) => {
-                    // Statistikaları artırmaq üçün tərtib et
-                    if (stat.value < 100) { // Burada maksimum sayı istədiyiniz qədər təyin edə bilərsiniz
-                        return { ...stat, value: stat.value + 1 };
-                    }
-                    return stat;
-                })
-            );
-        }, 50); // Hər 50 ms-də bir statistikanı artır
+        if (data) {
+            const targetStats = [
+                { id: 1, value: data.teacherCount || 0, label: "Pedaqoji Kollektiv" },
+                { id: 2, value: data.studentCount || 0, label: "Tələbə" },
+                { id: 3, value: data.graduatedCount || 0, label: "Məzun" },
+                { id: 4, value: data.successStoryPercent || 0, label: "Uğur Hekayəsi" },
+            ];
 
-        return () => clearInterval(interval); // Komponent silindikdə intervalu təmizləyirik
-    }, []);
+            targetStats.forEach((target, index) => {
+                let startValue = 0; // Burada startValue-i istifadə edirik
+                const step = Math.ceil(target.value / 100);
+
+                const interval = setInterval(() => {
+                    startValue += step; // startValue-ni artırırıq
+                    if (startValue >= target.value) {
+                        startValue = target.value; // Dəyəri aşmamaq üçün düzəliş
+                        clearInterval(interval); // Animasiya bitəndə dayandırırıq
+                    }
+
+                    setAnimatedStats((prevStats) => {
+                        const newStats = [...prevStats];
+                        newStats[index] = { ...newStats[index], value: startValue };
+                        return newStats;
+                    });
+                }, 60);
+            });
+        }
+    }, [data]);
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error occurred!</div>;
 
     return (
         <header className={styles.header}>
@@ -27,7 +52,7 @@ const GraduatesHeader = ({ statistics }) => {
                 Onların hər birinin əldə etdiyi nailiyyətlər, akademiyamızın keyfiyyətli tədris yanaşmasının və peşəkar müəllim heyətimizin bir göstəricisidir.
             </p>
             <div className={styles.stats}>
-                {stats.map((stat) => (
+                {animatedStats.map((stat) => (
                     <div key={stat.id} className={styles.stat}>
                         <h2 className={styles.statValue}>{stat.value}</h2>
                         <p className={styles.statLabel}>{stat.label}</p>

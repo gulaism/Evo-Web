@@ -1,67 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useGetAllDataQuery } from "../../../redux/services/graduateApi";
 import styles from "./PortfolioSection.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
 
-const PortfolioSection = ({ portfolios }) => {
-  const [hoveredId, setHoveredId] = useState(null);
+const PortfolioSection = () => {
+    const { data, error, isLoading } = useGetAllDataQuery();
+    const [portfolios, setPortfolios] = useState([]);
 
-  return (
-    // <div className="container">
-    <section className={styles.portfolio}>
-      <h2 className={styles.title}>Tədrisdən Yaradıcılığa</h2>
-      <p className={styles.description}>
-        Məzunlarımızın uğurları, bizim davamlı inkişafımızın və təhsil sahəsindəki öndə olmağı məqsədimizin təcəssümüdür.
-      </p>
+    useEffect(() => {
+        if (data) {
+            setPortfolios(data.studentWorks || []);  // API-dən gələn portfelləri yoxlayırıq
+        }
+    }, [data]);
 
-      <div className={styles.grid}>
-        <Swiper
-          slidesPerView={2.5}
-          spaceBetween={20}
-          freeMode={true}
-          modules={[FreeMode]}
-          className={styles.swiper}
-        >
-          {portfolios.map((portfolio) => (
-            <SwiperSlide className={styles.swiperSlide} key={portfolio.id}>
-              <div
-                className={`${styles.card} ${hoveredId === portfolio.id ? styles.hovered : ""}`}
-                onMouseEnter={() => setHoveredId(portfolio.id)}
-                onMouseLeave={() => setHoveredId(null)}
-              >
-                <div className={styles.profile}>
-                  <img src={portfolio.image} alt={portfolio.name} className={styles.avatar} />
-                  <div style={{ textAlign: "left" }}>
-                    <h3 className={styles.name}>{portfolio.name}</h3>
-                    <p className={styles.field}>{portfolio.field}</p>
-                  </div>
-                </div>
-                <p className={styles.review}>
-                  "Evo, biliklə yanaşı ilham verən, müəllimləri isə hər dərsdə dəstək və motivasiya mənbəyi olan bir ailədir!"
-                </p>
-                <div className={styles.images}>
-                  {portfolio.works.map((work, index) => (
-                    <img
-                      key={index}
-                      src={work}
-                      alt={`work-${index}`}
-                      className={`${styles.workImage} ${hoveredId === index ? styles.hovered : ""}`}
-                      onMouseEnter={() => setHoveredId(index)}
-                      onMouseLeave={() => setHoveredId(null)}
-                    />
-                  ))}
-                </div>
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error occurred!</div>;
 
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
-    // </div>
-  );
+    return (
+        <section className={styles.portfolio}>
+            <h2 className={styles.title}>Tədrisdən Yaradıcılığa</h2>
+            <p className={styles.description}>
+                Məzunlarımızın uğurları, bizim davamlı inkişafımızın və təhsil sahəsindəki öndə olmağı məqsədimizin təcəssümüdür.
+            </p>
+
+            <div className={styles.grid}>
+                <Swiper
+                    slidesPerView={2.5}
+                    spaceBetween={20}
+                    freeMode={true}  // Əllə sürüşdürmə
+                    modules={[FreeMode]}  // FreeMode modulunu aktiv edirik
+                    className={styles.swiper}
+                    loop={false}  // Avtomatik dövr etməməsi üçün loop-u deaktiv edirik
+                    autoplay={false}  // Avtomatik keçişi deaktiv edirik
+                >
+                    {portfolios.map((portfolio) => (
+                        <SwiperSlide key={portfolio.id} className={styles.swiperSlide}>
+                            <div className={styles.card}>
+                                <div className={styles.profile}>
+                                    <img src={portfolio.studentProfilePhoto} alt={portfolio.name} className={styles.avatar} />
+                                    <div>
+                                        <h3 className={styles.name}>{portfolio.name}</h3>
+                                        <p className={styles.field}>{portfolio.work}</p>
+                                    </div>
+                                </div>
+                                <p className={styles.review}>{portfolio.review}</p>
+                                <div className={styles.images}>
+                                    {portfolio.worksPhotos.slice(0, 4).map((work, index) => (
+                                        <div key={index} className={styles.cardİmg}>
+                                            <img src={work} alt={`Work ${index}`} className={styles.workImage} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </section>
+    );
 };
 
 export default PortfolioSection;
+

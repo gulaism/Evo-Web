@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./InternshipProgram.module.scss";
-// import circleIcon from "../../../../assets/images/AboutUs/internship icons.svg";
-// import cardIcon2 from "../../../../assets/images/AboutUs/cardIcon2.svg";
 import cardArrow from "../../../../assets/images/AboutUs/cardArrow.svg";
 import InternshipCard from "../InternshipCard/InternshipCard";
 
+const InternshipProgram = ({ programs }) => {
+  if (!programs || programs.length === 0) {
+    return <p>Məlumat yoxdur.</p>; // Əgər backend boş data qaytarsa
+  }
 
-
-const InternshipProgram = ({ programs}) => {
   return (
     <div className={styles.internShipContainer}>
       <h1 className={styles.internTitle}>Təcrübə Proqramı</h1>
@@ -16,21 +16,20 @@ const InternshipProgram = ({ programs}) => {
         bacarıqlarınızı inkişaf etdirmək üçün geniş imkanlar təqdim edir.
       </p>
       <div className={styles.cardContainer}>
-        {programs.map((program, index) => (
+        {programs.map((program) => (
           <InternshipCard
-            key={index}
+            key={program.id}
             title={program.header}
             description={program.description}
-            time={program.features?.[0] || ''}
-            mode={program.features?.[1] || ''}
-            icon={program.imageString} 
-            arrow={cardArrow} // Assuming imageString is the icon URL
+            time={program.features?.[0] || ""}
+            mode={program.features?.[1] || ""}
+            icon={program.imageString}
+            arrow={cardArrow}
           />
         ))}
       </div>
     </div>
   );
 };
-
 
 export default InternshipProgram;

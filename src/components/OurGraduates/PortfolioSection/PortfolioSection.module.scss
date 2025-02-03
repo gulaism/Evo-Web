@@ -1,12 +1,20 @@
 .portfolio {
   text-align: center;
-  //padding: 50px 100px;
 
   .title {
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 20px;
     color: #222;
+
+    @media (max-width: 599px) {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 28px;
+    }
   }
 
   .description {
@@ -14,31 +22,71 @@
     font-weight: 400;
     color: rgba(126, 141, 156, 1);
     margin-bottom: 40px;
-  }
-  // .grid{
-  //   display: grid;
-  //   grid-template-columns: repeat(auto-fit, minmax(505px, 1fr));
-  //   gap: 20px;
-  // }
 
-  .swiper {
+    @media (max-width: 599px) {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+
+.swiper {
     overflow: hidden;
     padding: 20px 0;
   }
-  .swiperSlide{
+
+  .swiperSlide {
     width: 505px !important;
+    margin: 0 20px !important;
+    
+    @media (max-width: 599px) {
+      width: 100% !important;  /* 1 card on mobile */
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 49% !important;  /* 2 cards on tablet */
+      margin: 0 6px !important;
+    }
+
+    @media (min-width: 1025px) {
+      width: 33.33%;  /* 2.5 cards on desktop */
+    }
   }
+
+
+
 
   .card {
     background-color: #fff;
-    border: 1px solid transparent;
-    border-radius: 32px;
+    border-radius: 20px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.3s ease;
+    max-width: 505px;
+    margin: 0 auto;
+    height: 520px;
+    overflow: hidden;
+    /* Şəkillərin card-dan çölə çıxmasının qarşısını alır */
+
+    @media (max-width: 599px) {
+      max-width: 343px;
+      padding: 15px;
+      max-height: 373px;
+
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      max-width: 342px;
+      padding: 18px;
+      max-height: 389px;
   }
+
 
   .profile {
     display: flex;
@@ -51,18 +99,41 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
+
+    @media (max-width: 599px) {
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 42px;
+      height: 42px;
+    }
   }
 
   .name {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
     color: rgba(34, 34, 34, 1);
+
+    @media (max-width: 599px) {
+      font-size: 16px;
+    }
   }
 
   .field {
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(126, 141, 156, 1);
     font-weight: 400;
+    text-align: left;
+
+    @media (max-width: 599px) {
+      font-size: 12px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   .review {
@@ -74,31 +145,47 @@
   }
 
   .images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-    align-items: start;
+    display: flex;
+    /* Grid əvəzinə flex istifadə edirik */
+    flex-wrap: wrap;
+    gap: 8px;
+    //justify-content: center; /* Mərkəzə gətirir */
+    align-items: center;
+    margin-top: 15px;
     position: relative;
+
+    @media (max-width: 599px) {
+      gap: 13px;
+    }
+  }
+
+  .cardİmg {
+    width: 226px;
+    height: 170px;
+
+    @media (max-width: 599px) {
+      width: 150px;
+      height: 110px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 147px;
+      height: 110px;
+    }
   }
 
   .workImage {
-    //width: 240px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease;
+    cursor: pointer;
   }
 
   .workImage:hover {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    width: 465px;
-    height: 357px;
-    transform: translate(0, 0);
-    z-index: 1;
+    transform: scale(1.05);
+    overflow: hidden;
   }
-
-  // .workImage:hover + .workImage {
-  //  // transform: translateY(50px); // Yanındakı şəkil aşağı düşür
-  //   transition: transform 0.4s ease;
-  // }
+}
 }

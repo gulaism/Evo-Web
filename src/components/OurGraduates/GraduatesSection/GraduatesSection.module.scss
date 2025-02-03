@@ -4,6 +4,16 @@
   margin-bottom: 20px;
   font-weight: 600;
   color: rgba(34, 34, 34, 1);
+
+  @media (max-width: 599px) {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    font-size: 28px;
+
+  }
 }
 
 .description {
@@ -13,14 +23,32 @@
   color: rgba(126, 141, 156, 1);
   margin-bottom: 40px;
   padding: 0 100px;
+
+  @media (max-width: 599px) {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 0;
+ 
+  }
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    font-size: 16px;
+    padding: 0;
+  }
 }
 
 .gridCont {
   display: grid;
-  // grid-template-columns: repeat(3, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
- // grid-auto-rows: minmax(400px, auto);
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+  }
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(342px, 2fr));
+  }
 
 
 
@@ -37,6 +65,16 @@
     grid-row: auto;
     height: fit-content;
 
+    @media (max-width: 599px) {
+      border-radius: 28px;
+      padding: 10px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      border-radius: 28px;
+      padding: 15px;
+    }
+
     .instructor {
       display: flex;
       align-items: center;
@@ -49,6 +87,16 @@
         height: 90px;
         white-space: nowrap;
         flex-shrink: 0;
+
+        @media (max-width: 599px) {
+          width: 70px;
+          height: 70px;
+        }
+
+        @media (min-width: 600px) and (max-width: 1024px) {
+          width: 75px;
+          height: 75px;
+        }
 
 
         img {
@@ -67,6 +115,14 @@
         color: rgba(34, 34, 34, 1);
         cursor: pointer;
         transition: color 0.3s ease;
+
+        @media (max-width: 599px) {
+          font-size: 18px;
+        }
+
+        @media (min-width: 600px) and (max-width: 1024px) {
+          font-size: 20px;
+        }
       }
 
 
@@ -76,6 +132,14 @@
           font-weight: 400;
           cursor: pointer;
           transition: color 0.3s ease;
+
+          @media (max-width: 599px) { 
+            font-size: 12px;
+          }
+
+          @media (min-width: 600px) and (max-width: 1024px) {
+            font-size: 14px;
+          }
         
           &:hover {
               color: #005582; // LinkedIn hover rəngi
@@ -95,6 +159,14 @@
       height: auto;
       transition: max-height 0.3s ease;
       margin-top: 16px;
+
+      @media (max-width: 599px) {
+        font-size: 12px;
+      }
+
+      @media (min-width: 600px) and (max-width: 1024px) {
+        font-size: 14px;
+      }
     }
   }
 

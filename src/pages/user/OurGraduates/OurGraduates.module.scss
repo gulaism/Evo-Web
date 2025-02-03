@@ -1,5 +1,26 @@
+@import "../../../assets/common/base.scss";
+/* CSS faylını idxal edin */
+
 .ourGraduates {
+  .container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 150px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 100px;
+
+    @media (max-width: 599px) {
+      gap: 50px !important;
+      padding: 0 16px !important;
+      /* Mobil üçün kiçik məsafə */
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      gap: 90px !important;
+      padding: 0 20px !important;
+      /* Tablet üçün orta məsafə */
+    }
   }
+}
