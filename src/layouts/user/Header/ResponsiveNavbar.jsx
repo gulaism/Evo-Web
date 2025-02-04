@@ -118,8 +118,12 @@ const ResponsiveNavbar = ({ fields, setShowResponsiveNavbar }) => {
 
   return !showFields ? (
     <div className={styles.respCont}>
-      <div style={{position: "relative"}}>
-        <Link style={{position: "absolute", inset: "0"}} onClick={closeNavBar} to={"/about"}></Link>
+      <div style={{ position: "relative" }}>
+        <Link
+          style={{ position: "absolute", inset: "0" }}
+          onClick={closeNavBar}
+          to={"/about"}
+        ></Link>
         <div>Haqqımızda</div>
         <BiRightArrowAlt size={18} color="#170F49" />
       </div>
@@ -148,6 +152,11 @@ const ResponsiveNavbar = ({ fields, setShowResponsiveNavbar }) => {
       <div>
         <div>Əlaqə</div>
         <BiRightArrowAlt size={18} color="#170F49" />
+        <Link
+          to={"/contact"}
+          style={{ position: "absolute", inset: "0" }}
+          onClick={closeNavBar}
+        ></Link>
       </div>
     </div>
   ) : (
@@ -156,7 +165,10 @@ const ResponsiveNavbar = ({ fields, setShowResponsiveNavbar }) => {
         <BiLeftArrowAlt color="#170F49" size={18} />
         <div>Geri qayıt</div>
       </div>
-      <FieldsComponent fields = {fields} setShowResponsiveNavbar = {setShowResponsiveNavbar}/>
+      <FieldsComponent
+        fields={fields}
+        setShowResponsiveNavbar={setShowResponsiveNavbar}
+      />
     </div>
   );
 }

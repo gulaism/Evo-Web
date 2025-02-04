@@ -1,0 +1,107 @@
+@import '../../../assets/variables/_variables.scss';
+h1 {
+    color: $mainColor;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 61px;
+    text-align: center;
+    margin: 100px 105px 150px;
+}
+
+
+.mainSec {
+    margin: 150px 105px;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+
+
+    .leftDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 50%;
+
+
+        > div {
+            background-color: white;
+            border-radius: 32px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 16px;
+            cursor: pointer;
+            position: relative;
+
+
+            .imgCont {
+                width: 80px;
+                height: 80px;
+                background-color: #F0EEFF;
+                padding: 20px;
+                overflow: hidden;
+                border-radius: 50%;
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+
+            .title {
+                color: $mainColor;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+            }
+
+
+            .info {
+                color: $secondColor;
+                font-size: 18px;
+                line-height: 27px;
+            }
+        }
+    }
+
+
+    .rightDiv {
+        width: 50%;
+        background-color: white;
+        border-radius: 32px;
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+
+
+        .title {
+            color: $mainColor;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+            margin-bottom: 10px;
+            text-align: start;
+        }
+
+
+        .desc {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: start;
+            color: $secondColor;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+
+    a {
+        position: absolute;
+        inset: 0;
+    }
+}

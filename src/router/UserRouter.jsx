@@ -5,6 +5,7 @@ import HomePage from '../pages/user/HomePage/HomePage'
 import FieldsOfStudy from '../pages/user/FieldsOfStudy/FieldsOfStudy.jsx'
 import AboutUs from '../pages/user/AboutUs/AboutUs.jsx'
 import OneField from '../pages/user/OneField/OneField.jsx'
+import Contact from '../pages/user/ContactPage/Contact.jsx'
 
 const UserRouter = () => {
   return (
@@ -14,7 +15,7 @@ const UserRouter = () => {
         <Route path='/about' element={<AboutUs/>} />
         <Route path='/education' element={<FieldsOfStudy />} /> 
         <Route path='/students' element={<h1>Mezunlarimiz</h1>} />
-        <Route path='/contact' element={<h1>Elaqe</h1>} />
+        <Route path='/contact' element={<Contact />} />
         <Route path='/field' element={<OneField />} />
       
         
