@@ -471,7 +471,7 @@ const fields = [
         title: "İllustrasiya və Qrafik Elementlər",
         description:
           " Məsələn, brendin vizual dilini dəstəkləyən ikonlar və şəkillər hazırlanması",
-        span: "Illustrasiya",
+        span: "İllustrasiya",
       },
       {
         title: "Çap Materiallarının Dizaynı",
@@ -714,6 +714,7 @@ const OneField = () => {
   useEffect(() => {
     if (window.innerWidth >= 600 && window.innerWidth <= 1025)
       setWindowWidth("tablet");
+    else if (window.innerWidth <= 600) setWindowWidth("mobile");
     else setWindowWidth("web");
   }, []);
 
@@ -889,7 +890,7 @@ const OneField = () => {
                       <a href={instructor.linkedinLink}>
                         <FaLinkedin
                           color="#0c65c2"
-                          size={windowWidth === "web" ? 32 : 24}
+                          size={windowWidth === "web" ? 32 : windowWidth === 'tablet' ? 24 : 20}
                         />
                       </a>
                     </div>

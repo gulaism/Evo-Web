@@ -689,10 +689,442 @@ section {
     }
 }
 
+// mobile 
+
+@media (max-width: 599px) {
+    section:first-of-type {
+        margin-top: 40px;
+    }
+    section {
+        margin-bottom: 50px;
+    }
+    .firstSection {
+        .title {
+            display: none;
+        }
+    
+    
+        .description {
+            display: none;
+        }
+    
+    
+        .generalInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0;
+    
+    
+            .fieldName {
+                font-size: 24px;
+                line-height: 34px;
+                width: 100%;
+                margin-right: 0;
+                text-align: center;
+            }
+    
+    
+            .fieldDesc {
+                font-size: 14px;
+                line-height: 21px;
+                gap: 15px;
+                padding: 12px 0px 0px;
+                border-left: none;
+
+
+                &::before {
+                    content: '';
+                    width: 162px;
+                    height: 1px;
+                    background-color: #7E8D9C45;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    
+    
+    .whatYouWillGet {
+        .title {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .grid {
+            margin: 28px 0;
+
+            .row {
+                margin-bottom: 28px;
+
+                .item {
+                    flex-basis: calc(100% - 20px);
+                    /* 1 column with 20px margin between */
+                    margin: 0px 28px;
+
+                    .itemTitle {
+                        font-size: 18px;
+                        line-height: 27px;
+                    }
+
+                    .itemDescription {
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+                }
+
+            }
+        }
+    }
+    
+    
+    .program {
+        .title {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .programDuration {
+            gap: 89px;
+            margin-bottom: 12px;
+    
+    
+            .number {
+                font-size: 28px;
+                line-height: 42px;
+            }
+    
+    
+            .detail {
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    
+    
+        .question {
+            font-size: 18px;
+            line-height: 27px;
+        }
+    
+    
+        .tools {
+            gap: 8px;
+            max-width: 100%;
+    
+    
+            .tool {
+                gap: 2px;
+                font-size: 12px;
+                line-height: 18px;
+                background-color: transparent;
+                border-radius: none;
+                padding: 0;
+                width: max-content;
+    
+    
+                >div:first-of-type {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    
+    
+        .grid {
+            grid-template-columns: repeat(1, 1fr);
+    
+    
+            > div {
+                padding: 16px 20px;
+    
+    
+                .title {
+                    font-size: 18px;
+                    line-height: 27px;
+                }
+    
+    
+                .description {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+    
+    
+    .instruktorss {
+        .instructorsCont {
+            padding: 0;
+        
+        
+            .instructorHeader {
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 8px;
+            }
+        
+        
+            .description {
+                font-size: 14px;
+                line-height: 21px;
+                margin-bottom: 28px;
+            }
+        
+        
+            .gridCont {
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 20px;
+                column-gap: 0;
+                grid-auto-rows: minmax(0px, auto);
+        
+        
+                .insCont {
+                    border-radius: 22px;
+                    padding: 15px 15px 5px;
+                    
+                    .instructor {
+                        gap: 14px;
+        
+        
+                        .photoCont {
+                            width: 80px;
+                            height: 80px;
+                        }
+        
+        
+                        .instName {
+                            font-size: 18px;
+                            line-height: 27px;
+                        }
+        
+        
+                        .instProf {
+                            font-size: 12px;
+                            line-height: 18px;
+                            margin-bottom: 8px;
+                        }
+
+
+                        a {
+                            display: block;
+                            height: 32px;
+                            width: 32px;
+                        }
+                    }
+        
+        
+                    .hiddenInfo {
+                        color: #788592;
+                        font-size: 12px;
+                        line-height: 18px;
+                        margin-top: 10px;
+                    }
+                }        
+            }
+        }
+    }
+    
+    
+    .nextGroups {
+        max-width: 100%;
+        margin: 0 auto 50px;
+    
+    
+        .title {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .flex {
+            gap: 20px;
+            max-width: 100%;
+    
+    
+            > div {
+                border-radius: 28px;
+                min-width: 343px;
+    
+    
+    
+                .title {
+                    font-size: 18px;
+                    line-height: 27px;
+                }   
+    
+    
+                .type {
+                    font-size: 14px;
+                    line-height: 21px;
+                    margin-bottom: 2px;
+                }
+    
+    
+                .time {
+                    gap: 8px;
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+    
+    
+                button {
+                    border-radius: 12px;
+                    padding: 7px 10px;
+                }
+            }
+    
+    
+            .noGroups {
+                padding: 14px;
+                max-width: 343px;
+    
+    
+                .title {
+                    max-width: 253px;
+                }
+    
+    
+                .desc {
+                    font-size: 12px;
+                    line-height: 18px;
+                    margin-bottom: 8px;
+                }
+    
+    
+                .animationCont {
+                    .arrowWrapper {
+                        width: 32px;
+                        height: 32px;
+                        padding: 5px 12px 6px 4px;
+                
+                        /* Hover zamanı düymənin genişlənməsi */
+                        &:hover {
+                        width: 147px;
+                        height: 32px;
+                        padding-left: 10px;
+                        }
+                
+                        /* Genişlənən düymə üçün konteyner */
+                        .expandButton {
+                            gap: 2px;
+                
+                        /* Hover zamanı genişlənmə */
+                            .hoverIcon {
+                                font-size: 20px;
+                            }
+                    
+                            .hoverText {
+                                font-size: 12px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .portfolio {
+        .title {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 28px;
+        }
+    
+    
+        .desc {
+            display: none;
+        }
+    
+    
+        .slider {
+            gap: 12px;
+    
+    
+            > div {
+                border-radius: 26px;
+                padding: 14px 18px;
+                max-width: 343px;
+                height: max-content;
+    
+    
+                .studentInfo {
+                    gap: 8px;
+                    margin-bottom: 8px;
+    
+    
+                    .img {
+                        width: 32px;
+                        height: 32px;
+                    }
+    
+    
+                    .name {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+    
+    
+                    .job {
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+                }
+    
+    
+                .saying {
+                    font-size: 12px;
+                    line-height: 18px;
+                    margin-bottom: 8px;   
+                }
+                
+    
+                .grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    width: 100%;
+                    height: max-content;
+                  }
+                  
+                  .box {
+                    width: 147px;
+                    height: 110px;
+                  }
+                  
+                  .box img {
+                    border-radius: 12px;
+                  }
+    
+                  .box:hover {
+                    grid-column: auto !important;
+                    grid-row: auto !important;
+                  }
+    
+                  .box:hover ~ div {
+                    grid-column: auto !important;
+                    grid-row: auto !important;
+                  }
+    
+                  .grid:has(.box:hover) {
+                    height: auto !important;
+                  }            
+            }
+        }
+    }
+} 
+
+
 
 // tablet
 
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 600px) and (max-width: 1024px) {
     section:first-of-type {
         margin-top: 80px;
     }
