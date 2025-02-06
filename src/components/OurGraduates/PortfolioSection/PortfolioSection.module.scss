@@ -1,0 +1,191 @@
+.portfolio {
+  text-align: center;
+
+  .title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+
+    @media (max-width: 599px) {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 28px;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(126, 141, 156, 1);
+    margin-bottom: 40px;
+
+    @media (max-width: 599px) {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+
+.swiper {
+    overflow: hidden;
+    padding: 20px 0;
+  }
+
+  .swiperSlide {
+    width: 505px !important;
+    margin: 0 20px !important;
+    
+    @media (max-width: 599px) {
+      width: 100% !important;  /* 1 card on mobile */
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 49% !important;  /* 2 cards on tablet */
+      margin: 0 6px !important;
+    }
+
+    @media (min-width: 1025px) {
+      width: 33.33%;  /* 2.5 cards on desktop */
+    }
+  }
+
+
+
+
+  .card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 505px;
+    margin: 0 auto;
+    height: 520px;
+    overflow: hidden;
+    /* Şəkillərin card-dan çölə çıxmasının qarşısını alır */
+
+    @media (max-width: 599px) {
+      max-width: 343px;
+      padding: 15px;
+      max-height: 373px;
+
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      max-width: 342px;
+      padding: 18px;
+      max-height: 389px;
+  }
+
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    @media (max-width: 599px) {
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(34, 34, 34, 1);
+
+    @media (max-width: 599px) {
+      font-size: 16px;
+    }
+  }
+
+  .field {
+    font-size: 14px;
+    color: rgba(126, 141, 156, 1);
+    font-weight: 400;
+    text-align: left;
+
+    @media (max-width: 599px) {
+      font-size: 12px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      font-size: 14px;
+    }
+  }
+
+  .review {
+    color: rgba(34, 34, 34, 1);
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .images {
+    display: flex;
+    /* Grid əvəzinə flex istifadə edirik */
+    flex-wrap: wrap;
+    gap: 8px;
+    //justify-content: center; /* Mərkəzə gətirir */
+    align-items: center;
+    margin-top: 15px;
+    position: relative;
+
+    @media (max-width: 599px) {
+      gap: 13px;
+    }
+  }
+
+  .cardİmg {
+    width: 226px;
+    height: 170px;
+
+    @media (max-width: 599px) {
+      width: 150px;
+      height: 110px;
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+      width: 147px;
+      height: 110px;
+    }
+  }
+
+  .workImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+  }
+
+  .workImage:hover {
+    transform: scale(1.05);
+    overflow: hidden;
+  }
+}
+}

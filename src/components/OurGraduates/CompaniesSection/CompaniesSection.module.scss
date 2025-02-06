@@ -1,0 +1,71 @@
+
+
+.title {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 600;
+  color: rgba(34, 34, 34, 1);
+  text-align: center;
+
+  @media (max-width: 599px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    font-size: 28px;
+  }
+}
+
+.list {
+  display: flex;
+ // justify-content: center;
+  gap: 20px; // Şəkillər arasındakı boşluq
+  flex-wrap: nowrap; // Logoların sətirə düşməməsini təmin etmək üçün
+  overflow: hidden; // Loqoların konteynerdən çıxmasını gizləyir
+  position: relative; // Konteyneri animasiya üçün əsas təyin edir
+  white-space: nowrap; // Loqoları bir xətt üzərində saxlayır
+
+  .animateWrapper {
+    display: flex;
+    animation: slide 10s linear infinite; // Sonsuz hərəkət, 30s sürətində
+  }
+}
+
+.item {
+
+  width: 255px; // Şəkil ölçüsü
+  height: 100px;
+  // object-fit: contain; // Şəkilləri səliqəli göstərmək üçün
+  // margin-right: 20px; // Şəkillər arasındakı boşluğu tənzimləyirik
+
+  //mobile üçün
+  @media (max-width: 599px) {
+    width: 140px;
+    //height: auto; // Nisbəti saxlamaq üçün
+  }
+
+  //tablet üçün
+  @media (min-width: 600px) and (max-width: 1024px) {
+    width: 217px;
+    //height: auto; // Nisbəti saxlamaq üçün
+  }
+}
+
+.logo {
+  width: 100%; // Şəkil ölçüsü
+  height: 100%;
+  object-fit: contain; // Şəkilləri səliqəli göstərmək üçün
+  margin-right: 20px; // Şəkillər arasındakı boşluğu tənzimləyirik
+}
+
+// @keyframes ilə animasiya təyin edirik
+@keyframes slide {
+  0% {
+    transform: translateX(0); // Başlanğıc nöqtəsi
+  }
+
+  100% {
+    transform: translateX(-25%); // Bitmə nöqtəsi
+  }
+}
