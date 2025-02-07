@@ -131,3 +131,137 @@ h1 {
         inset: 0;
     }
 }
+
+
+// mobile
+@media (max-width: 599px) {
+    h1 {
+        font-size: 28px;
+        line-height: 42px;
+        margin: 40px 0px 28px;
+    }
+    
+    
+    .mainSec {
+        margin: 0 0 50px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    
+        .leftDiv {
+            gap: 20px;
+            width: 100%;
+    
+    
+            > div {
+                border-radius: 28px;
+                padding: 15px 21px;
+                gap: 12px;
+    
+    
+                .imgCont {
+                    width: 60px;
+                    height: 60px;
+                    padding: 15px;
+                }
+    
+    
+                .title {
+                    font-size: 18px;
+                    line-height: 27px;
+                }
+    
+    
+                .info {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+        }
+    
+    
+        .rightDiv {
+            width: 100%;
+            border-radius: 28px;
+            padding: 15px 20px;
+    
+    
+            .title {
+                font-size: 28px;
+                line-height: 39px;
+                margin-bottom: 2px;
+            }
+    
+    
+            .desc {
+                gap: 8px;
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+
+// tablet 
+@media (min-width: 600px) and (max-width: 1024px) {
+    h1 {
+        font-size: 40px;
+        line-height: 41px;
+        margin: 80px 0px 90px;
+    }
+    
+    
+    .mainSec {
+        margin: 0 0 90px;
+    
+    
+        .leftDiv {
+            > div {
+                border-radius: 28px;
+                padding: 15px 20px;
+                gap: 12px;
+    
+    
+                .imgCont {
+                    width: 60px;
+                    height: 60px;
+                    padding: 15px;
+                }
+    
+    
+                .title {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+    
+    
+                .info {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+        }
+    
+    
+        .rightDiv {
+            border-radius: 28px;
+            padding: 15px 20px;
+    
+    
+            .title {
+                font-size: 32px;
+                line-height: 39px;
+                margin-bottom: 2px;
+            }
+    
+    
+            .desc {
+                gap: 6px;
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    }
+}
