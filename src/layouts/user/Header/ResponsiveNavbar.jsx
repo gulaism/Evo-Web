@@ -148,6 +148,11 @@ const ResponsiveNavbar = ({ fields, setShowResponsiveNavbar }) => {
       <div>
         <div>Məzunlarımız</div>
         <BiRightArrowAlt size={18} color="#170F49" />
+        <Link
+          to={"/students"}
+          style={{ position: "absolute", inset: "0" }}
+          onClick={closeNavBar}
+        ></Link>
       </div>
       <div>
         <div>Əlaqə</div>

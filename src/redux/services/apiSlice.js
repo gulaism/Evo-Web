@@ -20,19 +20,15 @@ export const apiSlice = createApi({
 
     // Consultation Email API
     sendConsultationEmail: builder.mutation({
-      async queryFn(data, _queryApi, _extraOptions, baseQuery) {
-        const response = await baseQuery({
-          url: 'email/consultation',
-          method: 'POST',
-          body: data,
-          headers: { "Content-Type": "application/json" },
-        });
-
-        if (response.error) return { error: response.error };
-
-        return { data: await response.data.text() }; // Convert only this response to text
-      },
+      query: (data) => ({
+        url: 'email/consultation',
+        method: 'POST',
+        body: data,
+        headers: { "Content-Type": "application/json" },
+        responseHandler: (response) => response.text(), // Explicitly parse response as text
+      }),
     }),
+    
 
     // Fields of API (Categories & Tablets)
     getCategories: builder.query({
