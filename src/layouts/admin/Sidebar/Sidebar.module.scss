@@ -1,0 +1,68 @@
+@import "../../../assets/variables/variables";
+
+.sidebar {
+    background-color: white;
+    width: max-content;
+    height: 100vh;
+    display: flex;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+
+
+    .coloredDiv {
+        background-color: #7367FF;
+        height: 100%;
+        width: 40px;
+    }
+
+
+    .rightDiv {
+        padding: 142px 30px 100px;
+
+
+        .menu {
+            height: 568px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 12px;
+                cursor: pointer;
+
+
+                > div {
+                    width: 24px;
+                    height: 24px;
+
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+
+                p {
+                    color: #170F49;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+
+
+            .selected {
+                background-color: rgba(115, 103, 255, 0.15);
+                border-radius: 12px;
+
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@ import './assets/common/base.scss'
 import UserRouter from './router/UserRouter'
 import { Provider } from 'react-redux'
 import store from './redux/store';
+import AdminRouter from './router/AdminRouter';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<UserRouter />} />
-          <Route path="/admin/*" element={<h1>Admin</h1>} />
+          <Route path="/admin/*" element={<AdminRouter />} />
         </Routes>
       </BrowserRouter>
     </Provider>

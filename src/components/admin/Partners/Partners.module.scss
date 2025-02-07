@@ -1,0 +1,23 @@
+.partners {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      margin-bottom: 15px;
+    }
+  
+    .partnerLogos {
+      display: flex;
+      gap: 15px;
+  
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    }
+  }
+  

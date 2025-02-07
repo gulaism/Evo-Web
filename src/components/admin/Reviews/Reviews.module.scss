@@ -1,0 +1,26 @@
+.reviews {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      margin-bottom: 15px;
+    }
+  
+    .reviewList {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      .reviewCard {
+        padding: 10px 15px;
+        background-color: #f8f9fb;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        font-style: italic;
+      }
+    }
+  }
+  
