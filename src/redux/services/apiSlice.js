@@ -52,6 +52,17 @@ export const apiSlice = createApi({
       query: (id) => `performance/getById/${id}`,
       providesTags: ['Performance'], // Helps with caching & re-fetching
     }),
+
+    // Appeal API
+    sendAppeal: builder.mutation({
+      query: (data) => ({
+        url: 'email/appeal',
+        method: 'POST',
+        body: data,
+        headers: { "Content-Type": "application/json"},
+        responseHandler: (response) => response.text(),
+      })
+    })
   }),
 });
 
@@ -62,5 +73,6 @@ export const {
   useGetCategoriesQuery,
   useGetTabletsByCategoryQuery,
   useGetAllDataQuery,
-  useGetTopPerformanceQuery
+  useGetTopPerformanceQuery,
+  useSendAppealMutation
 } = apiSlice;
