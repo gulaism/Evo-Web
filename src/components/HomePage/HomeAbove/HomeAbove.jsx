@@ -7,69 +7,70 @@ import plus from "../../../assets/images/HomePage/plus.svg";
 import cursorIcon from "../../../assets/images/HomePage/Vector.svg";
 import minus from "../../../assets/images/HomePage/minus.svg";
 import { Link } from "react-router-dom";
+import { useGetHomeQuery } from "../../../redux/services/apiSlice";
 
-const eduFields = [
-  {
-    header: "Advanced Front-end",
-    description: "Front-end dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "Back-end Java",
-    description: "Back-end dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "Ethical Hacking",
-    description: "Kibertəhlükəsizlik dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "Qrafik/Motion Dizayn",
-    description: "Dizayn dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "UX/UI Dizayn",
-    description: "Dizayn dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "İnteryer Dizayn",
-    description: "Dizayn dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "Data Analitika",
-    description: "Data analitika dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "QA Manual Testing",
-    description: "QA Testing dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "Rəqəmsal Marketinq",
-    description: "Marketinq dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  },
-  {
-    header: "Agile",
-    description: "Agile dünyasında ilk addımları bizimlə at.",
-    time: "4 ay",
-    duration: "52 saat",
-  }
-];
+// const eduFields = [
+//   {
+//     header: "Advanced Front-end",
+//     description: "Front-end dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "Back-end Java",
+//     description: "Back-end dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "Ethical Hacking",
+//     description: "Kibertəhlükəsizlik dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "Qrafik/Motion Dizayn",
+//     description: "Dizayn dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "UX/UI Dizayn",
+//     description: "Dizayn dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "İnteryer Dizayn",
+//     description: "Dizayn dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "Data Analitika",
+//     description: "Data analitika dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "QA Manual Testing",
+//     description: "QA Testing dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "Rəqəmsal Marketinq",
+//     description: "Marketinq dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   },
+//   {
+//     header: "Agile",
+//     description: "Agile dünyasında ilk addımları bizimlə at.",
+//     time: "4 ay",
+//     duration: "52 saat",
+//   }
+// ];
 
 const EduField = ({ header, description, time, duration }) => {
   return (
@@ -92,49 +93,50 @@ const EduField = ({ header, description, time, duration }) => {
 const items = [
   {
     title: "From Zero To Expert",
-    span: "Expert",
+    span: ["Expert"],
     description:
       "Tecrübəli müəllim və mentormuz tələbələrə real layihələrdə prosktiki təcrübə qazanmağa kömək edir.",
   },
   {
     title: "İnnovativ Təcrübə Proqramı",
-    span: "İnnovativ",
+    span: ["İnnovativ"],
     description:
       "Proqram müddətində seminarlar və real layihələr üzrə qazanmağa kömək edir.",
   },
   {
     title: "HR mütəxəssisi ilə keçirilən təlimlər",
-    span: "HR mütəxəssisi",
+    span: ["HR mütəxəssisi", "Təlimlər"],
     description:
       "Peşəkar kadr yetişdirir, sizə CV hazırlama və müsahibə sualları üzrə dəstək olunur.",
   },
   {
     title: "InnoTech təqaüd proqramı",
-    span: "InnoTech",
+    span: ["InnoTech"],
     description:
       "Tecrübəli müəllim və mentormuz tələbələrə real layihələrdə prosktiki təcrübə qazanmağa kömək edir.",
   },
   {
     title: "Strateji köməkçi dəstəyi",
-    span: "Strateji",
+    span: ["Strateji", "Köməkçi"],
     description:
       "Strategi köməkçilərimiz hər gün suallarınıza cavablandırmağa kömək edəcək.",
   },
 ];
 
 const Item = ({ title, span, description }) => {
-  const splitTitle = title.split(new RegExp(`(${span})`, "i"));
+  const regex = new RegExp(`(${span.join("|")})`, "gi");
+  const splitTitle = title.split(regex);
 
   return (
     <div className={styles.item}>
       <h3 className={styles.itemTitle}>
-        {splitTitle.map((part, index) => (
-          part.toLowerCase() === span.toLowerCase() ? (
+        {splitTitle.map((part, index) => 
+          span.some(word => word.toLowerCase() === part.toLowerCase()) ? (
             <span key={index}>{part}</span>
           ) : (
             <React.Fragment key={index}>{part}</React.Fragment>
           )
-        ))}
+        )}
       </h3>
       <p className={styles.itemDescription}>{description}</p>
     </div>
@@ -143,12 +145,13 @@ const Item = ({ title, span, description }) => {
 const HomeAbove = () => {
   const [mousePosition, setMousePosition] = useState({ x: 300, y: 300 });
   const [isHovered, setIsHovered] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(6);
   const [isAnimating, setIsAnimating] = useState(false);
   const [itemsPerRow, setItemsPerRow] = useState(3);
   const gridRef = useRef(null);
   const cursorRef = useRef(null);
-
+  const { data: dataHome, error: errorHome, isLoading: isLoadingHome } = useGetHomeQuery();
+  const [visibleCount, setVisibleCount] = useState(dataHome?.tabletList.length < 6 ? dataHome?.tabletList.length : 6);
+  
 
   useEffect(() => {
     const home = document.getElementById("home");
@@ -207,7 +210,7 @@ const HomeAbove = () => {
     }
     setIsAnimating(true);
     setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + incrementValue, eduFields.length))
+      setVisibleCount((prev) => Math.min(prev + incrementValue, dataHome?.tabletList.length))
       setIsAnimating(false);
     }, 300);
   }
@@ -277,7 +280,7 @@ const HomeAbove = () => {
       <div id="home" className={styles.homeWelcome}>
         <div className={styles.welcomeHead}>
           <div>
-            <div>XX+ Məzun sayı</div>
+            <div>{dataHome?.graduatedStudentCount}+ Məzun sayı</div>
             <div className={styles.photosCont}>
               <div>
                 <img
@@ -300,7 +303,7 @@ const HomeAbove = () => {
             </div>
           </div>
           <div>
-            <div>XX+ Akademik heyət</div>
+            <div>{dataHome?.instructorCount}+ Akademik heyət</div>
             <div className={styles.photosCont}>
               <div>
                 <img
@@ -332,7 +335,7 @@ const HomeAbove = () => {
           əldə edin.
         </div>
         <div className={styles.button}>
-          <Link to={'/education'} style={{ cursor: "none" }}>
+          <Link to={"/education"} style={{ cursor: "none" }}>
             Kəşf et
           </Link>
         </div>
@@ -346,62 +349,64 @@ const HomeAbove = () => {
           }`}
           ref={gridRef}
         >
-          {eduFields.slice(0, visibleCount).map((item, index) => (
+          {dataHome?.tabletList.slice(0, visibleCount).map((item, index) => (
             <EduField
               key={index}
-              header={item.header}
-              description={item.description}
-              time={item.time}
-              duration={item.duration}
+              header={item.areaName}
+              description={item.courseDescription}
+              time={item.courseHour}
+              duration={item.courseDuration}
             />
           ))}
         </div>
-        <div className={styles.toggleButtonContainer}>
-          {visibleCount < eduFields.length ? (
-            <button
-              className={styles.toggleButton}
-              onClick={handleIncreaseFields}
-              aria-label="Tədris sahələrini artır"
-            >
-              {/* Plus işarəsi SVG */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+        {dataHome?.tabletList.length > 6 && (
+          <div className={styles.toggleButtonContainer}>
+            {visibleCount < dataHome?.tabletList.length ? (
+              <button
+                className={styles.toggleButton}
+                onClick={handleIncreaseFields}
+                aria-label="Tədris sahələrini artır"
               >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          ) : (
-            <button
-              className={styles.toggleButton}
-              onClick={handleDecreaseFields}
-              aria-label="Tədris sahələrini azalt"
-            >
-              {/* Minus işarəsi SVG */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                {/* Plus işarəsi SVG */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            ) : (
+              <button
+                className={styles.toggleButton}
+                onClick={handleDecreaseFields}
+                aria-label="Tədris sahələrini azalt"
               >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          )}
-        </div>
+                {/* Minus işarəsi SVG */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       <div className={styles.difCont}>

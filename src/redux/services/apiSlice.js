@@ -7,6 +7,10 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: url }),  
   tagTypes: ['Performance'], // Define tag types for caching (optional)
   endpoints: (builder) => ({
+    // Home API
+    getHome: builder.query({
+      query: () => 'home',
+    }),
     
     // Our Difference API
     getDifference: builder.query({
@@ -74,5 +78,6 @@ export const {
   useGetTabletsByCategoryQuery,
   useGetAllDataQuery,
   useGetTopPerformanceQuery,
-  useSendAppealMutation
+  useSendAppealMutation,
+  useGetHomeQuery
 } = apiSlice;
