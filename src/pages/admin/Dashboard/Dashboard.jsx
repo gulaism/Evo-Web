@@ -8,9 +8,12 @@ const Dashboard = () => {
   return (
     <div>
         <Statistics />
+        <Reviews /> 
         <Partners />
         <Courses />
-        <Reviews />
+        <Courses />
+        <Courses />
+        <Courses />
     </div>
   )
 }

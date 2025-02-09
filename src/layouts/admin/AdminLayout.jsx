@@ -5,12 +5,14 @@ import { Outlet } from 'react-router-dom'
 
 const AdminLayout = () => {
   return (
-    <div>
+    <div style={{display: "flex", alignItems: "flex-start", gap: "20px"}}>
       <Sidebar />
-      <Navbar />
-      <Outlet />
+      <div className='adminContainer' style={{height: "100vh", overflowY: "scroll", scrollbarWidth: "none"}}>
+        <Navbar />
+        <Outlet />
+      </div>
     </div>
-  )
+  );
 }
 
 export default AdminLayout

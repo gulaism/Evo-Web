@@ -9,6 +9,7 @@ import graduatesIcon from "../../../assets/images/admin/Sidebar/graduatesIcon.sv
 import logo from "../../../assets/images/admin/Sidebar/logo.svg";
 import mainIcon from "../../../assets/images/admin/Sidebar/mainIcon.svg";
 import settingsIcon from "../../../assets/images/admin/Sidebar/settingsIcon.svg";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 
 const Sidebar = () => {
@@ -18,37 +19,69 @@ const Sidebar = () => {
       <div className={styles.rightDiv}>
         <ul className={styles.menu}>
           <li className={`${styles.menuItem} ${styles.selected}`}>
-            <div>
+            <div className={styles.imgCont}>
               <img src={mainIcon} alt="" />
             </div>
             <p>Ana səhifə</p>
           </li>
           <li className={styles.menuItem}>
-            <div>
+            <div className={styles.imgCont}>
               <img src={bookIcon} alt="" />
             </div>
             <p>Haqqımızda</p>
           </li>
-          <li className={styles.menuItem}>
-            <div>
-              <img src={fieldsIcon} alt="" />
+          <li className={styles.fieldsCont}>
+            <div className={styles.fieldsOfStudyAbove}>
+              <div className={styles.imgCont}>
+                <img src={fieldsIcon} alt="" />
+              </div>
+              <p>Tədris sahələri</p>
             </div>
-            <p>Tədris sahələri</p>
+            <div className={styles.categories}>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Proqramlaşdırma</span>
+              </div>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Dizayn</span>
+              </div>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Dizayn</span>
+              </div>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Dizayn</span>
+              </div>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Dizayn</span>
+              </div>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Dizayn</span>
+              </div>
+              <div>
+                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                <span>Dizayn</span>
+              </div>
+            </div>
           </li>
           <li className={styles.menuItem}>
-            <div>
+            <div className={styles.imgCont}>
               <img src={graduatesIcon} alt="" />
             </div>
             <p>Məzunlarımız</p>
           </li>
           <li className={styles.menuItem}>
-            <div>
+            <div className={styles.imgCont}>
               <img src={contactIcon} alt="" />
             </div>
             <p>Əlaqə</p>
           </li>
         </ul>
-        <div>
+        <div className={styles.bottomMenu}>
           <ul>
             <li>
               <div>
