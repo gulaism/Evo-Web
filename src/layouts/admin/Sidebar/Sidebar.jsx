@@ -46,26 +46,6 @@ const Sidebar = () => {
                 <MdKeyboardArrowRight size={16} color="#7367FF80" />
                 <span>Dizayn</span>
               </div>
-              <div>
-                <MdKeyboardArrowRight size={16} color="#7367FF80" />
-                <span>Dizayn</span>
-              </div>
-              <div>
-                <MdKeyboardArrowRight size={16} color="#7367FF80" />
-                <span>Dizayn</span>
-              </div>
-              <div>
-                <MdKeyboardArrowRight size={16} color="#7367FF80" />
-                <span>Dizayn</span>
-              </div>
-              <div>
-                <MdKeyboardArrowRight size={16} color="#7367FF80" />
-                <span>Dizayn</span>
-              </div>
-              <div>
-                <MdKeyboardArrowRight size={16} color="#7367FF80" />
-                <span>Dizayn</span>
-              </div>
             </div>
           </li>
           <li className={styles.menuItem}>
