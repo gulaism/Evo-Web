@@ -1,0 +1,129 @@
+@import "../../../../assets/variables/variables";
+
+.statistics {
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px 20px;
+
+
+  .title {
+    color: #A3AED0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 8px;
+  }
+
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: start;
+      margin: 0;
+
+
+      .sectionTitle {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+      }
+
+
+      .inputCont {
+        width: 100%;
+        border: 1px solid #7367FF26;
+        padding: 6px 10px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+
+        input {
+          width: 100%;
+          height: 100%;
+          border: none;
+          outline: none;
+          color: $secondColor;
+          font-size: 16px;
+          line-height: 24px;
+          // position: absolute;
+          // top: 0;
+          // right: 0;
+          // bottom: 0;
+          // left: 44px;
+
+
+          &::placeholder {
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+          }
+
+          // to hide increment and decrement arrows
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+
+
+        .iconCont {
+          width: 24px;
+          height: 24px;
+          white-space: nowrap;
+          // position: absolute;
+          // top: 15px;
+          // left: 10px;
+
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+
+        .ppCont {
+          background-color: #F4F3FF;
+          border-radius: 10px;
+          padding: 6px 11px;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          position: absolute;
+          top: 6px;
+          right: 10px;
+
+
+          > div {
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
