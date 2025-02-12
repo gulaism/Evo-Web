@@ -1,0 +1,21 @@
+.dashCont {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+
+    .firstSection {
+        display: flex;
+        gap: 20px;
+
+
+        > div:first-child {
+            flex-grow: 1;
+        }
+
+
+        > div:last-child {
+            width: 190px;
+        }
+    }
+}
