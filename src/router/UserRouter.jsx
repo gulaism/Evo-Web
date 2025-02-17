@@ -7,6 +7,10 @@ import AboutUs from '../pages/user/AboutUs/AboutUs.jsx'
 import OneField from '../pages/user/OneField/OneField.jsx'
 import Contact from '../pages/user/ContactPage/Contact.jsx'
 import OurGraduatesPage from '../pages/user/OurGraduates/OurGraduates.jsx'
+import Login from '../pages/admin/AdminLogin/Login/Login.jsx'
+import ForgetPassword from '../pages/admin/AdminLogin/ForgetPassword/ForgetPassPage.jsx'
+import ResetPasswordPage from '../pages/admin/AdminLogin/ResetPasswordPage/ResetPassPage.jsx'
+import ValidateOtp from '../pages/admin/AdminLogin/ValidateOtp/ValidateOtp.jsx'
 
 const UserRouter = () => {
   return (
@@ -18,6 +22,11 @@ const UserRouter = () => {
         <Route path='/students' element={<OurGraduatesPage />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/field' element={<OneField />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/forget' element={<ForgetPassword />} />
+        <Route path='/reset' element={<ResetPasswordPage />} />
+        <Route path='/otp' element={<ValidateOtp />} />
+        {/* <Route path='/reset-password' element={<ResetPassword />} /> */}
       </Route>
     </Routes>
   )

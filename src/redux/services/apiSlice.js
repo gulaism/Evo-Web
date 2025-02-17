@@ -7,6 +7,12 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: url }),  
   tagTypes: ['Performance'], // Define tag types for caching (optional)
   endpoints: (builder) => ({
+
+    // Home API
+    getHomeData: builder.query({
+      query: () => 'home',
+    }),
+   
     
     // Our Difference API
     getDifference: builder.query({
@@ -51,11 +57,7 @@ export const apiSlice = createApi({
       query: () => 'graduate',
     }),
 
-    // Top Performance API
-    getTopPerformance: builder.query({
-      query: (id) => `performance/getById/${id}`,
-      providesTags: ['Performance'], // Helps with caching & re-fetching
-    }),
+   
   }),
 });
 
@@ -66,5 +68,5 @@ export const {
   useGetCategoriesQuery,
   useGetTabletsByCategoryQuery,
   useGetAllDataQuery,
-  useGetTopPerformanceQuery
+  useGetHomeDataQuery
 } = apiSlice;
