@@ -1,0 +1,129 @@
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fc;
+
+  .blurBackground {
+    filter: blur(5px);
+    pointer-events: none; // Arxa fonla interaksiyanı bloklayır
+  }
+  
+
+  .loginImg{
+    width: 715px;
+    height: 569px;
+    position: relative;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: -37%;
+  }
+    }
+  
+
+
+.authBox {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 505px;
+  height: 505px;
+
+  .titleWellcome{
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(126, 141, 156, 1);
+  }
+  .titleEnter{
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(34, 34, 34, 1);
+    margin-bottom: 28px;
+  }
+  .inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input{
+      border: 1px solid rgba(115, 103, 255, 0.1);
+      width: 438px;
+      height: 53px;
+      border-radius: 12px;
+      padding: 15px;
+      color: rgba(126, 141, 156, 1);
+    }
+    label{
+      font-size: 16px;
+      font-weight: 500;
+      color:rgba(126, 141, 156, 1);
+    }
+  }
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color:rgba(115, 103, 255, 1);
+  color: rgba(244, 243, 255, 1);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+
+  &:hover {
+    background-color: rgba(0, 0, 255, 1);
+    transition: 0.6s ease;
+  }
+}
+
+}
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    padding-right: 40px; // Eye icon üçün yer açırıq
+  }
+
+  .eyeIcon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+}
+.forgotPassword{
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(126, 141, 156, 1);
+  text-align: right;
+  cursor: pointer;
+}
+.errorText{
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
