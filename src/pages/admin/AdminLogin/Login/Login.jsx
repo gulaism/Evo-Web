@@ -52,7 +52,7 @@ const Login = () => {
 
       await refetch(); // Admin emailini yenilə
 
-      navigate('/dashboard'); // Dərhal yönləndir!
+      navigate('/admin'); // Dərhal yönləndir!
     } catch (error) {
       setErrors({ general: 'Giriş zamanı xəta baş verdi. Yenidən cəhd edin.' });
     }
@@ -62,7 +62,7 @@ const Login = () => {
   const handleCloseResetModal = async () => {
     setShowResetModal(false);
     await refetch();
-    navigate('/dashboard');
+    navigate('/admin');
   };
 
   return (
