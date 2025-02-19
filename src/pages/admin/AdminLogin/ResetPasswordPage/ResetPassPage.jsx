@@ -45,7 +45,7 @@ const ResetPassword = () => {
     
             if (response.includes("Password reset successfully")) {
                 console.log("Şifrə uğurla dəyişdirildi!");
-                navigate('/login');  // Burada səhifəni login-ə yönləndir
+                navigate('/admin/login');  // Burada səhifəni login-ə yönləndir
             } else {
                 console.error("Şifrə dəyişmə uğursuz oldu:", response);
             }

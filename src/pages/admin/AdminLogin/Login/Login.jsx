@@ -52,7 +52,7 @@ const Login = () => {
 
       await refetch(); // Admin emailini yenilə
 
-      navigate('/dashboard'); // Dərhal yönləndir!
+      navigate('/admin'); // Dərhal yönləndir!
     } catch (error) {
       setErrors({ general: 'Giriş zamanı xəta baş verdi. Yenidən cəhd edin.' });
     }
@@ -62,8 +62,13 @@ const Login = () => {
   const handleCloseResetModal = async () => {
     setShowResetModal(false);
     await refetch();
-    navigate('/dashboard');
+    navigate('/admin');
   };
+
+
+  const openForgetPage = () => {
+    navigate('/admin/forget');
+  }
 
   return (
     <div className={`${styles.authContainer} ${showResetModal ? styles.blurBackground : ''}`}>
@@ -81,8 +86,8 @@ const Login = () => {
             <img src={showPassword ? closeEye : openEye} alt='Toggle visibility' onClick={() => setShowPassword(!showPassword)} className={styles.eyeIcon} />
           </div>
           {errors.password && <p className={styles.errorText}>{errors.password}</p>}
-          <div className={styles.forgotPassword}>
-            <Link to="/forget">şifrəni unutmusan?</Link>
+          <div onClick={openForgetPage} className={styles.forgotPassword}>
+            <Link>şifrəni unutmusan?</Link>
           </div>
 
           <button className={styles.submitBtn} type='submit'>{isLoading ? 'Yüklənir...' : 'Daxil ol'}</button>

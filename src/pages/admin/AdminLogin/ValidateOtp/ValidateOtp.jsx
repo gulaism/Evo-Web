@@ -58,7 +58,7 @@ const ValidateOtp = () => {
                 throw new Error("Gözlənilməz cavab formatı alındı.");
             }
 
-            navigate('/reset', { state: { email, token: response.token } });
+            navigate('/admin/reset', { state: { email, token: response.token } });
         } catch (error) {
             console.error("OTP doğrulama xətası:", error);
             setErrorMessage("Zəhmət olmazsa, şifrənin düzgünlüyünü yoxlayın");

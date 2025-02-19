@@ -16,7 +16,7 @@ const ForgetPassword = () => {
 
         try {
             await forgetPassword(email); // email birbaşa göndərilir
-            navigate('/otp', { state: { email } }); // Yalnız email doğru oldusa yönləndir
+            navigate('/admin/otp', { state: { email } }); // Yalnız email doğru oldusa yönləndir
         } catch (error) {
             console.error('Email göndərmə xətası:', error);
             setErrorMessage('Bu email qeydiyyatda deyil və ya server xətası baş verdi.'); // Xətanı ekrana yazdırır
