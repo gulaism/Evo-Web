@@ -52,17 +52,16 @@ const ValidateOtp = () => {
         try {
             const response = await validateOtp({ email, otp: otpString }).unwrap();
             console.log("OTP doğrulama cavabı:", response);
-
-            // Cavabın JSON olub-olmadığını yoxlayaq
-            if (typeof response !== "object") {
-                throw new Error("Gözlənilməz cavab formatı alındı.");
-            }
-
-            navigate('/admin/reset', { state: { email, token: response.token } });
+        
+            // Backend düz string qaytardığı üçün JSON formatı yoxlamadan qəbul edirik
+            const token = response; 
+        
+            navigate('/admin/reset', { state: { email, token } });
         } catch (error) {
             console.error("OTP doğrulama xətası:", error);
-            setErrorMessage("Zəhmət olmazsa, şifrənin düzgünlüyünü yoxlayın");
+            setErrorMessage("OTP kodu yanlışdır və ya müddəti bitib.");
         }
+        
     };
 
     return (
