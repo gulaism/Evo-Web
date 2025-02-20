@@ -6,6 +6,7 @@ import Statistics from "../../../components/admin/MainDashBoard/Statistics/Stati
 // style
 import styles from "./Dashboard.module.scss";
 import OurDifference from "../../../components/admin/MainDashBoard/OurDifference/OurDifference";
+import Faq from "../../../components/admin/MainDashBoard/Faq/Faq";
 
 
 const Dashboard = () => {
@@ -26,6 +27,9 @@ const Dashboard = () => {
       </div>
       <div>
         <OurDifference />
+      </div>
+      <div>
+        <Faq />
       </div>
       <button className={isEnabled ? `${styles.saveBtn} ${styles.active}` : `${styles.saveBtn}`}>Yadda saxla</button>
     </div>

@@ -1,0 +1,121 @@
+@import "../../../../assets/variables/variables";
+
+.faqCont {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 20px;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: start;
+
+
+    .faqHead {
+        color: #A3AED0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+    }
+
+
+    .faqHeader {
+        color: $mainColor;
+        font-weight: 600;
+        line-height: 27px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+
+        div:last-child {
+            padding: 8px;
+            border: 1px solid #7367FF26;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+    .faqs {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+
+
+        .question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #7367FF66;
+            padding: 0 10px 12px;
+            width: 100%;
+            gap: 50px;
+
+
+            div:first-child {
+                display: flex;
+                gap: 6px;
+                align-items: center;
+                width: 100%;
+
+
+                .inputDiv {
+                    width: 100%;
+                    height: 44px;
+                    border: 1px solid #7367FF26;
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+
+                    > div {
+                        width: 25px;
+                        height: 25px;
+                        padding: 3px 4px;
+
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        outline: none;
+                        border: none;
+                        color: $secondColor;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+
+
+            div:last-child {
+                width: 25px;
+                height: 25px;
+                padding: 3px 4px;
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
