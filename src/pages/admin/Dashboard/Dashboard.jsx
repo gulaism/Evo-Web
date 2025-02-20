@@ -5,6 +5,7 @@ import Reviews from "../../../components/admin/MainDashBoard/Reviews/Reviews";
 import Statistics from "../../../components/admin/MainDashBoard/Statistics/Statistics"
 // style
 import styles from "./Dashboard.module.scss";
+import OurDifference from "../../../components/admin/MainDashBoard/OurDifference/OurDifference";
 
 
 const Dashboard = () => {
@@ -22,6 +23,9 @@ const Dashboard = () => {
       </div>
       <div>
         <Reviews setIsEnabled = {setIsEnabled}/>
+      </div>
+      <div>
+        <OurDifference />
       </div>
       <button className={isEnabled ? `${styles.saveBtn} ${styles.active}` : `${styles.saveBtn}`}>Yadda saxla</button>
     </div>
