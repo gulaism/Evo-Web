@@ -53,7 +53,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #7367FF66;
+            // border-bottom: 1px solid #7367FF66;
             padding: 0 10px 12px;
             width: 100%;
             gap: 50px;
@@ -77,10 +77,11 @@
                     gap: 12px;
 
 
-                    > div {
+                    >div {
                         width: 25px;
                         height: 25px;
                         padding: 3px 4px;
+                        cursor: pointer;
 
 
                         img {
@@ -117,5 +118,31 @@
                 }
             }
         }
+    }
+}
+
+
+.withBorder {
+    border-bottom: 1px solid #7367FF66;
+}
+
+
+.answerCont {
+    color: #788592;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0 10px 12px 40px;
+    height: max-content;
+    width: 100%;
+
+
+    input {
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
     }
 }

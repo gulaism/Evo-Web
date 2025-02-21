@@ -29,7 +29,7 @@ const Dashboard = () => {
         <OurDifference />
       </div>
       <div>
-        <Faq />
+      <Faq setIsEnabled = {setIsEnabled}/>
       </div>
       <button className={isEnabled ? `${styles.saveBtn} ${styles.active}` : `${styles.saveBtn}`}>Yadda saxla</button>
     </div>

@@ -4,18 +4,50 @@ import styles from "./Faq.module.scss";
 import plusIcon from "../../../../assets/images/admin/Partners/plusIcon.svg";
 import trashIcon from "../../../../assets/images/admin/Partners/trashIcon.svg";
 import editIcon from "../../../../assets/images/admin/Statistics/editIcon.svg";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import React, { useState } from "react";
 
-const faqQuestions = [
-  "Lorem1 ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Lorem2 ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Lorem3 ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Lorem4 ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Lorem5 ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Lorem6 ipsum dolor sit amet, consectetur adipiscing elit.",
+const initialFaqQuestions = [
+  {
+    question: "Lorem1 ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Answer1 to question1",
+  },
+  {
+    question: "Lorem2 ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Answer2 to question2",
+  },
+  {
+    question: "Lorem3 ipsum dolor sit amet, consectetur adipiscing elit.",
+    answer: "Answer3 to question3",
+  },
 ];
 
-const Faq = () => {
+const Faq = ({setIsEnabled}) => {
+  const [ showAnswerWithId , setShowAnswerWithId ] = useState(null);
+  const [ focusedQuestion , setFocusedQuestion ] = useState(null);
+  const [ faqQuestions , setFaqQuestions ] = useState(initialFaqQuestions);
+
+  const handleChangeAnswer = (e, index) => {
+    const updatedFaqQuestion = e.target.value;
+    setFaqQuestions((prevFaqQuestions) => 
+      prevFaqQuestions.map((faq, i) =>
+        i === index ? {...faq, answer: updatedFaqQuestion} : faq 
+      )
+    );
+    setIsEnabled(true);
+  };
+
+  const handleChangeQuestion = (e, index) => {
+    const updatedFaqQuestion = e.target.value;
+    setFaqQuestions((prevFaqQuestions) => 
+      prevFaqQuestions.map((faq, i) =>
+        i === index ? {...faq, question: updatedFaqQuestion} : faq 
+      )
+    );
+    setIsEnabled(true);
+  }
+
+
   return (
     <div className={styles.faqCont}>
       <div className={styles.faqHead}>Tez-tez verilən suallar</div>
@@ -27,20 +59,52 @@ const Faq = () => {
       </div>
       <div className={styles.faqs}>
         {faqQuestions.map((faq, index) => (
-          <div className={styles.question} key={index}>
-            <div>
-              <MdKeyboardArrowRight size={24} color="#7367FF80" />
-              <div className={styles.inputDiv}>
-                <div>
-                  <img src={editIcon} alt="" />
+          <React.Fragment key={index}>
+            <div
+              className={`${styles.question} ${
+                showAnswerWithId !== index ? styles.withBorder : ""
+              }`}
+            >
+              <div>
+                {showAnswerWithId !== index ? (
+                  <MdKeyboardArrowRight
+                    size={24}
+                    color="#7367FF80"
+                    onClick={() => setShowAnswerWithId(index)}
+                    style={{ cursor: "pointer" }}
+                  />
+                ) : (
+                  <MdKeyboardArrowDown
+                    size={24}
+                    color="#7367FF80"
+                    onClick={() => setShowAnswerWithId(null)}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
+                <div className={styles.inputDiv}>
+                  <div onClick={() => setFocusedQuestion(index)}>
+                    <img src={editIcon} alt="" />
+                  </div>
+                  <input
+                    onChange={(e) => handleChangeQuestion(e, index)}
+                    type="text"
+                    defaultValue={faq.question}
+                  />
                 </div>
-                <input type="text" value={faq} />
+              </div>
+              <div>
+                <img src={trashIcon} alt="" />
               </div>
             </div>
-            <div>
-              <img src={trashIcon} alt="" />
-            </div>
-          </div>
+            {showAnswerWithId === index && (
+              <div className={`${styles.withBorder} ${styles.answerCont}`}>
+                <input
+                  onChange={(e) => handleChangeAnswer(e, index)}
+                  defaultValue={faq.answer}
+                />
+              </div>
+            )}
+          </React.Fragment>
         ))}
       </div>
     </div>
