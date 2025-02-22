@@ -38,7 +38,6 @@ export const adminApiSlice = createApi({
         method: "POST",
       }),
     }),
-    
     validateOtp: builder.mutation({
       query: ({ email, otp }) => ({
         url: `auth/validate-otp?email=${email}&otp=${otp}`,
@@ -46,8 +45,6 @@ export const adminApiSlice = createApi({
         responseHandler: (response) => response.text(), // JSON kimi parse etməsin, sadəcə text kimi oxusun
       }),
     }),
-    
-    
     resetPassword: builder.mutation({
       query: ({ email, newPassword, verifyPassword, resetToken }) => ({
         url: `auth/reset-password?email=${encodeURIComponent(email)}&newPassword=${encodeURIComponent(newPassword)}&verifyPassword=${encodeURIComponent(verifyPassword)}&resetToken=${encodeURIComponent(resetToken)}`,

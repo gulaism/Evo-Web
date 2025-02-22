@@ -19,10 +19,11 @@ const FieldsOfStudy = () => {
   // Kategoriyalar yükləndəndə default olaraq "Programming" seçilsin
   useEffect(() => {
     if (categories && categories.length > 0 && !selectedCategory) {
-      const defaultCategory = categories.find((category) => category.category === "Programming");
+      const defaultCategory = categories.find((category) => category.id === 1);
       if (defaultCategory) {
         setSelectedCategory(defaultCategory.category); // İlk olaraq "Programming" seçilsin
       }
+      console.log(categories);
     }
   }, [categories, selectedCategory]); // categories dəyişdikdə yenidən işləyəcək
 
