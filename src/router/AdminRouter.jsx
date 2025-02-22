@@ -6,6 +6,7 @@ import Login from '../pages/admin/AdminLogin/Login/Login'
 import ForgetPassword from '../pages/admin/AdminLogin/ForgetPassword/ForgetPassPage'
 import ValidateOtp from '../pages/admin/AdminLogin/ValidateOtp/ValidateOtp'
 import ResetPassword from '../pages/admin/AdminLogin/ResetPasswordPage/ResetPassPage'
+import AboutPage from '../pages/admin/AboutPage/AboutPage'
 
 const AdminRouter = () => {
   return (
@@ -17,6 +18,8 @@ const AdminRouter = () => {
       <Route path="/forget" element={<ForgetPassword />} />
       <Route path="/reset" element={<ResetPassword />} />
       <Route path="/otp" element={<ValidateOtp />} />
+      <Route path="/about" element={<AboutPage />} />
+
       {/* <Route path='/reset-password' element={<ResetPassword />} /> */}
     </Routes>
   );
