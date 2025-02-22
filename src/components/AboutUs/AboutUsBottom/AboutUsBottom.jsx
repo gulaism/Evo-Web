@@ -6,7 +6,7 @@ import InternshipProgram from './InternshipProgram/InternshipProgram';
 import { useGetAboutQuery } from '../../../redux/services/apiSlice';
 
 const AboutUsBottom = () => {
-  const { data = {}, isLoading, isError } = useGetAboutQuery();
+  const { data, isLoading, isError } = useGetAboutQuery();
 
   console.log('Backend-dən gələn data:', data);
 
@@ -31,7 +31,7 @@ const AboutUsBottom = () => {
         <h2>Partnyorlar</h2>
         <PartnerLogos logos={partners.map((partner, index) => ({
           id: index,
-          src: partner,
+          src: partner.imageUrl,
           alt: `Partnyor ${index + 1}`,
         }))} />
       </section>
