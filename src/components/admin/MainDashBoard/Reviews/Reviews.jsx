@@ -4,7 +4,7 @@ import styles from "./Reviews.module.scss";
 import plusIcon from "../../../../assets/images/admin/Partners/plusIcon.svg";
 import editIcon from "../../../../assets/images/admin/Statistics/editIcon.svg";
 import trashIcon from "../../../../assets/images/admin/Partners/trashIcon.svg";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import React, { useState } from "react";
 
 const initialStudents = [
@@ -23,9 +23,9 @@ const initialStudents = [
     name: "Paşayeva Nata",
     job: "Codeon / marketoloq",
     text: [
-      "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque non cursus risus, eu aliquam tellus. Donec ante dui, semper nec placerat ac, vestibulum vel libero. In vulputate hendrerit sagittis. Morbi tincidunt ultricies auctor. Proin pulvinar neque eu tempus imperdiet.",
-      "Etiam tincidunt lacinia sem, at finibus arcu fermentum sed. Sed finibus ipsum e",
-      "Duis tincidunt dictum ultrices. Pellentesque purus dolor, scelerisque at sodales quis, porta quis lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque tristique luctus bibendum. Duis luctus vehicula condimentum. Cras sed feugiat sem. Nulla tempor congue augue ac consequat.",
+        "Salam",
+        "Necesiz?",
+        "Sag olun!!!",
     ],
   },
 ];
@@ -34,6 +34,7 @@ const Reviews = ({ setIsEnabled }) => {
   const [editableStudentId, setEditableStudentId] = useState(null);
   const [students, setStudents] = useState(initialStudents);
   const [editingTextId, setEditingTextId] = useState(null);
+  const [ showStudentText , setShowStudentText ] = useState(null);
 
   const handleEditStudentInfo = (e, id, field) => {
     setIsEnabled(true);
@@ -80,11 +81,21 @@ const Reviews = ({ setIsEnabled }) => {
               <tr key={student.id}>
                 <td className={styles.studentCell}>
                   <div className={styles.iconsCont}>
-                    <MdKeyboardArrowRight
-                      className={styles.expandBtn}
-                      size={24}
-                      color="#b9b3f9"
-                    />
+                    {showStudentText !== student.id ? (
+                      <MdKeyboardArrowRight
+                        onClick={() => setShowStudentText(student.id)}
+                        className={styles.expandBtn}
+                        size={24}
+                        color="#b9b3f9"
+                      />
+                    ) : (
+                      <MdKeyboardArrowDown
+                        size={24}
+                        color="#b9b3f9"
+                        className={styles.expandBtn}
+                        onClick={() => setShowStudentText(null)}
+                      />
+                    )}
                     <button
                       onClick={() => setEditableStudentId(student.id)}
                       className={styles.editBtn}
@@ -126,27 +137,29 @@ const Reviews = ({ setIsEnabled }) => {
                   </button>
                 </td>
               </tr>
-              <tr className={styles.withBorder}>
-                <td colSpan="3" className={styles.textCell}>
-                  {editingTextId === student.id ? (
-                    <textarea
-                      value={student.text.join("\n")}
-                      onChange={(e) => handleEditStudentText(e, student.id)}
-                      onBlur={() => setEditingTextId(null)}
-                      autoFocus
-                    />
-                  ) : (
-                    <div
-                      className={styles.descPar}
-                      onClick={() => setEditingTextId(student.id)}
-                    >
-                      {student.text.map((line, index) => (
-                        <p key={index}>{line}</p>
-                      ))}
-                    </div>
-                  )}
-                </td>
-              </tr>
+              {showStudentText === student.id && (
+                <tr className={styles.withBorder}>
+                  <td colSpan="3" className={styles.textCell}>
+                    {editingTextId === student.id ? (
+                      <textarea
+                        value={student.text.join("\n")}
+                        onChange={(e) => handleEditStudentText(e, student.id)}
+                        onBlur={() => setEditingTextId(null)}
+                        autoFocus
+                      />
+                    ) : (
+                      <div
+                        className={styles.descPar}
+                        onClick={() => setEditingTextId(student.id)}
+                      >
+                        {student.text.map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              )}
             </React.Fragment>
           ))}
         </tbody>
