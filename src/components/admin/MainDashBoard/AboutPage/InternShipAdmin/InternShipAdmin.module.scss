@@ -1,0 +1,180 @@
+@import "../../../../../assets//variables/variables";
+
+
+
+.container {
+    width: 100%;
+    // max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: $fontFamily;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    color: rgba(163, 174, 208, 1)
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: rgba(34, 34, 34, 1)
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    //background: rgba(245, 247, 252, 1);
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(34, 34, 34, 1);
+    border: 1px solid rgba(226, 232, 240, 1);
+
+    h2 {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(126, 141, 156, 1);
+        margin-bottom: 0 !important;
+        width: 100%;
+    }
+
+    .icon {
+        color: rgba(163, 174, 208, 1);
+        font-size: 18px;
+    }
+}
+
+
+textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(126, 141, 156, 1);
+    font-family: $fontFamily;
+}
+
+
+.listHeader {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 2px solid #eee;
+    color: rgba(34, 34, 34, 1);
+
+
+
+    .addButton {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(115, 103, 255, 0.1490196078);
+        border-radius: 9px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: white;
+        margin-right: 54px;
+
+        &:hover {
+            color: #0056b3;
+        }
+    }
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+
+    .left {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        input {
+            //width: 150px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: rgba(126, 141, 156, 1);
+        }
+
+        .addButtonSlogan {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(115, 103, 255, 0.1490196078);
+            border-radius: 9px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: white;
+            //margin-right: 54px;
+
+            &:hover {
+                color: #0056b3;
+            }
+        }
+
+    }
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    textarea {
+        width: 505px;
+        min-height: 120px;
+        padding: 11px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+    }
+
+    .deleteButton {
+        cursor: pointer;
+        color: rgba(74, 58, 255, 1);
+        font-size: 18px;
+        transition: 0.2s;
+        margin-left: 268px;
+
+        &:hover {
+            color: #c21807;
+        }
+    }
+
+    .arrowType {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        //background: rgba(245, 247, 252, 1);
+        padding: 12px 15px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(34, 34, 34, 1);
+        border: 1px solid rgba(226, 232, 240, 1);
+    }
+}

@@ -1,0 +1,25 @@
+.aboutPage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(505px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.saveBtn {
+  background-color: #C5C0FF;
+  border-radius: 14px;
+  padding: 10px 46px;
+  font-size: 16px;
+  line-height: 24px;
+  position: fixed;
+  bottom: 352px;
+  right: 245px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: max-content;
+}
+
+.active {
+  background-color: #7367FF;
+}/*# sourceMappingURL=AboutPage.module.css.map */

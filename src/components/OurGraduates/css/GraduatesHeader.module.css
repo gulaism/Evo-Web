@@ -1,0 +1,88 @@
+.header {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.title {
+  font-size: 60px;
+  color: rgb(34, 34, 34);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+@media (max-width: 599px) {
+  .title {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+.description {
+  font-size: 20px;
+  color: rgb(126, 141, 156);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+@media (max-width: 599px) {
+  .description {
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .description {
+    font-size: 16px;
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 48px;
+}
+@media (max-width: 599px) {
+  .stats {
+    font-size: 12px;
+  }
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 48px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+@media (max-width: 599px) {
+  .statValue {
+    font-size: 16px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .statValue {
+    font-size: 32px;
+  }
+}
+
+.statLabel {
+  font-size: 16px;
+  color: rgb(126, 141, 156);
+  font-weight: 400;
+}
+@media (max-width: 599px) {
+  .statLabel {
+    font-size: 12px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .statLabel {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=GraduatesHeader.module.css.map */
