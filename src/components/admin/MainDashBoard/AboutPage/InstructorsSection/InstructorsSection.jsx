@@ -4,43 +4,29 @@ import editIcon from "../../../../../assets/images/admin/Statistics/editIcon.svg
 import trashIcon from "../../../../../assets/images/admin/Partners/trashIcon.svg";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const initialStudents = [
-    {
-        id: 1,
-        name: "Paşayev Namiq",
-        job: "Codeon / Rəqəmsal marketoloq",
-        linkedin: "https://www.linkedin.com/in/namiq",
-        text: [
-            "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-            "Etiam tincidunt lacinia sem, at finibus arcu fermentum sed. Sed finibus ipsum e",
-            "Duis tincidunt dictum ultrices. Pellentesque purus dolor, scelerisque at sodales quis."
-        ],
-    },
-    {
-        id: 2,
-        name: "Paşayeva Nata",
-        job: "Codeon / marketoloq",
-        linkedin: "https://www.linkedin.com/in/nata",
-        text: ["Salam", "Necesiz?", "Sag olun!!!"],
-    },
-];
-
-const InstructorsSection = ({ setIsEnabled }) => {
-    const [editableStudentId, setEditableStudentId] = useState(null);
-    const [students, setStudents] = useState(initialStudents);
+const InstructorsSection = ({ setIsEnabled, content, setContent }) => {
+    const [editableInstructorId, setEditableInstructorId] = useState(null);
+    const [instructors, setInstructors] = useState([]);
     const [editingTextId, setEditingTextId] = useState(null);
-    const [showStudentText, setShowStudentText] = useState(null);
+    const [showInstructorText, setShowInstructorText] = useState(null);
     const [description, setDescription] = useState("Burada sizə yalnız nəzəri biliklər deyil...");
     const [isEditingDesc, setIsEditingDesc] = useState(false);
 
-    const handleEditStudentInfo = (e, id, field) => {
+    // Backend-dən gələn instructors məlumatını state-ə yazırıq
+    useEffect(() => {
+        if (content?.instructors) {
+            setInstructors(content.instructors);
+        }
+    }, [content]);
+
+    const handleEditInstructorInfo = (e, id, field) => {
         setIsEnabled(true);
         const updatedValue = e.target.value;
-        setStudents(prevStudents =>
-            prevStudents.map(student =>
-                student.id === id ? { ...student, [field]: updatedValue } : student
+        setInstructors(prevInstructors =>
+            prevInstructors.map(instructor =>
+                instructor.id === id ? { ...instructor, [field]: updatedValue } : instructor
             )
         );
     };
@@ -69,32 +55,32 @@ const InstructorsSection = ({ setIsEnabled }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {students.map((student) => (
-                        <React.Fragment key={student.id}>
-                            <tr key={student.id}>
+                    {instructors.map((instructor) => (
+                        <React.Fragment key={instructor.id}>
+                            <tr>
                                 <td className={style.studentCell}>
                                     <div className={style.iconsCont}>
-                                        {showStudentText !== student.id ? (
-                                            <MdKeyboardArrowRight onClick={() => setShowStudentText(student.id)} className={style.expandBtn} size={24} color="#b9b3f9" />
+                                        {showInstructorText !== instructor.id ? (
+                                            <MdKeyboardArrowRight onClick={() => setShowInstructorText(instructor.id)} className={style.expandBtn} size={24} color="#b9b3f9" />
                                         ) : (
-                                            <MdKeyboardArrowDown size={24} color="#b9b3f9" className={style.expandBtn} onClick={() => setShowStudentText(null)} />
+                                            <MdKeyboardArrowDown size={24} color="#b9b3f9" className={style.expandBtn} onClick={() => setShowInstructorText(null)} />
                                         )}
-                                        <button onClick={() => setEditableStudentId(student.id)} className={style.editBtn}>
+                                        <button onClick={() => setEditableInstructorId(instructor.id)} className={style.editBtn}>
                                             <img src={editIcon} alt="" />
                                         </button>
                                     </div>
                                     <div className={style.studentCont}>
                                         <div>
-                                            <img src="https://thispersondoesnotexist.com/" alt="Profile" className={style.profileImg} />
+                                            <img src={instructor.profilePicture} alt="Profile" className={style.profileImg} />
                                         </div>
-                                        <input type="text" disabled={editableStudentId !== student.id} value={student.name} onChange={(e) => handleEditStudentInfo(e, student.id, "name")} />
+                                        <input type="text" disabled={editableInstructorId !== instructor.id} value={instructor.name} onChange={(e) => handleEditInstructorInfo(e, instructor.id, "name")} />
                                     </div>
                                 </td>
                                 <td className={style.jobCell}>
-                                    <input disabled={editableStudentId !== student.id} type="text" value={student.job} onChange={(e) => handleEditStudentInfo(e, student.id, "job")} />
+                                    <input disabled={editableInstructorId !== instructor.id} type="text" value={instructor.job} onChange={(e) => handleEditInstructorInfo(e, instructor.id, "job")} />
                                 </td>
                                 <td className={style.linkedinCell}>
-                                    <input disabled={editableStudentId !== student.id} type="text" value={student.linkedin} onChange={(e) => handleEditStudentInfo(e, student.id, "linkedin")} />
+                                    <input disabled={editableInstructorId !== instructor.id} type="text" value={instructor.linkedinLink} onChange={(e) => handleEditInstructorInfo(e, instructor.id, "linkedinLink")} />
                                 </td>
                                 <td className={style.btnCell}>
                                     <button className={style.deleteBtn}>

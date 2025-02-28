@@ -22,10 +22,9 @@ const AboutPage = () => {
     if (data) {
         setContent((prev) => ({
             ...prev, // Mövcud state-i qoruyuruq
-            // id: data?.id || null,
-            // hashtag: data?.hashtag || "",
-            // slogan: data?.title || "",
-            aboutRequest: data?.aboutRequest || {},
+            id: data?.id || null,
+            hashtag: data?.hashtag || "",
+            slogan: data?.title || "",
             description: data?.paragraphs?.join("\n") || "",
             scholarships: data?.scholarships || prev.scholarships || [], // Təqaüd proqramını saxlayırıq
             instructors: data?.instructors || prev.instructors || [], // Təlimçilər
@@ -33,6 +32,8 @@ const AboutPage = () => {
         }));
     }
 }, [data]);
+
+
 
 
   const handleSave = async () => {
@@ -72,7 +73,7 @@ const AboutPage = () => {
       >
         Yadda saxla
       </button>
-      <InternShipAdmin content={content} setContent={setContent} />
+      <InternShipAdmin />
     </div>
   );
 };
