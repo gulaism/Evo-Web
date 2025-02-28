@@ -37,6 +37,8 @@ const InternShipAdmin = () => {
     },
   ]);
 
+  const [editableField, setEditableField] = useState(null);
+
   const handleAddItem = () => {
     const newItem = {
       id: Date.now(),
@@ -61,8 +63,12 @@ const InternShipAdmin = () => {
       <h3 className={styles.title}>Təcrübə Proqramı</h3>
       <h3 className={styles.subtitle}>Giriş</h3>
       <div className={styles.inputContainer}>
-        <AiOutlineEdit className={styles.icon} />
-        <textarea value={introText} onChange={(e) => setIntroText(e.target.value)} />
+        <AiOutlineEdit className={styles.icon} onClick={() => setEditableField("introText")} />
+        <textarea
+          value={introText}
+          onChange={(e) => setIntroText(e.target.value)}
+          disabled={editableField !== "introText"}
+        />
       </div>
 
       <div className={styles.listHeader}>
@@ -76,50 +82,81 @@ const InternShipAdmin = () => {
       {items.map((item) => (
         <div key={item.id} className={styles.listItem}>
           <div className={styles.left}>
-            <div className={styles.addButtonFlex} style={{ display: "flex", alignItems: "center", gap: "10px", justifyContent: "start", marginBottom: "10px" }}>
+            <div
+              className={styles.addButtonFlex}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                justifyContent: "start",
+                marginBottom: "10px",
+              }}
+            >
               <button className={styles.addButtonSlogan} onClick={handleAddItem}>
                 <img src={plusIcon} alt="" />
               </button>
 
               <div className={styles.inputContainer} style={{ width: "330px", height: "44px" }}>
-                <AiOutlineEdit className={styles.icon} />
+                <AiOutlineEdit
+                  className={styles.icon}
+                  onClick={() => setEditableField(`slogan-${item.id}`)}
+                />
                 <input
                   style={{ width: "100%", border: "none" }}
                   className={styles.sloganInput}
                   type="text"
                   value={item.slogan}
                   onChange={(e) => handleEditItem(item.id, "slogan", e.target.value)}
+                  disabled={editableField !== `slogan-${item.id}`}
                 />
               </div>
             </div>
 
             <div className={styles.inputContainer} style={{ width: "185px", height: "44px" }}>
-              <AiOutlineEdit className={styles.icon} />
+              <AiOutlineEdit
+                className={styles.icon}
+                onClick={() => setEditableField(`time-${item.id}`)}
+              />
               <input
                 style={{ width: "100%", border: "none" }}
                 className={styles.smallInput}
                 type="text"
                 value={item.time}
                 onChange={(e) => handleEditItem(item.id, "time", e.target.value)}
+                disabled={editableField !== `time-${item.id}`}
               />
             </div>
-            <input
-              style={{ width: "185px", backgroundColor:"rgba(244, 243, 255, 1)", border: "none",borderRadius:"10px" }}
-              className={styles.smallInput}
-              type="text"
-              value={item.type}
-              onChange={(e) => handleEditItem(item.id, "type", e.target.value)}
-            />
 
+            <div className={styles.typeContainer} style={{ width: "185px", height: "44px" }}>
+              <MdOutlineKeyboardArrowRight
+                className={styles.arrow}
+                style={{ fontSize: "30px", color: "rgba(126, 141, 156, 1)" }}
+              />
+              <input
+                style={{ width: "100%", backgroundColor: "rgba(244, 243, 255, 1)", border: "none" }}
+                className={styles.smallInput}
+                type="text"
+                value={item.type}
+                onChange={(e) => handleEditItem(item.id, "type", e.target.value)}
+                disabled={editableField !== `type-${item.id}`}
+              />
+            </div>
           </div>
 
-          <div className={styles.right}>
-            <textarea
-              className={styles.descriptionInput}
-              value={item.description}
-              onChange={(e) => handleEditItem(item.id, "description", e.target.value)}
+          <div className={styles.inputContainer} style={{ border: "none" }}>
+            <AiOutlineEdit
+              className={styles.icon}
+              onClick={() => setEditableField(`description-${item.id}`)}
             />
-            <FiTrash2 className={styles.deleteButton} onClick={() => handleDeleteItem(item.id)} />
+            <div className={styles.right}>
+              <textarea
+                className={styles.descriptionInput}
+                value={item.description}
+                onChange={(e) => handleEditItem(item.id, "description", e.target.value)}
+                disabled={editableField !== `description-${item.id}`}
+              />
+              <FiTrash2 className={styles.deleteButton} onClick={() => handleDeleteItem(item.id)} />
+            </div>
           </div>
         </div>
       ))}

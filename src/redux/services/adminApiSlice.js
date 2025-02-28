@@ -1,16 +1,19 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const url = import.meta.env.VITE_SOME_KEY;
+const baseUrl = import.meta.env.VITE_SOME_KEY || "http://localhost:8080/api/v1"; // Default URL əlavə edildi
 
 export const adminApiSlice = createApi({
   reducerPath: "adminApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: url,
+    baseUrl,
     prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.token;
+      const token = getState()?.auth?.token;
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
+      } else {
+        console.warn("⚠️ Token yoxdur, API çağırışları işləməyəcək!");
       }
+      headers.set("Content-Type", "application/json");
       return headers;
     },
   }),
@@ -34,29 +37,34 @@ export const adminApiSlice = createApi({
     }),
     forgotPassword: builder.mutation({
       query: (email) => ({
-        url: `auth/forgot-password?email=${email}`,
+        url: `auth/forgot-password?email=${encodeURIComponent(email)}`,
         method: "POST",
       }),
     }),
-    
     validateOtp: builder.mutation({
       query: ({ email, otp }) => ({
-        url: `auth/validate-otp?email=${email}&otp=${otp}`,
+        url: `auth/validate-otp?email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`,
         method: "POST",
-        responseHandler: (response) => response.text(), // JSON kimi parse etməsin, sadəcə text kimi oxusun
+        responseHandler: (response) => response.text(), // JSON kimi parse etməsin, text qaytarsın
       }),
     }),
-    
-    
     resetPassword: builder.mutation({
       query: ({ email, newPassword, verifyPassword, resetToken }) => ({
         url: `auth/reset-password?email=${encodeURIComponent(email)}&newPassword=${encodeURIComponent(newPassword)}&verifyPassword=${encodeURIComponent(verifyPassword)}&resetToken=${encodeURIComponent(resetToken)}`,
         method: "POST",
-        responseHandler: (response) => response.text(), // JSON yox, TEXT kimi parse edir
+        responseHandler: (response) => response.text(),
       }),
     }),
-    
-    
+    createOrUpdateAbout: builder.mutation({
+      query: (data) => ({
+        url: "about/create",
+        method: "POST",
+        body: data,
+      }),
+    }),
+    getAbout: builder.query({
+      query: () => "about",
+    }),
   }),
 });
 
@@ -67,4 +75,6 @@ export const {
   useForgotPasswordMutation,
   useValidateOtpMutation,
   useResetPasswordMutation,
+  useCreateOrUpdateAboutMutation,
+  useGetAboutQuery,
 } = adminApiSlice;
