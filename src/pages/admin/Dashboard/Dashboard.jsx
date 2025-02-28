@@ -23,7 +23,7 @@ const Dashboard = () => {
     <div className={styles.dashCont}>
       <div className={styles.firstSection}>
         <div>
-          <Statistics />
+          <Statistics setIsEnabled = {setIsEnabled} />
         </div>
         <div>
           <Partners />
@@ -33,10 +33,10 @@ const Dashboard = () => {
         <Reviews setIsEnabled = {setIsEnabled}/>
       </div>
       <div>
-        <OurDifference />
+        <OurDifference setIsEnabled = {setIsEnabled}/>
       </div>
       <div>
-      <Faq setIsEnabled = {setIsEnabled}/>
+      <Faq setIsEnabled = {setIsEnabled} />
       </div>
       <button className={isEnabled ? `${styles.saveBtn} ${styles.active}` : `${styles.saveBtn}`}>Yadda saxla</button>
     </div>

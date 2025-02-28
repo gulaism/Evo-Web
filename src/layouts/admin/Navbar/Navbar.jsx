@@ -17,15 +17,6 @@ const Navbar = () => {
           <p>Xoş gəlmisən!</p>
         </div>
       </div>
-      <div className={styles.searchBar}>
-        <input
-          type="text"
-          placeholder="Search"
-        />
-        <div>
-          <img src={search} alt="" />
-        </div>
-      </div>
     </div>
   );
 };

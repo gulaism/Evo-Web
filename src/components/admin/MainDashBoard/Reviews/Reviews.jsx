@@ -22,11 +22,7 @@ const initialStudents = [
     id: 2,
     name: "Paşayeva Nata",
     job: "Codeon / marketoloq",
-    text: [
-        "Salam",
-        "Necesiz?",
-        "Sag olun!!!",
-    ],
+    text: ["Salam", "Necesiz?", "Sag olun!!!"],
   },
 ];
 
@@ -34,20 +30,17 @@ const Reviews = ({ setIsEnabled }) => {
   const [editableStudentId, setEditableStudentId] = useState(null);
   const [students, setStudents] = useState(initialStudents);
   const [editingTextId, setEditingTextId] = useState(null);
-  const [ showStudentText , setShowStudentText ] = useState(null);
+  const [showStudentText, setShowStudentText] = useState(null);
 
   const handleEditStudentInfo = (e, id, field) => {
     setIsEnabled(true);
     const updatedValue = e.target.value;
     setStudents((prevStudents) =>
       prevStudents.map((student) =>
-        student.id === id
-          ? { ...student, [field]: updatedValue }
-          : student
+        student.id === id ? { ...student, [field]: updatedValue } : student
       )
     );
   };
-
 
   const handleEditStudentText = (e, id) => {
     const newTextArray = e.target.value.split("\n");
@@ -57,9 +50,6 @@ const Reviews = ({ setIsEnabled }) => {
       )
     );
   };
-
-
-
 
   return (
     <div className={styles.reviews}>
@@ -140,23 +130,27 @@ const Reviews = ({ setIsEnabled }) => {
               {showStudentText === student.id && (
                 <tr className={styles.withBorder}>
                   <td colSpan="3" className={styles.textCell}>
-                    {editingTextId === student.id ? (
-                      <textarea
+                    {/* {editingTextId === student.id ? ( */}
+                    {/* <textarea
                         value={student.text.join("\n")}
                         onChange={(e) => handleEditStudentText(e, student.id)}
                         onBlur={() => setEditingTextId(null)}
                         autoFocus
-                      />
-                    ) : (
-                      <div
-                        className={styles.descPar}
-                        onClick={() => setEditingTextId(student.id)}
-                      >
-                        {student.text.map((line, index) => (
-                          <p key={index}>{line}</p>
-                        ))}
-                      </div>
-                    )}
+                      /> */}
+                    {/* ) : ( */}
+                    <div
+                      className={styles.descPar}
+                      contentEditable
+                      suppressContentEditableWarning={true}
+                      // onBlur={(e) => handleContentEditableChange(e, student.id)}
+                      onInput={() => setIsEnabled(true)}
+                      // onClick={() => setEditingTextId(student.id)}
+                    >
+                      {student.text.map((line, index) => (
+                        <p key={index}>{line}</p>
+                      ))}
+                    </div>
+                    {/* )} */}
                   </td>
                 </tr>
               )}

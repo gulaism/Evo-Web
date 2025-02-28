@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Statistics.module.scss";
 import editIcon from "../../../../assets/images/admin/Statistics/editIcon.svg";
 
-const Statistics = () => {
+const Statistics = ({setIsEnabled}) => {
+
+
+  const handleChangeDefaultValue = (e) => {
+    setIsEnabled(true);
+    //set the value of the input
+    // let value = e.target.value;
+    // console.log(value);
+  }
+  
+
   return (
     <div className={styles.statistics}>
       <div className={styles.title}>Herobody</div>
@@ -13,7 +23,11 @@ const Statistics = () => {
             <div className={styles.iconCont}>
               <img src={editIcon} alt="" />
             </div>
-            <input type="number" placeholder="XX+ Məzun sayı" />
+            <input
+              type="number"
+              onChange={() => setIsEnabled(true)}
+              placeholder="XX+ Məzun sayı"
+            />
             <div className={styles.ppCont}>
               <div>
                 <img src="https://thispersondoesnotexist.com/" alt="" />
@@ -30,7 +44,11 @@ const Statistics = () => {
             <div className={styles.iconCont}>
               <img src={editIcon} alt="" />
             </div>
-            <input type="number" placeholder="XX+ Pedaqoji Kollektiv" />
+            <input
+              type="number"
+              onChange={() => setIsEnabled(true)}
+              placeholder="XX+ Pedaqoji Kollektiv"
+            />
             <div className={styles.ppCont}>
               <div>
                 <img src="https://thispersondoesnotexist.com/" alt="" />
@@ -52,7 +70,8 @@ const Statistics = () => {
             </div>
             <input
               type="text"
-              placeholder="Gələcəyin bacarıqları bu günün akademiyasında!"
+              onChange={(e) => handleChangeDefaultValue(e)}
+              defaultValue="Gələcəyin bacarıqları bu günün akademiyasında!"
             />
           </div>
         </section>
@@ -63,8 +82,8 @@ const Statistics = () => {
               <img src={editIcon} alt="" />
             </div>
             <input
-              type="text"
-              placeholder="Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin."
+              type="text" onChange={() => setIsEnabled(true)}
+              defaultValue="Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin."
             />
           </div>
         </section>

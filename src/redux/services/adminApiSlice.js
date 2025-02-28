@@ -7,6 +7,8 @@ export const adminApiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: url,
     prepareHeaders: (headers, { getState }) => {
+      const state = getState();
+      console.log('Current state: ', state);
       const token = getState().auth.token;
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
@@ -53,6 +55,13 @@ export const adminApiSlice = createApi({
       }),
     }),
     
+    // delete partner
+    deletePartner: builder.mutation({
+      query: (id) => ({
+        url: `partner/${id}`,
+        method: 'DELETE',
+      }),
+    }),
     
   }),
 });
@@ -64,4 +73,5 @@ export const {
   useForgotPasswordMutation,
   useValidateOtpMutation,
   useResetPasswordMutation,
+  useDeletePartnerMutation
 } = adminApiSlice;
