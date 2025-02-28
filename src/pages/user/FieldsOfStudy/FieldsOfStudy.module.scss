@@ -135,9 +135,13 @@
 }
 
 .gridBox {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     //flex-wrap: wrap; 
-    gap: 1.5rem;
+    gap: 20px;
+    // height of the row should be maximum element's height
+    
+
     margin-top: 2rem;
 
     //Mobile uçun
@@ -156,10 +160,11 @@
 
         .gridItem {
             width: 400px;
-            max-height: max-content;
+            min-height: max-content;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            justify-content: space-between;
             background: #fff;
             border-radius: 32px;
             border: 1px solid transparent;

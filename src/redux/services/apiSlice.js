@@ -11,17 +11,14 @@ export const apiSlice = createApi({
     getHome: builder.query({
       query: () => 'home',
     }),
-    
     // Our Difference API
     getDifference: builder.query({
       query: (id) => `ourDifference/getOurDifferenceById/${id}`,
     }),
-
     // About API
     getAbout: builder.query({
       query: () => 'about',
     }),
-
     // Consultation Email API
     sendConsultationEmail: builder.mutation({
       query: (data) => ({
@@ -32,31 +29,25 @@ export const apiSlice = createApi({
         responseHandler: (response) => response.text(), // Explicitly parse response as text
       }),
     }),
-    
-
     // Fields of API (Categories & Tablets)
     getCategories: builder.query({
       query: () => 'category',
     }),
-
     getTabletsByCategory: builder.query({
       query: (category) => ({
         url: `category/getTablets?trimmedCategory=${category}`,
         method: "GET",
       }),
     }),
-
     // Graduate API
     getAllData: builder.query({
       query: () => 'graduate',
     }),
-
     // Top Performance API
     getTopPerformance: builder.query({
       query: (id) => `performance/getById/${id}`,
       providesTags: ['Performance'], // Helps with caching & re-fetching
     }),
-
     // Appeal API
     sendAppeal: builder.mutation({
       query: (data) => ({
@@ -66,6 +57,21 @@ export const apiSlice = createApi({
         headers: { "Content-Type": "application/json"},
         responseHandler: (response) => response.text(),
       })
+    }),
+    getDropDown: builder.query({
+      query: () => `category/getDropdown`,
+    }),
+    getCourseDetails: builder.query({
+      query: (trimmedAreaName) => `course/${trimmedAreaName}`,
+    }),
+    getAllCourseNames: builder.query({
+      query: () => `course/getCourseNames`,
+    }),
+    getAllPartners: builder.query({
+      query: () => `partner`,
+    }),
+    getMeetData: builder.query({
+      query: () => `meet`,
     })
   }),
 });
@@ -79,5 +85,10 @@ export const {
   useGetAllDataQuery,
   useGetTopPerformanceQuery,
   useSendAppealMutation,
-  useGetHomeQuery
+  useGetHomeQuery,
+  useGetDropDownQuery,
+  useGetCourseDetailsQuery,
+  useGetAllCourseNamesQuery,
+  useGetAllPartnersQuery,
+  useGetMeetDataQuery
 } = apiSlice;

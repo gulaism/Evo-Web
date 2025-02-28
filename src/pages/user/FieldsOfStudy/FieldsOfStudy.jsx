@@ -4,11 +4,13 @@ import { FaChevronDown } from "react-icons/fa";
 // import { useGetCategoriesQuery, useGetTabletsByCategoryQuery } from "../../../redux/services/fieldsOfApi";  
 import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
 import { useGetCategoriesQuery, useGetTabletsByCategoryQuery } from "../../../redux/services/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 const FieldsOfStudy = () => {
   const [selectedCategory, setSelectedCategory] = useState("");  // Başlangıçda heç bir kateqoriya seçilməyib
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   // Get Categories (You can use this in your dropdown)
   const { data: categories, isLoading: isLoadingCategories } = useGetCategoriesQuery();
@@ -45,6 +47,11 @@ const FieldsOfStudy = () => {
   if (isLoadingCategories) return <p>Kateqoriyalar yüklənir...</p>;
   if (isLoadingTablets) return <p>Kurslar yüklənir...</p>;
 
+  const handleOpenTheFieldPage = (courseName) => {
+    const trimmedCourseName = courseName.split(" ").join("");
+    navigate('/field', {state: {field: trimmedCourseName}});
+  }
+
   return (
     <div className="container">
       <div className={styles.fieldsOfStudy}>
@@ -68,7 +75,7 @@ const FieldsOfStudy = () => {
         {/* GridBox */}
         <div className={styles.gridBox}>
           {tablets?.map((tablet) => (
-            <div key={tablet.order} className={styles.gridItem}>
+            <div onClick={() => handleOpenTheFieldPage(tablet.areaName)} key={tablet.order} className={styles.gridItem}>
               <h3 className={styles.itemHeader}>{tablet.areaName}</h3>
               <p className={styles.itemDescription}>{tablet.courseDescription}</p>
               <div className={styles.boxBottom}>

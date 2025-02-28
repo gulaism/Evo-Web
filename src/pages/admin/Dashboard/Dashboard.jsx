@@ -1,5 +1,5 @@
 // components
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Partners from "../../../components/admin/MainDashBoard/Partners/Partners"
 import Reviews from "../../../components/admin/MainDashBoard/Reviews/Reviews";
 import Statistics from "../../../components/admin/MainDashBoard/Statistics/Statistics"
@@ -11,6 +11,13 @@ import Faq from "../../../components/admin/MainDashBoard/Faq/Faq";
 
 const Dashboard = () => {
   const [isEnabled, setIsEnabled] = useState(false);
+  const [token, setToken] = useState(null);
+
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+    console.log(token);
+  }, [token]);
 
   return (
     <div className={styles.dashCont}>

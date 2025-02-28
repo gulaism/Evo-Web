@@ -6,8 +6,8 @@ import rightArrow from "../../../assets/images/HomePage/Expand_right.svg";
 import plus from "../../../assets/images/HomePage/plus.svg";
 import cursorIcon from "../../../assets/images/HomePage/Vector.svg";
 import minus from "../../../assets/images/HomePage/minus.svg";
-import { Link } from "react-router-dom";
-import { useGetHomeQuery } from "../../../redux/services/apiSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { useGetAllCourseNamesQuery, useGetCourseDetailsQuery, useGetHomeQuery } from "../../../redux/services/apiSlice";
 
 // const eduFields = [
 //   {
@@ -72,15 +72,36 @@ import { useGetHomeQuery } from "../../../redux/services/apiSlice";
 //   }
 // ];
 
-const EduField = ({ header, description, time, duration }) => {
+const EduField = ({ trimmedCourseName }) => {
+  const navigate = useNavigate();
+  const {
+    data: course,
+    error: errorCourse,
+    isLoading: isLoadingCourse,
+  } = useGetCourseDetailsQuery(trimmedCourseName);
+
+  useEffect(() => {
+    if(!errorCourse && !isLoadingCourse) {
+      console.log(course);
+    }
+  }, [errorCourse, isLoadingCourse])
+
+  useEffect(() => {
+    console.log({trimmedCourseName})
+  }, [])
+
+  const handleOpenTheFieldPage = () => {
+    navigate('/field', {state: {field: trimmedCourseName}});
+  }
+
   return (
-    <div className={styles.box}>
-      <div className={styles.boxHeading}>{header}</div>
-      <div className={styles.boxDesc}>{description}</div>
+    <div className={styles.box} onClick={handleOpenTheFieldPage}>
+      <div className={styles.boxHeading}>{course?.areaName}</div>
+      <div className={styles.boxDesc}>{course?.tabletDescription}</div>
       <div className={styles.boxBottom}>
         <div className={styles.time}>
-          <div>{time}</div>
-          <div>{duration}</div>
+          <div>{course?.lessonDuration} ay</div>
+          <div>{course?.lessonHours} saat</div>
         </div>
         <button className={styles.arrowCont}>
           <img className={styles.arrowImg} src={rightArrow} alt="" />
@@ -150,8 +171,21 @@ const HomeAbove = () => {
   const gridRef = useRef(null);
   const cursorRef = useRef(null);
   const { data: dataHome, error: errorHome, isLoading: isLoadingHome } = useGetHomeQuery();
+  const { data: courseNamesArray, error: errorCourseNamesArray, isLoading: isLoadingCourseNamesArray } = useGetAllCourseNamesQuery();
   const [visibleCount, setVisibleCount] = useState(dataHome?.tabletList.length < 6 ? dataHome?.tabletList.length : 6);
   
+  useEffect(() => {
+    if(!errorHome && !isLoadingHome) {
+      console.log(dataHome)
+    }
+  }, [dataHome, errorHome, isLoadingHome]);
+
+  useEffect(() => {
+    if(!errorCourseNamesArray && !isLoadingCourseNamesArray) {
+      console.log(courseNamesArray);
+    }
+  }, [errorCourseNamesArray, isLoadingCourseNamesArray])
+
 
   useEffect(() => {
     const home = document.getElementById("home");
@@ -349,14 +383,8 @@ const HomeAbove = () => {
           }`}
           ref={gridRef}
         >
-          {dataHome?.tabletList.slice(0, visibleCount).map((item, index) => (
-            <EduField
-              key={index}
-              header={item.areaName}
-              description={item.courseDescription}
-              time={item.courseHour}
-              duration={item.courseDuration}
-            />
+          {courseNamesArray?.map((course, index) => (
+            <EduField key={index} trimmedCourseName={course.split(" ").join("")} />
           ))}
         </div>
         {dataHome?.tabletList.length > 6 && (

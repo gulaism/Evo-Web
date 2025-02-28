@@ -41,7 +41,7 @@ h1 {
                 width: 80px;
                 height: 80px;
                 background-color: #F0EEFF;
-                padding: 20px;
+                padding: 8px;
                 overflow: hidden;
                 border-radius: 50%;
 
@@ -82,8 +82,12 @@ h1 {
     }
 
 
-    .rightDiv {
+    .addresses {
         width: 50%;
+    }
+
+    .rightDiv {
+        width: 100%;
         background-color: white;
         border-radius: 32px;
         padding: 20px;

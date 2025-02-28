@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 // images
 import logo from '../../../assets/images/Header/EvoCodingLogo.svg'
 // styles
@@ -11,35 +11,39 @@ import { MdDesignServices } from 'react-icons/md';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import cancel from "../../../assets/images/HomePage/Application/Close.svg";
 import ResponsiveNavbar from './ResponsiveNavbar';
+import { useGetDropDownQuery } from '../../../redux/services/apiSlice';
 
-const fields = [
-  {
-    name: "Proqramlaşdırma",
-    description: "Front-end  və Back-end proqramlaşdırma",
-    subTopics: ["Advanced Front-end", "Back-end Java"],
-  },
-  {
-    name: "Dizayn",
-    description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
-    subTopics: ["Qrafik/Motion dizayn"],
-  },
-  {
-    name: "Data analitika",
-    description: "Data analitika",
-    subTopics: ["Data analitika"],
-  },
-  {
-    name: "Rəqəmsal Marketinq",
-    description: "Rəqəmsal Marketinq",
-    subTopics: ["Rəqəmsal Marketinq"],
-  },
-];
+// const fields = [
+//   {
+//     name: "Proqramlaşdırma",
+//     description: "Front-end  və Back-end proqramlaşdırma",
+//     subTopics: ["Advanced Front-end", "Back-end Java"],
+//   },
+//   {
+//     name: "Dizayn",
+//     description: "Qrafik/Motion, UX/UI, İnteryer Dizayn",
+//     subTopics: ["Qrafik/Motion dizayn"],
+//   },
+//   {
+//     name: "Data analitika",
+//     description: "Data analitika",
+//     subTopics: ["Data analitika"],
+//   },
+//   {
+//     name: "Rəqəmsal Marketinq",
+//     description: "Rəqəmsal Marketinq",
+//     subTopics: ["Rəqəmsal Marketinq"],
+//   },
+// ];
+
+
 
 const HoveredSubCont = ({ subTopics }) => {
   const navigate = useNavigate();
 
   const openTheField = (fieldName) => {
-    navigate('/field', {state: {field: fieldName}});
+    console.log(fieldName.split(" ").join(""));
+    navigate('/field', {state: {field: fieldName.split(" ").join("")}});
   } 
 
   return (
@@ -62,7 +66,13 @@ const Header = ({  showApplication, setShowApplication }) => {
   const [ isSubHovered, setIsSubHovered ] = useState(null);
   const [ showResponsiveNavbar, setShowResponsiveNavbar ] = useState(false);
   const timeoutId = useRef(null);
+  const { data: fields, isLoading: isFieldsLoading, isError: isFieldsError } = useGetDropDownQuery();
 
+  useEffect(() => {
+    if(!isFieldsError && !isFieldsError) {
+      console.log(fields);
+    }
+  }, [fields, isFieldsLoading, isFieldsError])
 
 
   const handleOpenModal = () => {
@@ -168,7 +178,7 @@ const Header = ({  showApplication, setShowApplication }) => {
         onMouseEnter={handleShowingHoveredCont}
         onMouseLeave={handleClosingHoveredCont}
       >
-        {fields.map((field, index) => (
+        {fields?.map((field, index) => (
           <div
             key={index}
             className={styles.flexEl}
@@ -176,21 +186,23 @@ const Header = ({  showApplication, setShowApplication }) => {
             onMouseLeave={() => handleClosingHoveredSubCont(index)}
           >
             <div className={styles.mainIconCont}>
-              <FaLaptopCode size={40} color="#4A3AFF" />
+              {/* <FaLaptopCode size={40} color="#4A3AFF" /> */}
+              <img src={field.imageUrl} alt="" />
             </div>
             <div>
               <div className={styles.abovePart}>
-                <div>{field.name}</div>
+                <div>{field.category}</div>
                 <BiRightArrowAlt
                   size={20}
                   style={{ transition: "all 0.3s ease-in-out" }}
                   color={`${isSubHovered === index ? "#4A3AFF" : "#170F49"}`}
                 />
               </div>
-              <div className={styles.description}>{field.description}</div>
+              {/* find description api */}
+              <div className={styles.description}>{field.areas.join(" , ")}</div>
             </div>
             {isSubHovered === index && (
-              <HoveredSubCont subTopics={field.subTopics} />
+              <HoveredSubCont subTopics={field.areas} />
             )}
           </div>
         ))}

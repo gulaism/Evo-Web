@@ -3,10 +3,15 @@ import PartnerLogos from '../../HomePage/HomeBottom/PartnerLogos/PartnerLogos';
 import FaqList from '../../HomePage/HomeBottom/FaqListQuestions/FaqListQuestions';
 import styles from './AboutUs.module.scss';
 import InternshipProgram from './InternshipProgram/InternshipProgram';
-import { useGetAboutQuery } from '../../../redux/services/apiSlice';
+import { useGetAboutQuery, useGetAllPartnersQuery } from '../../../redux/services/apiSlice';
 
 const AboutUsBottom = () => {
   const { data, isLoading, isError } = useGetAboutQuery();
+  const {
+    data: partners,
+    error: partnerError,
+    isLoading: partnerLoading,
+  } = useGetAllPartnersQuery();
 
   console.log('Backend-dən gələn data:', data);
 
@@ -22,7 +27,8 @@ const AboutUsBottom = () => {
     return <div>Məlumat yoxdur.</div>;
   }
 
-  const { partners, experienceProgram, faqs } = data;
+  const { experienceProgram, faqs } = data;
+  
 
   return (
     <div style={{marginBlock: "150px"}} className="container">
@@ -31,7 +37,7 @@ const AboutUsBottom = () => {
         <h2>Partnyorlar</h2>
         <PartnerLogos logos={partners.map((partner, index) => ({
           id: index,
-          src: partner.imageUrl,
+          imageUrl: partner.imageUrl,
           alt: `Partnyor ${index + 1}`,
         }))} />
       </section>
