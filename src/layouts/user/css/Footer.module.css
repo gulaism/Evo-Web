@@ -1,0 +1,161 @@
+.footerCont {
+  background-color: #10101C;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-size: 14px;
+}
+.footerCont .aboveCont {
+  border-bottom: 1px solid rgba(126, 141, 156, 0.27);
+  padding-bottom: 50px;
+  margin-bottom: 37px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  line-height: 17px;
+}
+.footerCont .aboveCont .logoCont {
+  width: 145px;
+  height: 52px;
+}
+.footerCont .aboveCont .logoCont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.footerCont .aboveCont .aboveInfo {
+  display: flex;
+  align-items: start;
+  gap: 67px;
+}
+.footerCont .aboveCont .heading {
+  color: #F4F3FF;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+.footerCont .aboveCont .subHeadingCont {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  color: #788592;
+  font-weight: 400;
+}
+.footerCont .aboveCont .subHeadingCont div {
+  cursor: pointer;
+}
+.footerCont .aboveCont .subHeadingCont div:hover {
+  color: #F4F3FF;
+  transition: 0.3s ease;
+}
+.footerCont .aboveCont .subHeadingCont a:hover {
+  color: #F4F3FF;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+.footerCont .aboveCont .subHeadingCont a:hover div {
+  text-decoration: none;
+}
+.footerCont .aboveCont .subHeadingCont .contactCont {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footerCont .aboveCont .subHeadingCont .contactCont .iconCont {
+  width: 20px;
+  height: 20px;
+}
+.footerCont .aboveCont .subHeadingCont .contactCont .iconCont .iconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.footerCont .belowCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #788592;
+}
+.footerCont .belowCont .socialCont {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footerCont .belowCont .socialCont .iconCont {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.footerCont .belowCont .socialCont .iconCont .iconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 599px) {
+  .footerCont {
+    padding-top: 20px 20px 6px;
+  }
+  .footerCont .aboveCont {
+    margin-bottom: 20px;
+  }
+  .footerCont .aboveCont .logoCont {
+    display: none;
+  }
+  .footerCont .aboveCont .aboveInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    text-align: center;
+  }
+  .footerCont .aboveCont .heading {
+    margin-bottom: 20px;
+  }
+  .footerCont .aboveCont .subHeadingCont {
+    gap: 12px;
+  }
+  .footerCont .aboveCont .subHeadingCont .contactCont {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .footerCont .belowCont {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+  .footerCont .belowCont .socialCont .iconCont {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .footerCont .aboveCont {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    gap: 132px;
+  }
+  .footerCont .aboveCont .logoCont {
+    width: 120px;
+    height: 43px;
+  }
+  .footerCont .aboveCont .aboveInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+  .footerCont .aboveCont .heading {
+    margin-bottom: 20px;
+  }
+  .footerCont .aboveCont .subHeadingCont {
+    gap: 12px;
+  }
+  .footerCont .belowCont .socialCont {
+    gap: 24px;
+  }
+}/*# sourceMappingURL=Footer.module.css.map */

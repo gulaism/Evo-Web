@@ -1,0 +1,72 @@
+.navbar {
+  width: 100%;
+  background-color: transparent;
+  height: 62px;
+  margin: 52px auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .greeting > div:first-child {
+  width: 52px;
+  height: 52px;
+}
+.navbar .greeting > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.navbar .greeting > div:last-child {
+  font-weight: 700;
+}
+.navbar .greeting > div:last-child > p:first-child {
+  color: #A3AED0;
+  font-size: 14px;
+  line-height: 24px;
+}
+.navbar .greeting > div:last-child > p:last-child {
+  color: #4A3AFF;
+  font-size: 28px;
+  line-height: 42px;
+}
+.navbar .searchBar {
+  background-color: white;
+  padding: 9px 20px;
+  border-radius: 10px;
+  height: 42px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.navbar .searchBar input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding-left: 36px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8F9BBA;
+}
+.navbar .searchBar input::placeholder {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.navbar .searchBar > div {
+  position: absolute;
+  top: 9px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+}
+.navbar .searchBar > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}/*# sourceMappingURL=Navbar.module.css.map */

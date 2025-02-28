@@ -1,0 +1,150 @@
+.respCont {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  right: 20px;
+  left: 20px;
+  margin-top: 32px;
+}
+.respCont > div {
+  background-color: white;
+  box-shadow: 0px 4px 20px 0px rgba(23, 15, 73, 0.0784313725);
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  color: #170F49;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+}
+
+.subCont {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  right: 20px;
+  left: 20px;
+  margin-top: 32px;
+}
+.subCont .backCont {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: max-content;
+  color: #170F49;
+  cursor: pointer;
+}
+.subCont .fieldsdCont {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.subCont .fieldsdCont > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0px 4px 20px 0px rgba(23, 15, 73, 0.0784313725);
+}
+.subCont .fieldsdCont > div .subTopics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #7E8D9C;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.subCont .fieldsdCont > div .subTopics > div {
+  padding: 10px;
+}
+.subCont .fieldsdCont > div .subTopics > div:not(:last-child) {
+  border-bottom: 0.5px solid rgba(126, 141, 156, 0.2705882353);
+}
+.subCont .fieldsdCont .flexEl {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.subCont .fieldsdCont .flexEl .mainIconCont {
+  padding: 9px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px 0px rgba(23, 15, 73, 0.0784313725);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+.subCont .fieldsdCont .flexEl .abovePart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #170F49;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+.subCont .fieldsdCont .flexEl .description {
+  color: #788592;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@media (max-width: 599px) {
+  .respCont {
+    right: 16px;
+    left: 16px;
+    margin-top: 16px;
+  }
+  .respCont > div {
+    padding: 19px 15px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .subCont {
+    gap: 13px;
+    right: 16px;
+    left: 16px;
+    margin-top: 24px;
+  }
+  .subCont .backCont {
+    padding: 5px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .subCont .fieldsdCont > div .subTopics {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .subCont .fieldsdCont .flexEl {
+    gap: 17px;
+  }
+  .subCont .fieldsdCont .flexEl .abovePart {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .subCont .fieldsdCont .flexEl .description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}/*# sourceMappingURL=ResponsiveNavbar.module.css.map */

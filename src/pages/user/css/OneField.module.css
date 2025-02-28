@@ -1,0 +1,1105 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+section:first-of-type {
+  margin-top: 100px;
+}
+
+section {
+  margin-bottom: 150px;
+}
+
+.firstSection .title {
+  color: #222222;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 90px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.firstSection .description {
+  color: #7E8D9C;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+.firstSection .generalInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.firstSection .generalInfo .fieldName {
+  color: #222222;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 67px;
+  width: 400px;
+  margin-right: 54px;
+}
+.firstSection .generalInfo .fieldDesc {
+  color: #7E8D9C;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 41px 0 42px 67px;
+  border-left: 1px solid #7E8D9C;
+  width: 100%;
+}
+
+.whatYouWillGet .title {
+  color: #222222;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  text-align-last: center;
+  margin-bottom: 40px;
+}
+.whatYouWillGet .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+.whatYouWillGet .grid .row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 52px;
+}
+.whatYouWillGet .grid .row .item {
+  flex-basis: calc(50% - 20px);
+  /* 3 columns with 20px margin between */
+  margin: 0px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.whatYouWillGet .grid .row .item .itemTitle {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: #222222;
+  line-height: 42px;
+  max-width: 270px;
+}
+.whatYouWillGet .grid .row .item span {
+  font-weight: 600;
+  color: #4A3AFF;
+}
+.whatYouWillGet .grid .row .item .itemDescription {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #7E8D9C;
+}
+
+.program .title {
+  color: #222222;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.program .programDuration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 173px;
+  margin-bottom: 20px;
+}
+.program .programDuration .number {
+  color: #222222;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+}
+.program .programDuration .detail {
+  color: #7E8D9C;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+.program .question {
+  color: #222222;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.program .tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1115px;
+  margin: 0 auto 28px;
+}
+.program .tools .tool {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #7E8D9C;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: white;
+  border-radius: 12px;
+  border: none;
+  padding: 8px 10px 8px 8px;
+  white-space: nowrap;
+  width: max-content;
+}
+.program .tools .tool > div:first-of-type {
+  width: 48px;
+  height: 48px;
+}
+.program .tools .tool > div:first-of-type > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.program .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.program .grid > div {
+  background-color: white;
+  border-radius: 32px;
+  padding: 20px 38px;
+  border: 1px solid transparent;
+  transition: border 0.3s ease;
+}
+.program .grid > div:hover {
+  border: 1px solid rgba(126, 141, 156, 0.368627451);
+}
+.program .grid > div .title {
+  color: #222222;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 8px;
+  text-align: start;
+  transition: color 0.3s ease;
+}
+.program .grid > div:hover .title {
+  color: #4A3AFF;
+}
+.program .grid > div .description {
+  color: #7E8D9C;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.instruktorss .instructorsCont {
+  padding: 0 105px;
+}
+.instruktorss .instructorsCont .instructorHeader {
+  color: #222222;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.instruktorss .instructorsCont .description {
+  color: #7E8D9C;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 31px;
+}
+.instruktorss .instructorsCont .gridCont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 31px;
+  grid-auto-rows: minmax(150px, auto);
+}
+.instruktorss .instructorsCont .gridCont .insCont {
+  background-color: white;
+  border-radius: 32px;
+  padding: 20px 32px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s ease, height 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  grid-row: auto;
+  height: fit-content;
+}
+.instruktorss .instructorsCont .gridCont .insCont .instructor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.instruktorss .instructorsCont .gridCont .insCont .instructor .photoCont {
+  width: 143px;
+  height: 143px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.instruktorss .instructorsCont .gridCont .insCont .instructor .photoCont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  white-space: nowrap;
+}
+.instruktorss .instructorsCont .gridCont .insCont .instructor .instName {
+  color: #222222;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  white-space: nowrap;
+}
+.instruktorss .instructorsCont .gridCont .insCont .instructor .instProf {
+  color: #7E8D9C;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 18px;
+}
+.instruktorss .instructorsCont .gridCont .insCont .hiddenInfo {
+  color: #7E8D9C;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  overflow: hidden;
+  max-height: 0;
+  height: auto;
+  transition: max-height 0.3s ease;
+  margin-top: 16px;
+}
+.instruktorss .instructorsCont .gridCont .insCont:hover {
+  border: 1px solid rgba(126, 141, 156, 0.368627451);
+  transition: 0.3 ease;
+}
+.instruktorss .instructorsCont .gridCont .insCont.clicked .hiddenInfo {
+  max-height: 300px;
+}
+
+.nextGroups {
+  max-width: 1030px;
+  margin: 0 auto 150px;
+}
+.nextGroups .title {
+  color: #222222;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 31px;
+  transition: color 0.3s ease-in-out;
+}
+.nextGroups .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1030px;
+  align-items: center;
+  margin: 0 auto;
+}
+.nextGroups .flex > div {
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+  min-width: 400px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  color: inherit;
+  transition: border-color 0.3s ease-in-out;
+}
+.nextGroups .flex > div:hover {
+  border: 1px solid rgba(126, 141, 156, 0.368627451);
+}
+.nextGroups .flex > div:hover .title {
+  color: #4A3AFF;
+}
+.nextGroups .flex > div .title {
+  color: #222222;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  margin-bottom: 8px;
+  text-align: start;
+}
+.nextGroups .flex > div .type {
+  color: #7E8D9C;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 4px;
+}
+.nextGroups .flex > div .time {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+  color: #7E8D9C;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 12px;
+}
+.nextGroups .flex > div button {
+  background-color: #4A3AFF;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-self: end;
+  cursor: pointer;
+}
+.nextGroups .flex .noGroups {
+  padding: 20px 19px;
+  max-width: 610px;
+}
+.nextGroups .flex .noGroups .title {
+  font-weight: 700;
+  max-width: 380px;
+}
+.nextGroups .flex .noGroups .desc {
+  color: #7E8D9C;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 12px;
+}
+.nextGroups .flex .noGroups .animationCont {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  background-color: #F4F3FF;
+  border-radius: 31px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 10px 12px 10px 8px;
+  transition: width 0.9s ease, background-color 0.3s ease;
+  /* Hover zamanı düymənin genişlənməsi */
+  /* Adi ox üçün tərtibat */
+  /* Genişlənən düymə üçün konteyner */
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper:hover {
+  width: 197px;
+  background-color: #7367FF;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  white-space: nowrap;
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper .icon {
+  vertical-align: middle;
+  transition: opacity 0.3s ease;
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* İkon ilə mətn arasındakı məsafə */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Hover zamanı genişlənmə */
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton .hoverIcon {
+  font-size: 26px;
+  color: #F4F3FF;
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton .hoverText {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #F4F3FF;
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper:hover .expandButton {
+  opacity: 1;
+  transform: scale(1);
+  margin-left: auto;
+}
+.nextGroups .flex .noGroups .animationCont .arrowWrapper:hover .icon {
+  display: none;
+  opacity: 0;
+}
+
+.portfolio .title {
+  color: #222222;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.portfolio .desc {
+  color: #7E8D9C;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 1030px;
+}
+.portfolio .slider {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: scroll;
+  display: flex;
+  scrollbar-width: none;
+  gap: 20px;
+  height: max-content;
+}
+.portfolio .slider > div {
+  background-color: white;
+  border-radius: 32px;
+  padding: 20px;
+  max-width: 505px;
+  height: max-content;
+}
+.portfolio .slider > div .studentInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.portfolio .slider > div .studentInfo .img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.portfolio .slider > div .studentInfo .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portfolio .slider > div .studentInfo .name {
+  color: #222222;
+  font-size: 20px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+.portfolio .slider > div .studentInfo .job {
+  color: #7E8D9C;
+  font-size: 16px;
+  line-height: 24px;
+}
+.portfolio .slider > div .saying {
+  color: #222222;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.portfolio .slider > div .grid {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 226px auto;
+  gap: 13px;
+  cursor: pointer;
+  width: 465px;
+  height: 357px;
+}
+.portfolio .slider > div .box {
+  overflow: hidden;
+}
+.portfolio .slider > div .box img {
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portfolio .slider > div .box:hover {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+.portfolio .slider > div .box:hover ~ div {
+  grid-column: span 1;
+  grid-row: auto;
+}
+.portfolio .slider > div .grid:has(.box:hover) {
+  height: 727px;
+}
+
+@media (max-width: 599px) {
+  section:first-of-type {
+    margin-top: 40px;
+  }
+  section {
+    margin-bottom: 50px;
+  }
+  .firstSection .title {
+    display: none;
+  }
+  .firstSection .description {
+    display: none;
+  }
+  .firstSection .generalInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+  .firstSection .generalInfo .fieldName {
+    font-size: 24px;
+    line-height: 34px;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+  .firstSection .generalInfo .fieldDesc {
+    font-size: 14px;
+    line-height: 21px;
+    gap: 15px;
+    padding: 12px 0px 0px;
+    border-left: none;
+  }
+  .firstSection .generalInfo .fieldDesc::before {
+    content: "";
+    width: 162px;
+    height: 1px;
+    background-color: rgba(126, 141, 156, 0.2705882353);
+    margin: 0 auto;
+  }
+  .whatYouWillGet .title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+  .whatYouWillGet .grid {
+    margin: 28px 0;
+  }
+  .whatYouWillGet .grid .row {
+    margin-bottom: 28px;
+  }
+  .whatYouWillGet .grid .row .item {
+    flex-basis: calc(100% - 20px);
+    /* 1 column with 20px margin between */
+    margin: 0px 28px;
+  }
+  .whatYouWillGet .grid .row .item .itemTitle {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .whatYouWillGet .grid .row .item .itemDescription {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .program .title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+  .program .programDuration {
+    gap: 89px;
+    margin-bottom: 12px;
+  }
+  .program .programDuration .number {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  .program .programDuration .detail {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .program .question {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .program .tools {
+    gap: 8px;
+    max-width: 100%;
+  }
+  .program .tools .tool {
+    gap: 2px;
+    font-size: 12px;
+    line-height: 18px;
+    background-color: transparent;
+    border-radius: none;
+    padding: 0;
+    width: max-content;
+  }
+  .program .tools .tool > div:first-of-type {
+    width: 24px;
+    height: 24px;
+  }
+  .program .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .program .grid > div {
+    padding: 16px 20px;
+  }
+  .program .grid > div .title {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .program .grid > div .description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .instruktorss .instructorsCont {
+    padding: 0;
+  }
+  .instruktorss .instructorsCont .instructorHeader {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+  .instruktorss .instructorsCont .description {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 28px;
+  }
+  .instruktorss .instructorsCont .gridCont {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+    column-gap: 0;
+    grid-auto-rows: minmax(0px, auto);
+  }
+  .instruktorss .instructorsCont .gridCont .insCont {
+    border-radius: 22px;
+    padding: 15px 15px 5px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor {
+    gap: 14px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor .photoCont {
+    width: 80px;
+    height: 80px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor .instName {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor .instProf {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor a {
+    display: block;
+    height: 32px;
+    width: 32px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .hiddenInfo {
+    color: #788592;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 10px;
+  }
+  .nextGroups {
+    max-width: 100%;
+    margin: 0 auto 50px;
+  }
+  .nextGroups .title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+  .nextGroups .flex {
+    gap: 20px;
+    max-width: 100%;
+  }
+  .nextGroups .flex > div {
+    border-radius: 28px;
+    min-width: 343px;
+  }
+  .nextGroups .flex > div .title {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .nextGroups .flex > div .type {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 2px;
+  }
+  .nextGroups .flex > div .time {
+    gap: 8px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .nextGroups .flex > div button {
+    border-radius: 12px;
+    padding: 7px 10px;
+  }
+  .nextGroups .flex .noGroups {
+    padding: 14px;
+    max-width: 343px;
+  }
+  .nextGroups .flex .noGroups .title {
+    max-width: 253px;
+  }
+  .nextGroups .flex .noGroups .desc {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper {
+    width: 32px;
+    height: 32px;
+    padding: 5px 12px 6px 4px;
+    /* Hover zamanı düymənin genişlənməsi */
+    /* Genişlənən düymə üçün konteyner */
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper:hover {
+    width: 147px;
+    height: 32px;
+    padding-left: 10px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton {
+    gap: 2px;
+    /* Hover zamanı genişlənmə */
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton .hoverIcon {
+    font-size: 20px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton .hoverText {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .portfolio .title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+  .portfolio .desc {
+    display: none;
+  }
+  .portfolio .slider {
+    gap: 12px;
+  }
+  .portfolio .slider > div {
+    border-radius: 26px;
+    padding: 14px 18px;
+    max-width: 343px;
+    height: max-content;
+  }
+  .portfolio .slider > div .studentInfo {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .portfolio .slider > div .studentInfo .img {
+    width: 32px;
+    height: 32px;
+  }
+  .portfolio .slider > div .studentInfo .name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .portfolio .slider > div .studentInfo .job {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .portfolio .slider > div .saying {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+  .portfolio .slider > div .grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: max-content;
+  }
+  .portfolio .slider > div .box {
+    width: 147px;
+    height: 110px;
+  }
+  .portfolio .slider > div .box img {
+    border-radius: 12px;
+  }
+  .portfolio .slider > div .box:hover {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .portfolio .slider > div .box:hover ~ div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .portfolio .slider > div .grid:has(.box:hover) {
+    height: auto !important;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  section:first-of-type {
+    margin-top: 80px;
+  }
+  section {
+    margin-bottom: 90px;
+  }
+  .firstSection .title {
+    font-size: 40px;
+    line-height: 41px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .firstSection .description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 563px;
+  }
+  .firstSection .generalInfo {
+    margin-top: 32px;
+  }
+  .firstSection .generalInfo .fieldName {
+    font-size: 28px;
+    line-height: 39px;
+    width: 202px;
+    margin-right: 24px;
+  }
+  .firstSection .generalInfo .fieldDesc {
+    font-size: 16px;
+    line-height: 24px;
+    gap: 18px;
+    padding: 10px 0 15px 24px;
+  }
+  .whatYouWillGet .title {
+    font-size: 28px;
+    line-height: 42px;
+    margin-bottom: 32px;
+  }
+  .whatYouWillGet .grid .row {
+    margin-bottom: 20px;
+  }
+  .whatYouWillGet .grid .row .item .itemTitle {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .whatYouWillGet .grid .row .item .itemDescription {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .program .title {
+    font-size: 28px;
+    line-height: 42px;
+    margin-bottom: 32px;
+  }
+  .program .programDuration {
+    gap: 90px;
+  }
+  .program .programDuration .number {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .program .programDuration .detail {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .program .question {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  .program .tools {
+    gap: 12px;
+    max-width: 564px;
+    margin: 0 auto 20px;
+  }
+  .program .tools .tool {
+    font-size: 14px;
+    line-height: 21px;
+    padding: 5px 10px 5px 5px;
+  }
+  .program .tools .tool > div:first-of-type {
+    width: 32px;
+    height: 32px;
+  }
+  .program .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .program .grid > div {
+    padding: 16px 20px;
+    user-select: none;
+  }
+  .program .grid > div .title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .program .grid > div .description {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .instruktorss .instructorsCont {
+    padding: 0;
+  }
+  .instruktorss .instructorsCont .instructorHeader {
+    font-size: 28px;
+    line-height: 42px;
+    margin-bottom: 12px;
+  }
+  .instruktorss .instructorsCont .description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+  .instruktorss .instructorsCont .gridCont {
+    row-gap: 20px;
+    grid-auto-rows: minmax(113px, auto);
+  }
+  .instruktorss .instructorsCont .gridCont .insCont {
+    border-radius: 22px;
+    padding: 15px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor {
+    gap: 12px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor .photoCont {
+    width: 81px;
+    height: 81px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor .instName {
+    color: #222222;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .instructor .instProf {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 8px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont .hiddenInfo {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 10px;
+  }
+  .instruktorss .instructorsCont .gridCont .insCont.clicked .hiddenInfo {
+    max-height: auto;
+  }
+  .nextGroups {
+    max-width: 100%;
+    margin: 0 auto 90px;
+  }
+  .nextGroups .title {
+    font-size: 28px;
+    line-height: 42px;
+    margin-bottom: 32px;
+  }
+  .nextGroups .flex {
+    max-width: 100%;
+  }
+  .nextGroups .flex > div {
+    min-width: 342px;
+  }
+  .nextGroups .flex > div .title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .nextGroups .flex > div .type {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .nextGroups .flex > div .time {
+    gap: 8px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .nextGroups .flex > div button {
+    border-radius: 12px;
+    padding: 10px 10px;
+  }
+  .nextGroups .flex .noGroups {
+    padding: 20px 20px;
+    max-width: 523px;
+  }
+  .nextGroups .flex .noGroups .title {
+    font-weight: 700;
+    max-width: 253px;
+  }
+  .nextGroups .flex .noGroups .desc {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper {
+    width: 36px;
+    height: 36px;
+    padding: 7px 8px 8px 5px;
+    /* Hover zamanı düymənin genişlənməsi */
+    /* Genişlənən düymə üçün konteyner */
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper:hover {
+    width: 166px;
+    background-color: #7367FF;
+    height: 46px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton {
+    gap: 8px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton .hoverIcon {
+    font-size: 20px;
+  }
+  .nextGroups .flex .noGroups .animationCont .arrowWrapper .expandButton .hoverText {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .portfolio .title {
+    font-size: 28px;
+    line-height: 42px;
+    margin-bottom: 12px;
+  }
+  .portfolio .desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 auto 32px;
+    max-width: 100%;
+  }
+  .portfolio .slider > div {
+    border-radius: 26px;
+    padding: 14px 19px;
+    max-width: 342px;
+  }
+  .portfolio .slider > div .studentInfo {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .portfolio .slider > div .studentInfo .img {
+    width: 42px;
+    height: 42px;
+  }
+  .portfolio .slider > div .studentInfo .name {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .portfolio .slider > div .studentInfo .job {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .portfolio .slider > div .saying {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .portfolio .slider > div .grid {
+    grid-template-columns: 147px auto;
+    gap: 12px;
+    width: 306px;
+    height: 232px;
+  }
+  .portfolio .slider > div .box img {
+    border-radius: 12px;
+  }
+  .portfolio .slider > div .box:hover {
+    grid-column: 1/span 2;
+    grid-row: 1/span 2;
+  }
+  .portfolio .slider > div .box:hover ~ div {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+  .portfolio .slider > div .grid:has(.box:hover) {
+    height: 479px;
+  }
+}/*# sourceMappingURL=OneField.module.css.map */

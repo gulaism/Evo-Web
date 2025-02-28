@@ -1,0 +1,74 @@
+.partners {
+  text-align: center;
+  margin-top: 150px;
+}
+@media (max-width: 599px) {
+  .partners {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .partners {
+    margin-top: 90px;
+  }
+}
+.partners h2 {
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+@media (max-width: 599px) {
+  .partners h2 {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .partners h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+}
+
+.partnerLogos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.partnerLogos .animateWrapper {
+  display: flex;
+  animation: slide 10s linear infinite;
+}
+
+.partnerLogo {
+  width: 295px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+@media (max-width: 599px) {
+  .partnerLogo {
+    width: 140px;
+    height: auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .partnerLogo {
+    width: 217px;
+    height: auto;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}/*# sourceMappingURL=AboutUs.module.css.map */

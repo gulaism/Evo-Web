@@ -7,6 +7,7 @@ import ForgetPassword from '../pages/admin/AdminLogin/ForgetPassword/ForgetPassP
 import ValidateOtp from '../pages/admin/AdminLogin/ValidateOtp/ValidateOtp'
 import ResetPassword from '../pages/admin/AdminLogin/ResetPasswordPage/ResetPassPage'
 import AdminProtectedRoute from './AdminProtectedRoute'
+import AboutPage from '../pages/admin/AboutPage/AboutPage'
 
 const AdminRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AdminRouter = () => {
         }
       >
         <Route index path="/" element={<Dashboard />} />
+        <Route path="/about" element={<AboutPage />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/forget" element={<ForgetPassword />} />

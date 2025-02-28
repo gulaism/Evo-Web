@@ -4,7 +4,16 @@ const url = import.meta.env.VITE_SOME_KEY;  // Base API URL
 
 export const apiSlice = createApi({
   reducerPath: 'apiSlice',
-  baseQuery: fetchBaseQuery({ baseUrl: url }),  
+  baseQuery: fetchBaseQuery({
+    baseUrl: url,
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState()?.auth?.token;
+      if (token) {
+        headers.set('Authorization', `Bearer ${token}`);
+      }
+      return headers;
+    },
+  }),  
   tagTypes: ['Performance'], // Define tag types for caching (optional)
   endpoints: (builder) => ({
     // Home API
@@ -29,6 +38,7 @@ export const apiSlice = createApi({
         responseHandler: (response) => response.text(), // Explicitly parse response as text
       }),
     }),
+
     // Fields of API (Categories & Tablets)
     getCategories: builder.query({
       query: () => 'category',
