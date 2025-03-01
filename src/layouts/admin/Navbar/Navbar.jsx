@@ -13,8 +13,8 @@ const Navbar = () => {
           <img src={profileCircle} alt="" />
         </div>
         <div>
-          <p>Hey Admin,</p>
-          <p>Xoş gəlmisən!</p>
+          <p className={styles.heyCont}>Hey Admin,</p>
+          <p className={styles.welCont}>Xoş gəlmisən!</p>
         </div>
       </div>
     </div>

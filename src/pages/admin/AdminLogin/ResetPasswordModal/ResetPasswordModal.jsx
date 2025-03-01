@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useCompleteAdminMutation } from '../../../../redux/services/adminApiSlice';
 import { useNavigate } from 'react-router-dom';
 import styles from './ResetPassword.module.scss';
-import openEye from '../../../../assets/images/AdminLogin/openEye.svg';
-import closeEye from '../../../../assets/images/AdminLogin/closeEye.png';
+import openEye from '../../../../assets/images/admin/AdminLogin/openEye.svg';
+import closeEye from '../../../../assets/images/admin/AdminLogin/closeEye.png';
 
 const ResetPasswordModal = ({ onSuccess }) => {
   const [formData, setFormData] = useState({ email: '', password: '', confirmPassword: '' });

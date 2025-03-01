@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import openEye from '../../../../assets/images/AdminLogin/openEye.svg';
-import closeEye from '../../../../assets/images/AdminLogin/closeEye.png';
+import openEye from '../../../../assets/images/admin/AdminLogin/openEye.svg';
+import closeEye from '../../../../assets/images/admin/AdminLogin/closeEye.png';
 import { useLoginAdminMutation, useCheckAdminEmailQuery } from '../../../../redux/services/adminApiSlice';
 import { setAuthToken } from '../../../../redux/services/authSlice';
 import ResetPasswordModal from '../ResetPasswordModal/ResetPasswordModal';
 import styles from '../Login/Login.module.scss';
-import login from '../../../../assets/images/AdminLogin/login.svg';
 import { Link } from "react-router-dom";
 
 

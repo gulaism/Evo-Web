@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import style from "./AboutPage.module.scss";
-import HeroSection from "../../../components/admin/MainDashBoard/AboutPage/HeroSection/HeroSection";
-import ScholarshipProgram from "../../../components/admin/MainDashBoard/AboutPage/ScholarshipSection/ScholarshipSection";
-import InstructorsSection from "../../../components/admin/MainDashBoard/AboutPage/InstructorsSection/InstructorsSection";
-import InternShipAdmin from "../../../components/admin/MainDashBoard/AboutPage/InternShipAdmin/InternShipAdmin";
 import { useGetAboutQuery, useCreateOrUpdateAboutMutation } from "../../../redux/services/adminApiSlice";
+import HeroSection from "../../../components/admin/About/AboutPage/HeroSection/HeroSection";
+import ScholarshipProgram from "../../../components/admin/About/AboutPage/ScholarshipSection/ScholarshipSection";
+import InstructorsSection from "../../../components/admin/About/AboutPage/InstructorsSection/InstructorsSection";
+import InternShipAdmin from "../../../components/admin/About/AboutPage/InternShipAdmin/InternShipAdmin";
 
 const AboutPage = () => {
   const { data, isLoading } = useGetAboutQuery();

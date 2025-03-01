@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useResetPasswordMutation } from '../../../../redux/services/adminApiSlice';
 import styles from '../ResetPasswordPage/ResetPassPage.module.scss';
-import openEye from '../../../../assets/images/AdminLogin/openEye.svg';
-import closeEye from '../../../../assets/images/AdminLogin/closeEye.png';
-import login from '../../../../assets/images/AdminLogin/login.svg';
+import openEye from '../../../../assets/images/admin/AdminLogin/openEye.svg';
+import closeEye from '../../../../assets/images/admin/AdminLogin/closeEye.png';
+import login from '../../../../assets/images/admin/AdminLogin/login.svg';
 
 const ResetPassword = () => {
     const navigate = useNavigate();

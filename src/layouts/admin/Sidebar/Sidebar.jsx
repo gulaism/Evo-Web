@@ -22,20 +22,20 @@ const Sidebar = () => {
             <div className={styles.imgCont}>
               <img src={mainIcon} alt="" />
             </div>
-            <p>Ana səhifə</p>
+            <p className={styles.par}>Ana səhifə</p>
           </li>
           <li className={styles.menuItem}>
             <div className={styles.imgCont}>
               <img src={bookIcon} alt="" />
             </div>
-            <p>Haqqımızda</p>
+            <p className={styles.par}>Haqqımızda</p>
           </li>
           <li className={styles.fieldsCont}>
             <div className={styles.fieldsOfStudyAbove}>
               <div className={styles.imgCont}>
                 <img src={fieldsIcon} alt="" />
               </div>
-              <p>Tədris sahələri</p>
+              <p className={styles.par}>Tədris sahələri</p>
             </div>
             <div className={styles.categories}>
               <div>
@@ -52,13 +52,13 @@ const Sidebar = () => {
             <div className={styles.imgCont}>
               <img src={graduatesIcon} alt="" />
             </div>
-            <p>Məzunlarımız</p>
+            <p className={styles.par}>Məzunlarımız</p>
           </li>
           <li className={styles.menuItem}>
             <div className={styles.imgCont}>
               <img src={contactIcon} alt="" />
             </div>
-            <p>Əlaqə</p>
+            <p className={styles.par}>Əlaqə</p>
           </li>
         </ul>
         <div className={styles.bottomMenu}>
@@ -67,13 +67,13 @@ const Sidebar = () => {
               <div>
                 <img src={settingsIcon} alt="" />
               </div>
-              <p>Tənzimləmələr</p>
+              <p className={styles.par}>Tənzimləmələr</p>
             </li>
             <li>
               <div>
                 <img src={exitIcon} alt="" />
               </div>
-              <p>Çıxış</p>
+              <p className={styles.par}>Çıxış</p>
             </li>
           </ul>
           <div className={styles.logo}>

@@ -14,7 +14,7 @@
     gap: 10px;
 
 
-    > div:first-child {
+    >div:first-child {
       width: 52px;
       height: 52px;
 
@@ -27,22 +27,19 @@
     }
 
 
-    > div:last-child {
+
+    .heyCont {
+      color: #A3AED0;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+
+    .welCont {
+      color: #4A3AFF !important;
+      font-size: 28px;
+      line-height: 42px;
       font-weight: 700;
-
-
-      > p:first-child {
-        color: #A3AED0;
-        font-size: 14px;
-        line-height: 24px;
-      }
-
-
-      > p:last-child {
-        color: #4A3AFF;
-        font-size: 28px;
-        line-height: 42px;
-      }
     }
   }
 
@@ -76,7 +73,7 @@
     }
 
 
-    > div {
+    >div {
       position: absolute;
       top: 9px;
       left: 20px;

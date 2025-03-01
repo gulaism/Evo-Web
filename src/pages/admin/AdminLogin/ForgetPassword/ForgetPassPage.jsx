@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForgotPasswordMutation } from '../../../../redux/services/adminApiSlice';
 import styles from '../ForgetPassword/ForgetPassPage.module.scss';
-import login from '../../../../assets/images/AdminLogin/login.svg';
+import login from '../../../../assets/images/admin/AdminLogin/login.svg';
 
 const ForgetPassword = () => {
     const [email, setEmail] = useState('');
