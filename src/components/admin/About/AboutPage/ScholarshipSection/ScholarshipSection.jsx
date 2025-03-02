@@ -64,7 +64,7 @@ const ScholarshipProgram = ({ content, setContent }) => {
     if (isLoading) return <p>Yüklənir...</p>;
 
     const scholarship = content.scholarships?.at(0);
-    if (!scholarship) return <p>Məlumat tapılmadı.</p>;
+    // if (!scholarship) return <p>Məlumat tapılmadı.</p>;
 
     return (
         <section className={styles.scholarshipProgram}>
@@ -76,13 +76,13 @@ const ScholarshipProgram = ({ content, setContent }) => {
                 <input
                     className={styles.input}
                     type="text"
-                    value={scholarship.name || ""}
+                    value={scholarship?.name || ""}
                     onChange={(e) => handleChange("name", e.target.value)}
                     disabled={!editable.name}
                 />
             </div>
 
-            {scholarship.paragraphs?.map((paragraph, index) => (
+            {scholarship?.paragraphs?.map((paragraph, index) => (
                 <div key={index}>
                     <h4 className={styles.title}>Təsvir {index + 1}</h4>
                     <div className={styles.textareaContainer}>
@@ -97,7 +97,7 @@ const ScholarshipProgram = ({ content, setContent }) => {
                 </div>
             ))}
 
-            <p><strong>ID:</strong> {scholarship.id}</p>
+            <p><strong>ID:</strong> {scholarship?.id}</p>
         </section>
     );
 };

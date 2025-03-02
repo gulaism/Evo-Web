@@ -61,19 +61,19 @@ const AboutPage = () => {
   if (isLoading) return <p>Yüklənir...</p>;
 
   return (
-    <div className="adminContainer">
+    <div className={`${style.aboutOutContainer}`}>
       <div className={style.aboutPage}>
         <HeroSection content={content} setContent={setContent} />
         <ScholarshipProgram content={content} setContent={setContent} />
       </div>
       <InstructorsSection content={content} setContent={setContent} setIsEnabled={setIsEnabled} />
+      <InternShipAdmin />
       <button
         className={isEnabled ? `${style.saveBtn} ${style.active}` : `${style.saveBtn}`}
         onClick={handleSave}
       >
         Yadda saxla
       </button>
-      <InternShipAdmin />
     </div>
   );
 };
