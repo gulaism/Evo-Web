@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./EducationFields.module.scss";
 import plusIcon from "../../../assets/images/admin/Partners/plusIcon.svg";
 import editIcon from "../../../assets/images/admin/Statistics/editIcon.svg";
@@ -18,6 +18,21 @@ const data = [
 ];
 
 const EducationFields = () => {
+    const [sections, setSections] = useState(data);
+    const [isEnabled, setIsEnabled] = useState(false);
+
+    const handleInputChange = (sectionIndex, itemIndex, value) => {
+        const updatedSections = [...sections];
+        updatedSections[sectionIndex].items[itemIndex] = value;
+        setSections(updatedSections);
+        setIsEnabled(true); // Dəyişiklik olanda düymə aktiv olsun
+    };
+
+    const handleSave = () => {
+        console.log("Yadda saxlanıldı:", sections);
+        setIsEnabled(false); // Yadda saxlayandan sonra deaktiv et
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.heroBody}>
@@ -28,14 +43,15 @@ const EducationFields = () => {
                         <img src={editIcon} alt="Edit" />
                     </button>
                     <p className={styles.text}>
-                        Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin.
+                        Texnologiya ilə uyğunlaşın, bacarıqlarınızı inkişaf etdirin, gələcəyin iş dünyasında uğur
+                        qazanmaq üçün lazım olan bilik və təcrübəni bu gün əldə edin.
                     </p>
                 </div>
             </div>
 
             <div className={styles.sections}>
-                {data.map((section, index) => (
-                    <div key={index} className={styles.box}>
+                {sections.map((section, sectionIndex) => (
+                    <div key={sectionIndex} className={styles.box}>
                         <h4 className={styles.sectionTitle}>{section.title}</h4>
                         <div className={styles.titleAdd}>
                             <h3 className={styles.subTitle}>{section.subtitle}</h3>
@@ -48,13 +64,12 @@ const EducationFields = () => {
                             <thead>
                                 <tr>
                                     <th></th>
-                                    {/* <th>{section.subtitle}</th> */}
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {section.items.map((item, idx) => (
-                                    <tr key={idx} className={styles.row}>
+                                {section.items.map((item, itemIndex) => (
+                                    <tr key={itemIndex} className={styles.row}>
                                         <td>
                                             <button className={styles.addBtn}>
                                                 <img src={plusIcon} alt="Add" />
@@ -66,7 +81,12 @@ const EducationFields = () => {
                                             </button>
                                         </td>
                                         <td>
-                                            <input type="text" className={styles.input} value={item} readOnly />
+                                            <input
+                                                type="text"
+                                                className={styles.input}
+                                                value={item}
+                                                onChange={(e) => handleInputChange(sectionIndex, itemIndex, e.target.value)}
+                                            />
                                         </td>
                                         <td>
                                             <button className={styles.deleteBtn}>
@@ -80,6 +100,14 @@ const EducationFields = () => {
                     </div>
                 ))}
             </div>
+
+            <button
+                className={isEnabled ? `${styles.saveBtn} ${styles.active}` : styles.saveBtn}
+                onClick={handleSave}
+                disabled={!isEnabled} // Əgər dəyişiklik yoxdursa, düymə disabled olsun
+            >
+                Yadda saxla
+            </button>
         </div>
     );
 };

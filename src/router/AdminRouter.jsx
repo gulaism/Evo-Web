@@ -9,6 +9,7 @@ import ResetPassword from '../pages/admin/AdminLogin/ResetPasswordPage/ResetPass
 import AdminProtectedRoute from './AdminProtectedRoute'
 import AboutPage from '../pages/admin/AboutPage/AboutPage'
 import EducationFields from '../pages/admin/EducationFields/EducationFields'
+import SettingsPage from '../pages/admin/SettingsPage/SettingsPage'
 
 
 const AdminRouter = () => {
@@ -24,6 +25,7 @@ const AdminRouter = () => {
         <Route index path="/" element={<Dashboard />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path ="/education" element ={<EducationFields/>}/>
+        <Route path ="settings" element = {<SettingsPage/>}/>
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/forget" element={<ForgetPassword />} />
