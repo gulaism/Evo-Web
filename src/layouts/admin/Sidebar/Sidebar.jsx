@@ -10,28 +10,60 @@ import logo from "../../../assets/images/admin/Sidebar/logo.svg";
 import mainIcon from "../../../assets/images/admin/Sidebar/mainIcon.svg";
 import settingsIcon from "../../../assets/images/admin/Sidebar/settingsIcon.svg";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
+const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
+  const [selectedPage, setSelectedPage] = useState("");
+  const navigate = useNavigate();
+  
 
-const Sidebar = () => {
+  useEffect(() => {
+    if(isAddPageOpen === true && location.pathname.split("/").pop() === "newcourse") {
+      setSelectedPage("fields");
+    }
+  }, [isAddPageOpen, setIsAddPageOpen])
+
+  const handleOpenPage = (pageName) => {
+    setIsAddPageOpen(false);
+    setSelectedPage(pageName);
+    navigate(`/admin/${pageName}`);
+  };
+
   return (
     <div className={styles.sidebar}>
       <div className={styles.coloredDiv}></div>
       <div className={styles.rightDiv}>
         <ul className={styles.menu}>
-          <li className={`${styles.menuItem} ${styles.selected}`}>
+          <li
+            onClick={() => handleOpenPage("")}
+            className={`${styles.menuItem} ${
+              selectedPage === "" && styles.selected
+            }`}
+          >
             <div className={styles.imgCont}>
               <img src={mainIcon} alt="" />
             </div>
             <p className={styles.par}>Ana səhifə</p>
           </li>
-          <li className={styles.menuItem}>
+          <li
+            onClick={() => handleOpenPage("about")}
+            className={`${styles.menuItem} ${
+              selectedPage === "about" && styles.selected
+            }`}
+          >
             <div className={styles.imgCont}>
               <img src={bookIcon} alt="" />
             </div>
             <p className={styles.par}>Haqqımızda</p>
           </li>
           <li className={styles.fieldsCont}>
-            <div className={styles.fieldsOfStudyAbove}>
+            <div
+            onClick={() => handleOpenPage("fields")}
+              className={`${styles.fieldsOfStudyAbove} ${
+                selectedPage === "fields" && styles.selected
+              }`}
+            >
               <div className={styles.imgCont}>
                 <img src={fieldsIcon} alt="" />
               </div>
@@ -48,13 +80,23 @@ const Sidebar = () => {
               </div>
             </div>
           </li>
-          <li className={styles.menuItem}>
+          <li
+            onClick={() => handleOpenPage("graduates")}
+            className={`${styles.menuItem} ${
+              selectedPage === "graduates" && styles.selected
+            }`}
+          >
             <div className={styles.imgCont}>
               <img src={graduatesIcon} alt="" />
             </div>
             <p className={styles.par}>Məzunlarımız</p>
           </li>
-          <li className={styles.menuItem}>
+          <li
+            onClick={() => handleOpenPage("contact")}
+            className={`${styles.menuItem} ${
+              selectedPage === "contact" && styles.selected
+            }`}
+          >
             <div className={styles.imgCont}>
               <img src={contactIcon} alt="" />
             </div>

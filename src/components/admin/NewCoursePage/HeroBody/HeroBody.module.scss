@@ -1,0 +1,222 @@
+@import '../../../../assets/variables/variables';
+
+.heroCont {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 20px;
+    padding: 25px 20px;
+    width: 100%;
+
+
+    .title {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: start;
+
+
+        .gridCont {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+            row-gap: 8px;
+
+
+            .heads {
+                color: $mainColor;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 100%;
+            }
+
+
+            .courseName {
+                height: 44px;
+                border-radius: 10px;
+                border: 1px solid #7367FF26;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 380px;
+
+
+                .editIcon {
+                    width: 24px;
+                    height: 24px;
+                    padding: 3px;
+                }
+
+
+                .inputCont {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    outline: none;
+                    color: $secondColor;
+                    font-size: 16px;
+                    line-height: 100%;
+
+
+                    &::placeholder {
+                        color: inherit;
+                    }
+                }
+            }
+
+
+            .chooseCat {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+
+                .plusIcon {
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid #7367FF26;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    padding: 8px; 
+                }
+
+
+                .catCont {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    background-color: $bgColor;
+                    border-radius: 12px;
+                    padding: 8px 10px;
+                    cursor: pointer;
+                    min-width: 251px;
+
+
+                    .selectedCat {
+                        color: $secondColor;
+                        font-size: 16px;
+                        line-height: 100%;
+                    }
+                }
+            }
+        }
+
+
+        .descCont {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+
+
+            .above {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+
+                .tit {
+                    color: $mainColor;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 100%;
+                }
+
+
+                .add {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+
+
+                    .word {
+                        color: #A3AED0;
+                        font-size: 14px;
+                        line-height: 100%;
+                    }
+
+
+                    .addIcon {
+                        width: 24px;
+                        height: 24px;
+                        // padding: 3px;
+
+
+                        .addImage {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+
+
+            .below {
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                gap: 20px;
+
+
+                .inputCont {
+                    border: 1px solid #7367FF26;
+                    border-radius: 10px;
+                    padding: 10px;
+                    // height: 116px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+
+                    .editIcon {
+                        width: 24px;
+                        height: 24px;
+                        padding: 3px;
+                    }
+
+
+                    .input {
+                        outline: none;
+                        color: $secondColor;
+                        font-size: 16px;
+                        line-height: 100%;
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+
+                .trashIcon {
+                    width: 40px;
+                    height: 40px;
+                    padding: 8px;
+                    border: 1px solid #7367FF26;
+                    border-radius: 8px;
+
+
+                    .image {
+                        width: 24px;
+                        height: 24px;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
