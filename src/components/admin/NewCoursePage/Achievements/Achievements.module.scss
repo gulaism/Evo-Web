@@ -1,0 +1,155 @@
+@import '../../../../assets/variables/variables';
+
+.achieveCont {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
+    .tit {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+
+    .tableDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+
+        // .tableDiv {
+        //     .tableHead {
+        //         .tableHead {
+        //             padding-bottom: 8px;
+        //             text-align: start;
+        //             width: 100%;
+        //         }
+        //     }
+        // }
+
+
+        .gridHead {
+            display: grid;
+            grid-template-columns: auto auto 40px;
+
+
+            .headData {
+                color: $mainColor;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 100%;
+                text-align: start;
+            }
+        }
+
+
+        .gridBody {
+            display: grid;
+            grid-template-columns: auto auto 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #7367FF66;
+
+
+            .sloganCell {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: start;
+
+
+                .word {
+                    border: 1px solid #7367FF26;
+                    border-radius: 10px;
+                    height: 44px;
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+
+                    .input {
+                        width: 100%;
+                        height: 100%;
+                        outline: none;
+                        border: none;
+                        color: $secondColor;
+                        font-size: 16px;
+                        line-height: 100%;
+
+
+                        &::placeholder {
+                            color: inherit;
+                        }
+                    }
+                }
+
+
+                .differWord {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 10px;
+                    background-color: $bgColor;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+
+                    .sectionText {
+                        color: $secondColor;
+                        font-size: 16px;
+                        line-height: 100%;
+                    }
+                }
+            }
+
+
+            .descCell {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1px solid #7367FF26;
+                padding: 24px 10px;
+                border-radius: 10px;
+                max-width: calc(100% - 105px);
+                margin-left: -15px;
+
+                
+                .input {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    border: none;
+                    color: $secondColor;
+                    font-size: 16px;
+                    line-height: 100%;
+                }
+            }
+
+
+            .lastCell {
+                height: 100%;
+                display: flex;
+                align-items: end;
+
+                .iconCell {
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid #7367FF26;
+                    border-radius: 8px;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
