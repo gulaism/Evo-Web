@@ -8,6 +8,8 @@ import { setAuthToken } from '../../../../redux/services/authSlice';
 import ResetPasswordModal from '../ResetPasswordModal/ResetPasswordModal';
 import styles from '../Login/Login.module.scss';
 import { Link } from "react-router-dom";
+import login from '../../../../assets/images/admin/AdminLogin/login.svg'
+
 
 
 
