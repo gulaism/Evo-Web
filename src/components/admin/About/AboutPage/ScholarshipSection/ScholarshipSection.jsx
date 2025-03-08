@@ -61,7 +61,7 @@ const ScholarshipProgram = ({ content, setContent }) => {
         }
     };
 
-    if (isLoading) return <p>Yüklənir...</p>;
+    // if (isLoading) return <p>Yüklənir...</p>;
 
     const scholarship = content.scholarships?.at(0);
     // if (!scholarship) return <p>Məlumat tapılmadı.</p>;

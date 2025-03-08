@@ -12,28 +12,39 @@ import NextGroupStatus from '../../../components/admin/NewCoursePage/NextGroupSt
 import NextGroupTime from '../../../components/admin/NewCoursePage/NextGroupTime/NextGroupTime';
 import Portfolio from '../../../components/admin/NewCoursePage/Portfolio/Portfolio';
 import Faq from '../../../components/admin/MainDashBoard/Faq/Faq';
+import { useState } from 'react';
 
 
 const AddNewCourse = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+
+
   return (
     <div className={styles.addNewCourseCont}>
       <Description />
       <HeroBody />
       <Achievements />
       <div className={styles.flexDiv}>
-        <EduProg className={styles.eduProg}/>
-        <Tools className={styles.tools}/>
+        <EduProg className={styles.eduProg} />
+        <Tools className={styles.tools} />
       </div>
       <Module />
       <Instructors />
       <div className={styles.flexDiv}>
-        <NextGroupStatus className={styles.eduProg}/>
-        <NextGroupTime className={styles.tools}/>
+        <NextGroupStatus className={styles.eduProg} />
+        <NextGroupTime className={styles.tools} />
       </div>
       <Portfolio />
       <Faq />
+      <button
+        className={
+          isEnabled ? `${styles.saveBtn} ${styles.active}` : `${styles.saveBtn}`
+        }
+      >
+        Yadda saxla
+      </button>
     </div>
-  )
+  );
 }
 
 export default AddNewCourse

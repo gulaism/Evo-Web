@@ -4,7 +4,7 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { useGetAboutQuery } from "../../../../../redux/services/adminApiSlice";
 
 const HeroSection = ({ content, setContent }) => {
-  const { data, isLoading } = useGetAboutQuery();
+  // const { data, isLoading } = useGetAboutQuery();
 
   const [editable, setEditable] = useState({
     hashtag: false,
@@ -12,16 +12,16 @@ const HeroSection = ({ content, setContent }) => {
     description: false,
   });
 
-  useEffect(() => {
-    if (data) {
-      setContent({
-        id: data?.id || null, // ID varsa saxlayırıq
-        hashtag: data?.hashtag || "",
-        slogan: data?.title || "",
-        description: data?.paragraphs?.join("\n") || "", // Array isə birləşdiririk
-      });
-    }
-  }, [data, setContent]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setContent({
+  //       id: data?.id || null, // ID varsa saxlayırıq
+  //       hashtag: data?.hashtag || "",
+  //       slogan: data?.title || "",
+  //       description: data?.paragraphs?.join("\n") || "", // Array isə birləşdiririk
+  //     });
+  //   }
+  // }, [data, setContent]);
 
   const handleEdit = (field) => {
     setEditable((prev) => ({ ...prev, [field]: true }));
@@ -31,7 +31,7 @@ const HeroSection = ({ content, setContent }) => {
     setContent((prev) => ({ ...prev, [field]: value }));
   };
 
-  if (isLoading) return <p>Yüklənir...</p>;
+  // if (isLoading) return <p>Yüklənir...</p>;
 
   return (
     <section className={styles.heroSection}>
