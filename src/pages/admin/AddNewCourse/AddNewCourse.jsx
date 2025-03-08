@@ -4,6 +4,8 @@ import styles from './AddNewCourse.module.scss';
 import Description from '../../../components/admin/NewCoursePage/Description/Description'
 import HeroBody from '../../../components/admin/NewCoursePage/HeroBody/HeroBody'
 import Achievements from '../../../components/admin/NewCoursePage/Achievements/Achievements';
+import EduProg from '../../../components/admin/NewCoursePage/EduProg/EduProg';
+import Tools from '../../../components/admin/NewCoursePage/Tools/Tools';
 
 
 const AddNewCourse = () => {
@@ -12,6 +14,10 @@ const AddNewCourse = () => {
       <Description />
       <HeroBody />
       <Achievements />
+      <div className={styles.flexDiv}>
+        <EduProg className={styles.eduProg}/>
+        <Tools className={styles.tools}/>
+      </div>
     </div>
   )
 }

@@ -2,4 +2,21 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
+
+
+    .flexDiv {
+        display: flex;
+        align-items: start;
+        gap: 20px;
+
+
+        .eduProg {
+            max-width: fit-content;
+        }
+
+
+        .tools {
+            flex: 1;
+        }
+    }
 }
