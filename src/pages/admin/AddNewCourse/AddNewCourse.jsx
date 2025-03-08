@@ -8,6 +8,8 @@ import EduProg from '../../../components/admin/NewCoursePage/EduProg/EduProg';
 import Tools from '../../../components/admin/NewCoursePage/Tools/Tools';
 import Module from '../../../components/admin/NewCoursePage/Module/Module';
 import Instructors from '../../../components/admin/NewCoursePage/Instructors/Instructors';
+import NextGroupStatus from '../../../components/admin/NewCoursePage/NextGroupStatus/NextGroupStatus';
+import NextGroupTime from '../../../components/admin/NewCoursePage/NextGroupTime/NextGroupTime';
 
 
 const AddNewCourse = () => {
@@ -22,6 +24,10 @@ const AddNewCourse = () => {
       </div>
       <Module />
       <Instructors />
+      <div className={styles.flexDiv}>
+        <NextGroupStatus className={styles.eduProg}/>
+        <NextGroupTime className={styles.tools}/>
+      </div>
     </div>
   )
 }

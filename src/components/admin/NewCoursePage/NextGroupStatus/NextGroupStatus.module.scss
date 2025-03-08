@@ -1,0 +1,55 @@
+@import '../../../../assets/variables/variables';
+
+.nextStatCont {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 190px;
+
+
+    .statTit {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+
+    .statHead {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+
+    .statBody {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        border: 1px solid #7367FF26;
+        border-radius: 10px;
+        padding: 12px 10px;
+
+
+        .statCircle {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #7367FF26;
+            border-radius: 50%;
+        }
+
+
+        .input1 {
+            border: none;
+            outline: none;
+            color: $secondColor;
+            font-size: 16px;
+            line-height: 100%;
+            width: 100%;
+        }
+    }
+}
