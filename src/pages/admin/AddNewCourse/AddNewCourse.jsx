@@ -10,6 +10,7 @@ import Module from '../../../components/admin/NewCoursePage/Module/Module';
 import Instructors from '../../../components/admin/NewCoursePage/Instructors/Instructors';
 import NextGroupStatus from '../../../components/admin/NewCoursePage/NextGroupStatus/NextGroupStatus';
 import NextGroupTime from '../../../components/admin/NewCoursePage/NextGroupTime/NextGroupTime';
+import Portfolio from '../../../components/admin/NewCoursePage/Portfolio/Portfolio';
 
 
 const AddNewCourse = () => {
@@ -28,6 +29,7 @@ const AddNewCourse = () => {
         <NextGroupStatus className={styles.eduProg}/>
         <NextGroupTime className={styles.tools}/>
       </div>
+      <Portfolio />
     </div>
   )
 }

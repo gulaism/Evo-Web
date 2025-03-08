@@ -1,0 +1,73 @@
+@import '../../../../assets/variables/variables';
+
+.portCont {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: fit-content;
+
+
+    .portTit {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+
+    .portHead {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+
+    .portBot {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+
+        .portVar {
+            border: 1px solid #7367FF26;
+            border-radius: 10px;
+            padding: 10px;
+            width: 176px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+
+            .portCircle {
+                width: 20px;
+                height: 20px;
+                border: 1px solid #7367FF26;
+                border-radius: 50%;
+            }
+
+
+            .portWord {
+                color: $secondColor;
+                font-size: 16px;
+                line-height: 100%;
+            }
+        }
+    }
+}
+
+
+.tick {
+    width: 20px;
+    height: 20px;
+
+
+    .tickImg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
