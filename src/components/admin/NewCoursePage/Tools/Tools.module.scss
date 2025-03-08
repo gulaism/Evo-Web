@@ -1,0 +1,102 @@
+@import '../../../../assets/variables/variables';
+
+.toolsSec {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    align-items: start;
+
+
+    .toolTit {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+
+    .toolHead {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+
+        .headIc {
+            border: 1px solid #7367FF26;
+            width: 40px;
+            height: 40px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+    }
+
+
+    .toolsGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+
+
+        .oneTool {
+            border: 1px solid #7367FF26;
+            border-radius: 10px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            .toolLeft {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+
+                .toolIcOne {
+                    border: 1px solid #7367FF26;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 8px;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                
+                .toolInput {
+                    outline: none;
+                    border: none;
+                    color: $secondColor;
+                    font-size: 16px;
+                    line-height: 100%; 
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+
+
+                    &::placeholder {
+                        color: inherit;
+                    }
+                }
+            }
+
+
+            .toolIcTwo {
+                width: 24px;
+                height: 24px;
+                padding: 3px;
+            }
+        }
+    }
+}
