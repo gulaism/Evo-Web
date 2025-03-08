@@ -7,6 +7,7 @@ import Achievements from '../../../components/admin/NewCoursePage/Achievements/A
 import EduProg from '../../../components/admin/NewCoursePage/EduProg/EduProg';
 import Tools from '../../../components/admin/NewCoursePage/Tools/Tools';
 import Module from '../../../components/admin/NewCoursePage/Module/Module';
+import Instructors from '../../../components/admin/NewCoursePage/Instructors/Instructors';
 
 
 const AddNewCourse = () => {
@@ -20,6 +21,7 @@ const AddNewCourse = () => {
         <Tools className={styles.tools}/>
       </div>
       <Module />
+      <Instructors />
     </div>
   )
 }
