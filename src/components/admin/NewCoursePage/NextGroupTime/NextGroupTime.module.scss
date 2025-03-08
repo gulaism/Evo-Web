@@ -1,0 +1,113 @@
+@import '../../../../assets/variables/variables';
+
+.nextGroupTimeCont {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    
+    
+    .ngtTit {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+
+    .ngtBody {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+
+
+        .ngtWeekly {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 50%;
+
+
+            .weeklyTop {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+
+                .topLeft {
+                    color: $mainColor;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 100%;
+                }
+
+
+                .topRight {
+                    display: flex;
+                    gap: 2px;
+                    align-items: center;
+
+
+                    .rightWord {
+                        color: #A3AED0;
+                        font-size: 16px;
+                        line-height: 100%;
+                    }
+
+
+                    .rightCircle {
+                        border: 1px solid #7367FF26;
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+
+            .weeklyBot {
+                border: 1px solid #7367FF26;
+                border-radius: 10px;
+                padding: 10px;
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                justify-content: start;
+
+
+                .botIc {
+                    width: 24px;
+                    height: 24px;
+                    pad: 3px;
+                }
+
+
+                .botInput {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    border: none;
+                    color: $secondColor;
+                    font-size: 16px;
+                    line-height: 100%;
+
+
+                    &::placeholder {
+                        color: inherit;
+                    }
+                }
+            }
+
+
+            .weeklyBotBottom {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+        }
+    }
+}
