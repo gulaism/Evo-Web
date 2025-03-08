@@ -9,6 +9,7 @@ import ResetPassword from '../pages/admin/AdminLogin/ResetPasswordPage/ResetPass
 import AdminProtectedRoute from './AdminProtectedRoute'
 import AboutPage from '../pages/admin/AboutPage/AboutPage'
 import AddNewCourse from '../pages/admin/AddNewCourse/AddNewCourse'
+import Contact from '../pages/admin/Contact/Contact'
 
 const AdminRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AdminRouter = () => {
         <Route index path="/" element={<Dashboard />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/newcourse" element={<AddNewCourse />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/forget" element={<ForgetPassword />} />

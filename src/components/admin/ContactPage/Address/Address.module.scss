@@ -1,0 +1,115 @@
+@import '../../../../assets/variables/variables';
+
+.addressCont {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 20px;
+    width: 50%;
+
+
+    .addressTit {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        margin-bottom: 8px;
+    }
+
+
+    .addressHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+
+
+        .headWordBold {
+            color: $mainColor;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 100%;
+        }
+
+
+        .headIc {
+            width: 40px;
+            height: 40px;
+            pad: 8px;
+            border: 1px solid #7367FF26;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+    .addressBody {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+
+        .bodyCont {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #7367FF66;
+
+
+            .bodyTits {
+                color: #A3AED0;
+                font-size: 14px;
+                line-height: 100%;
+            }
+
+            
+            .bodyInputs {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1px solid #7367FF26;
+                padding: 10px;
+                border-radius: 10px;
+                width: 80%;
+
+
+                .inputIc {
+                    width: 24px;
+                    height: 24px;
+                    padding: 3px;
+                }
+
+
+                .bodInp {
+                    outline: none;
+                    color: $secondColor;
+                    font-size: 16px;
+                    line-height: 100%;
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+
+            .lastLine {
+                display: flex;
+                justify-content: end;
+            }
+
+
+            .lastIcon {
+                border: 1px solid #7367FF26;
+                border-radius: 8px;
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
