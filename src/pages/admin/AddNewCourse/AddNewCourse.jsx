@@ -11,6 +11,7 @@ import Instructors from '../../../components/admin/NewCoursePage/Instructors/Ins
 import NextGroupStatus from '../../../components/admin/NewCoursePage/NextGroupStatus/NextGroupStatus';
 import NextGroupTime from '../../../components/admin/NewCoursePage/NextGroupTime/NextGroupTime';
 import Portfolio from '../../../components/admin/NewCoursePage/Portfolio/Portfolio';
+import Faq from '../../../components/admin/MainDashBoard/Faq/Faq';
 
 
 const AddNewCourse = () => {
@@ -30,6 +31,7 @@ const AddNewCourse = () => {
         <NextGroupTime className={styles.tools}/>
       </div>
       <Portfolio />
+      <Faq />
     </div>
   )
 }
