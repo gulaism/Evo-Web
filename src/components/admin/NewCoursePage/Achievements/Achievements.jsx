@@ -81,7 +81,7 @@ const Achievements = () => {
             <input
               className={styles.input}
               type="text"
-              placeholder="Vəd edilmiş bacarıqların 1 və ya 2 cümlə ilə sadə, lokanik izahı."
+              placeholder="Vəd edilmiş bacarıqların sadə, lokanik izahı."
             />
           </div>
           <div className={styles.lastCell}>
