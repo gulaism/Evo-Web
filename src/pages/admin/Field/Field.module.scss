@@ -1,0 +1,43 @@
+.addNewCourseCont {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+
+    .flexDiv {
+        display: flex;
+        align-items: start;
+        gap: 20px;
+
+
+        .eduProg {
+            max-width: fit-content;
+        }
+
+
+        .tools {
+            flex: 1;
+        }
+    }
+}
+
+
+.saveBtn {
+    background-color: #C5C0FF;
+    border-radius: 14px;
+    padding: 10px 46px;
+    font-size: 16px;
+    line-height: 24px;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: max-content;
+}
+
+
+.active {
+    background-color: #7367FF;
+}

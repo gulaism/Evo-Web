@@ -10,6 +10,7 @@ import AdminProtectedRoute from './AdminProtectedRoute'
 import AboutPage from '../pages/admin/AboutPage/AboutPage'
 import AddNewCourse from '../pages/admin/AddNewCourse/AddNewCourse'
 import Contact from '../pages/admin/Contact/Contact'
+import Field from '../pages/admin/Field/Field'
 
 const AdminRouter = () => {
   return (
@@ -25,6 +26,7 @@ const AdminRouter = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/newcourse" element={<AddNewCourse />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/field" element={<Field />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/forget" element={<ForgetPassword />} />

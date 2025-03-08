@@ -9,12 +9,13 @@ import graduatesIcon from "../../../assets/images/admin/Sidebar/graduatesIcon.sv
 import logo from "../../../assets/images/admin/Sidebar/logo.svg";
 import mainIcon from "../../../assets/images/admin/Sidebar/mainIcon.svg";
 import settingsIcon from "../../../assets/images/admin/Sidebar/settingsIcon.svg";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
   const [selectedPage, setSelectedPage] = useState("");
+  const [showFields, setShowFields] = useState(false);
   const navigate = useNavigate();
   
 
@@ -27,8 +28,15 @@ const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
   const handleOpenPage = (pageName) => {
     setIsAddPageOpen(false);
     setSelectedPage(pageName);
-    navigate(`/admin/${pageName}`);
+    if(pageName !== "fields") {
+      navigate(`/admin/${pageName}`);
+    }
   };
+
+
+  const handleNavigateToTheField = () => {
+    navigate('/admin/field');
+  }
 
   return (
     <div className={styles.sidebar}>
@@ -59,7 +67,7 @@ const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
           </li>
           <li className={styles.fieldsCont}>
             <div
-            onClick={() => handleOpenPage("fields")}
+              onClick={() => handleOpenPage("fields")}
               className={`${styles.fieldsOfStudyAbove} ${
                 selectedPage === "fields" && styles.selected
               }`}
@@ -70,10 +78,22 @@ const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
               <p className={styles.par}>Tədris sahələri</p>
             </div>
             <div className={styles.categories}>
-              <div>
-                <MdKeyboardArrowRight size={16} color="#7367FF80" />
+              <div onClick={() => setShowFields(!showFields)}>
+                {showFields ? (
+                  <MdKeyboardArrowDown size={16} color="#7367FF80" />
+                ) : (
+                  <MdKeyboardArrowRight size={16} color="#7367FF80" />
+                )}
                 <span>Proqramlaşdırma</span>
               </div>
+              {showFields && (
+                <div
+                  className={styles.addedField}
+                  onClick={handleNavigateToTheField}
+                >
+                  Advanced Front-end
+                </div>
+              )}
               <div>
                 <MdKeyboardArrowRight size={16} color="#7367FF80" />
                 <span>Dizayn</span>
