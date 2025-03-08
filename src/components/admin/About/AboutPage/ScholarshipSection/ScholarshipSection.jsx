@@ -11,15 +11,15 @@ const ScholarshipProgram = ({ content, setContent }) => {
         paragraphs: []
     });
 
-    useEffect(() => {
-        if (data?.scholarships?.length > 0) {
-            setContent({ scholarships: data.scholarships });
-            setEditable({
-                name: false,
-                paragraphs: new Array(data.scholarships[0].paragraphs.length).fill(false)
-            });
-        }
-    }, [data, setContent]);
+    // useEffect(() => {
+    //     if (data?.scholarships?.length > 0) {
+    //         setContent({ scholarships: data.scholarships });
+    //         setEditable({
+    //             name: false,
+    //             paragraphs: new Array(data.scholarships[0].paragraphs.length).fill(false)
+    //         });
+    //     }
+    // }, [data, setContent]);
 
     const handleEdit = (field, index = null) => {
         if (index !== null) {

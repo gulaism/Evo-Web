@@ -87,13 +87,6 @@
                     }
                 }
             }
-
-
-            .selected {
-                background-color: rgba(115, 103, 255, 0.15);
-                border-radius: 12px;
-
-            }
         }
 
 
@@ -169,4 +162,14 @@
     line-height: 100%;
     margin-left: 15px;
     white-space: nowrap;
+}
+
+
+
+
+
+.selected {
+    background-color: rgba(115, 103, 255, 0.15);
+    border-radius: 12px;
+
 }

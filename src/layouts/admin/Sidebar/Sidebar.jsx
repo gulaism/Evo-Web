@@ -13,30 +13,29 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
+const Sidebar = ({ isAddPageOpen, setIsAddPageOpen }) => {
   const [selectedPage, setSelectedPage] = useState("");
   const [showFields, setShowFields] = useState(false);
   const navigate = useNavigate();
-  
 
   useEffect(() => {
-    if(isAddPageOpen === true && location.pathname.split("/").pop() === "newcourse") {
+    if (
+      isAddPageOpen === true &&
+      location.pathname.split("/").pop() === "newcourse"
+    ) {
       setSelectedPage("fields");
     }
-  }, [isAddPageOpen, setIsAddPageOpen])
+  }, [isAddPageOpen, setIsAddPageOpen]);
 
   const handleOpenPage = (pageName) => {
     setIsAddPageOpen(false);
     setSelectedPage(pageName);
-    if(pageName !== "fields") {
-      navigate(`/admin/${pageName}`);
-    }
+    navigate(`/admin/${pageName}`);
   };
 
-
   const handleNavigateToTheField = () => {
-    navigate('/admin/field');
-  }
+    navigate("/admin/field");
+  };
 
   return (
     <div className={styles.sidebar}>
@@ -125,7 +124,10 @@ const Sidebar = ({isAddPageOpen, setIsAddPageOpen}) => {
         </ul>
         <div className={styles.bottomMenu}>
           <ul>
-            <li>
+            <li onClick={() => handleOpenPage("settings")}
+              className={` ${
+                selectedPage === "settings" && styles.selected
+              }`}>
               <div>
                 <img src={settingsIcon} alt="" />
               </div>

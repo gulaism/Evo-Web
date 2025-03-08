@@ -4,9 +4,12 @@ import styles from './HeroBody.module.scss';
 import edit from '../../../../assets/images/admin/Statistics/editIcon.svg';
 import plus from '../../../../assets/images/admin/Partners/plusIcon.svg';
 import trash from '../../../../assets/images/admin/Partners/trashIcon.svg';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md';
+import { useState } from 'react';
 
 const HeroBody = () => {
+  const [showCategories, setShowCategories] = useState(false);
+
   return (
     <div className={styles.heroCont}>
       <div className={styles.title}>Herobody</div>
@@ -26,15 +29,30 @@ const HeroBody = () => {
           <div className={styles.heads}>Kateqoriya</div>
           <div className={styles.courseName}>
             <img className={styles.editIcon} src={edit} alt="" />
-            <input className={styles.inputCont} type="text" placeholder="Kurs adı" />
+            <input
+              className={styles.inputCont}
+              type="text"
+              placeholder="Kurs adı"
+            />
           </div>
           <div className={styles.chooseCat}>
             <div className={styles.plusIcon}>
               <img src={plus} alt="" />
             </div>
-            <div className={styles.catCont}>
-              <MdKeyboardArrowRight size={24} color="#b4adff" />
+            <div onClick={() => setShowCategories(!showCategories)} className={styles.catCont}>
+              {showCategories ? (
+                <MdKeyboardArrowDown size={24} color="#b4adff" />
+              ) : (
+                <MdKeyboardArrowRight size={24} color="#b4adff" />
+              )}
               <div className={styles.selectedCat}>Proqramlaşdırma</div>
+              
+              {showCategories && (
+                <div className={styles.catList}>
+                  <div className={styles.catItem}>Dizayn</div>
+                  <div className={styles.catItem}>Data Analitika</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -51,7 +69,11 @@ const HeroBody = () => {
           <div className={styles.below}>
             <div className={styles.inputCont}>
               <img className={styles.editIcon} src={edit} alt="" />
-              <input className={styles.input} type="text" placeholder="Təsvir" />
+              <input
+                className={styles.input}
+                type="text"
+                placeholder="Təsvir"
+              />
             </div>
             <div className={styles.trashIcon}>
               <img className={styles.image} src={trash} alt="" />

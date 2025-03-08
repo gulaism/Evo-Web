@@ -21,7 +21,7 @@ const AddNewCourse = () => {
 
   return (
     <div className={styles.addNewCourseCont}>
-      <Description />
+      <Description setIsEnabled = {setIsEnabled}/>
       <HeroBody />
       <Achievements />
       <div className={styles.flexDiv}>
