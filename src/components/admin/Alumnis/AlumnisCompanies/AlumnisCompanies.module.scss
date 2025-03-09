@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.companiesSection {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 40px;
+
+    .title{
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(163, 174, 208, 1);
+    }
+
+
+    h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: rgba(34, 34, 34, 1);
+    }
+
+    .companies {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+        //justify-content: center;
+        align-items: center;
+
+        .companyCard {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(115, 103, 255, 0.05);
+            padding: 10px;
+            border-radius: 15px;
+            /* box-shadow: 0 4px 8px rgba(115, 103, 255, 0.15); */
+            width: 150px;
+            height: 43px;
+            border: 1px solid rgba(115, 103, 255, 0.15);
+            gap: 5px;
+
+
+
+            .logoWrapper {
+                width: 90px;
+                height: 43px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                //background: rgba(115, 103, 255, 0.1);
+                border-radius: 10px;
+
+                .companyLogo {
+                    width: 100%;
+                    // height: 70%;
+                    //object-fit: contain;
+                }
+            }
+        }
+
+        .addBtn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(115, 103, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: white;
+            transition: 0.2s ease-in-out;
+            // position: absolute;
+            // top:85%;
+            // right: 7%;
+
+            &:hover {
+                background-color: rgba(115, 103, 255, 0.1);
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+                filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(200deg);
+            }
+        }
+    }
+
+
+}
+
+.editBtn {
+    width: 25px;
+    height: 25px;
+    padding: 3px 4px;
+    background-color: transparent;
+  
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &:hover {
+      background-color: rgba(115, 103, 255, 0.15);
+    }
+  }
+
+.deleteBtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 25px;
+}
