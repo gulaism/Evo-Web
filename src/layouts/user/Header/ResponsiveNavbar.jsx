@@ -69,7 +69,7 @@ const FieldsComponent = ({ fields , setShowResponsiveNavbar }) => {
 
     return (
       <div className={styles.fieldsdCont}>
-        {fields.map((field, index) => (
+        {fields?.map((field, index) => (
           <div key={index}>
             <div onClick={() => handleToggleField(index)} className={styles.flexEl} key={index}>
               <div className={styles.mainIconCont}>

@@ -3,6 +3,9 @@ import styles from "./InternShipAdmin.module.scss";
 import { FiTrash2 } from "react-icons/fi";
 import { AiOutlineEdit } from "react-icons/ai";
 import plusIcon from "../../../../../assets/images/admin/Partners/plusIcon.svg";
+import edit from "../../../../../assets/images/admin/Statistics/editIcon.svg";
+import trash from '../../../../../assets/images/admin/Partners/trashIcon.svg';
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const InternShipAdmin = () => {
   const [introText, setIntroText] = useState(
@@ -45,12 +48,15 @@ const InternShipAdmin = () => {
       <h3 className={styles.title}>Təcrübə Proqramı</h3>
 
       <h3 className={styles.subtitle}>Giriş</h3>
-      <div className={styles.inputContainer}>
+      <div className={styles.inputContainer} style={{ marginBottom: "20px" }}>
         <AiOutlineEdit className={styles.icon} />
-        <textarea value={introText} onChange={(e) => setIntroText(e.target.value)} />
+        <textarea
+          value={introText}
+          onChange={(e) => setIntroText(e.target.value)}
+        />
       </div>
 
-      <div className={styles.headerRow}>
+      {/* <div className={styles.headerRow}>
         <div className={styles.listHeader}>
           <span></span>
           <span>Sloqan</span>
@@ -75,7 +81,62 @@ const InternShipAdmin = () => {
           <textarea value={item.description} onChange={(e) => handleEditItem(item.id, "description", e.target.value)} />
           <FiTrash2 className={styles.deleteButton} onClick={() => handleDeleteItem(item.id)} />
         </div>
-      ))}
+      ))} */}
+
+      <div className={styles.tableDiv}>
+        <div className={styles.gridHead}>
+          <div className={styles.headData}>Sloqan</div>
+          <div className={styles.headData}>Təsvir</div>
+          <div>
+            <div>
+              <img src={plusIcon} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className={styles.gridBody}>
+          <div className={styles.sloganCell}>
+            <div>
+              <div className={styles.word}>
+                <img src={edit} alt="" />
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Üstünlüklər"
+                />
+              </div>
+            </div>
+            <div className={styles.newFlexDiv}>
+              <div className={styles.word}>
+                <img src={edit} alt="" />
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Tədris müddəti"
+                />
+              </div>
+              <div className={styles.differWord}>
+                <MdKeyboardArrowRight size={24} color="#b4adff" />
+                <div className={styles.sectionText}>
+                Tədris tipi
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.descCell}>
+            <img src={edit} alt="" />
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Vəd edilmiş bacarıqların sadə, lokanik izahı."
+            />
+          </div>
+          <div className={styles.lastCell}>
+            <div className={styles.iconCell}>
+              <img src={trash} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
